@@ -5,15 +5,10 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
-import java.util.List;
-
 /**
  *
  * @author victor
  */
-public interface Repositorio<T extends Entidade> {
-    public boolean Salvar(T obj);
-    public boolean Apagar(T obj);
-    public T Abrir(int id);
-    public List<T> Buscar(T filtro);
+public interface ClienteRepositorio extends Repositorio<Cliente>{
+    public Cliente Abrir(String cpf);
 }
