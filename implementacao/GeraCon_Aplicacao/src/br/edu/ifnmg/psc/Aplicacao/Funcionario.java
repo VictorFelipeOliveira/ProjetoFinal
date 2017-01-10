@@ -5,11 +5,13 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import java.util.Objects;
+
 /**
  *
  * @author thais
  */
-public class Funcionario implements Entidade {
+public class Funcionario  extends Pessoa implements Entidade {
 
     private String carteiraTrabalho;
     private String cargo;
@@ -48,5 +50,36 @@ public class Funcionario implements Entidade {
     public void setId(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.carteiraTrabalho);
+        hash = 53 * hash + Objects.hashCode(this.cargo);
+        hash = 53 * hash + Objects.hashCode(this.cpf);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Funcionario other = (Funcionario) obj;
+        if (!Objects.equals(this.carteiraTrabalho, other.carteiraTrabalho)) {
+            return false;
+        }
+        if (!Objects.equals(this.cargo, other.cargo)) {
+            return false;
+        }
+        if (!Objects.equals(this.cpf, other.cpf)) {
+            return false;
+        }
+        return true;
+    }
+    
     
 }
