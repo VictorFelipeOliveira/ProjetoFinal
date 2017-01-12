@@ -19,239 +19,73 @@ import java.util.List;
  *
  * @author victor
  */
-public class ClienteDAO implements ClienteRepositorio{
-    Connection conn;
+public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteRepositorio{
 
-    public ClienteDAO() {
-         try {
-            DB.Iniciar();
-            conn = DB.criarConexao();
-        } catch(ClassNotFoundException ex){ 
-            System.out.println("Driver não encontrado!");
-        } catch(SQLException ex){ 
-            System.out.println("Usuário/senha errados!");
-        } catch(Exception ex){
-            System.out.println(ex);
+    public ClienteDAO(){
+        setConsultaAbrir(null);
+        setConsultaApagar(null);
+        setConsultaInserir(null);
+        setConsultaAlterar(null);
+        setConsultaBusca(null);
+        setConsultaUltimoId(null);
+        
+    }
+    @Override
+    protected Cliente preencheObjeto(ResultSet resultado) {
+        Cliente cliente = new Cliente();
+        
+        try{
+            
+            cliente.setId(id);
+            cliente.setCpf(null);
+            cliente.setDescricao(null);
+            cliente.setRg(null);
+            cliente.setNome(null);
+            cliente.setTelefone(null);
+            cliente.setEmail(null);
+        } catch(SQLException ex){
+            
         }
+        return cliente;
+        
+    }
+
+    @Override
+    protected void preencheConsulta(PreparedStatement sql, Cliente cliente) {
+        try{
+            
+            sql.setString(1,  cliente.getNome() );
+            sql.setString(2,  cliente.getCpf());
+            sql.setString(3,  cliente.getDescricao());
+            sql.setString(4,  cliente.getRg());
+            sql.setString(5,  cliente.getEmail());
+            sql.setString(6,  cliente.getTelefone());
+            sql.setString(7,  cliente.getBairro());
+            sql.setString(8,  cliente.getCidade());
+            sql.setString(9,  cliente.getComplemento());
+            sql.setString(10, cliente.getRua());
+            sql.setInt(11, cliente.getNumero());
+            
+        } catch(SQLException ex){
+            System.out.println(ex);
+            
+        }
+    }
+
+    @Override
+    protected void preencheFiltros(Cliente filtro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    protected void preencheParametros(PreparedStatement sql, Cliente filtro) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Cliente Abrir(String cpf) {
-         try {
-            
-            // Crio a consulta sql
-            PreparedStatement sql = conn.prepareStatement("select codigo,nome,cpf,dataNascimento "
-                    + "from clientes where cpf = ?");
-            
-            // Passo os parâmentros para a consulta sql
-            sql.setString(1, cpf);
-            
-            // Executo a consulta sql e pego os resultados
-            ResultSet resultado = sql.executeQuery();
-            
-            // Verifica se algum registro foi retornado na consulta
-            if(resultado.next()){
-                
-                // Posso os dados do resultado para o objeto
-                Cliente cliente = new Cliente();
-                cliente.setId(resultado.getInt(1));
-                cliente.setNome(resultado.getString(2));
-                cliente.setCpf(resultado.getString(3));
-                
-                // Retorna o objeto
-                return cliente;
-            }            
-            
-        } catch(SQLException ex){
-            System.out.println(ex);
-        }
-        
-        return null;
-    }
-
-    @Override
-    public boolean Salvar(Cliente obj) {
-        try {
-            if(obj.getId() == 0){
-                // Objeto não está no BD, inserir
-
-                // Cria a consulta sql
-                PreparedStatement sql = conn.prepareStatement("INSERT INTO clientes(nome,cpf,dataNascimento) "
-                        + "VALUES(?,?,?)");
-                // Passa os parâmetros para a consulta SQL
-
-                
-                preencherObjeto(sql, obj);
-                
-                
-                // Executa a consulta SQL
-                sql.executeUpdate();
-                
-                
-                
-            } else {
-                // Objeto já está no BD, atualizar
-                
-                                // Cria a consulta sql
-                PreparedStatement sql = conn.prepareStatement("UPDATE clientes SET nome = ?, "
-                        + "cpf = ?, dataNascimento = ? "
-                        + "WHERE id = ?");
-                
-                
-                preencherObjeto(sql, obj);
-                sql.setInt(4,obj.getId());
-                
-                
-                // Executa a consulta SQL
-                sql.executeUpdate();
-
-                
-            }
-            
-            return true;
-        
-        } catch(SQLException e){
-            System.out.print(e);
-            
-        }
-        return false;
-    }
-
-    protected void preencherObjeto(PreparedStatement sql, Cliente obj) throws SQLException {
-        // Passa os parâmetros para a consulta SQL
-        sql.setString(1, obj.getNome());
-        sql.setString(2, obj.getCpf());
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    @Override
-    public boolean Apagar(Cliente obj) {
-        try {
-            if(obj.getId() > 0){
-                // Objeto não está no BD, inserir
-
-                // Cria a consulta sql
-                PreparedStatement sql = conn.prepareStatement("DELETE FROM clientes WHERE id = ? ");
-                
-                
-                // Passa os parâmetros para a consulta SQL
-                sql.setInt(1, obj.getId());
-                                
-                // Executa a consulta SQL
-                sql.executeUpdate();
-            
-            }
-            
-            return true;
-        
-        } catch(SQLException e){
-            System.out.print(e);
-            
-        }
-        return false;
-    }
-
-    @Override
-    public Cliente Abrir(int id) {
-         try {
-            
-            // Crio a consulta sql
-            PreparedStatement sql = conn.prepareStatement("select id,nome,cpf,dataNascimento "
-                    + "from clientes where id = ?");
-            
-            // Passo os parâmentros para a consulta sql
-            sql.setInt(1, id);
-            
-            // Executo a consulta sql e pego os resultados
-            ResultSet resultado = sql.executeQuery();
-            
-            // Verifica se algum registro foi retornado na consulta
-            if(resultado.next()){
-                
-                // Posso os dados do resultado para o objeto
-                Cliente cliente = new Cliente();
-                cliente.setId(resultado.getInt(1));
-                cliente.setNome(resultado.getString(2));
-                cliente.setCpf(resultado.getString(3));
-                
-                // Retorna o objeto
-                return cliente;
-            }            
-            
-        } catch(SQLException ex){
-            System.out.println(ex);
-        }
-        
-        return null;
-    }
-
-    @Override
-    public List<Cliente> Buscar(Cliente filtro) {
-        List<Cliente> ret = new ArrayList<>();
-        
-        String consulta_sql = "select id,nome,cpf,dataNascimento "
-                    + "from clientes ";
-        String where = "";
-        
-        HashMap<String,Integer> parametros = new HashMap<>();
-        int count = 0;
-        
-        
-        if(filtro.getId() > 0){
-            where = where + "id = ?";
-            count++;
-            parametros.put("id",count);
-        }
-        
-        if(filtro.getNome() != null){
-            if(where.length() > 0) where = where + " and ";
-            
-            where = where + "nome = ?";
-            count++;
-            parametros.put("nome",count);
-        }
-        
-        if(filtro.getCpf() != null){
-            if(where.length() > 0) where = where + " and ";
-            
-            where = where + "cpf = ?";
-            count++;
-            parametros.put("cpf",count);
-        }
-        
-        if(where.length() > 0 )
-            where = "WHERE " + where;
-        
-        try {
-            
-            // Crio a consulta sql
-            PreparedStatement sql = conn.prepareStatement(consulta_sql + where);
-            
-            // Passo os parâmentros para a consulta sql
-            if(filtro.getId() > 0) sql.setInt(parametros.get("id"), filtro.getId());
-            if(filtro.getNome() != null) sql.setString(parametros.get("nome"), filtro.getNome());
-            if(filtro.getCpf() != null) sql.setString(parametros.get("cpf"), filtro.getCpf());
-            
-            // Executo a consulta sql e pego os resultados
-            ResultSet resultado = sql.executeQuery();
-                        
-            // Verifica se algum registro foi retornado na consulta
-            while(resultado.next()){
-                
-                // Posso os dados do resultado para o objeto
-                Cliente cliente = new Cliente();
-                cliente.setId(resultado.getInt(1));
-                cliente.setNome(resultado.getString(2));
-                cliente.setCpf(resultado.getString(3));
-                
-                // Adiciona o objeto à lista
-                ret.add(cliente);
-            }            
-            
-        } catch(SQLException ex){
-            System.out.println(ex);
-        }
-        
-        return ret;
-    }
-    
+       
 }
