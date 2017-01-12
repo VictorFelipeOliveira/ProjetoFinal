@@ -10,6 +10,5 @@ package br.edu.ifnmg.psc.Aplicacao;
  * @author thais
  */
 public interface ProdutoRepositorio extends Repositorio<Produto> {
-    public Produto Abir();
-    
+     
 }
