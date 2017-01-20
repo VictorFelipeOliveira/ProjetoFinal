@@ -5,7 +5,7 @@
         <group>
             <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/ClienteDAO.java</file>
             <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/VeiculoDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/FuncionarioDAO.java</file>
+            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/FornecedorDAO.java</file>
             <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DB.java</file>
             <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/UsuarioDAO.java</file>
             <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DAOGenerico.java</file>
