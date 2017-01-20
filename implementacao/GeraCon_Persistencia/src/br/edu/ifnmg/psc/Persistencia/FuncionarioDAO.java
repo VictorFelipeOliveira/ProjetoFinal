@@ -10,9 +10,6 @@ import br.edu.ifnmg.psc.Aplicacao.FuncionarioRepositorio;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -54,45 +51,68 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
         }catch(SQLException ex){
            ex.printStackTrace();
        }
+       
+       return funcionario;
     }
 
     @Override
     protected void preencheConsulta(PreparedStatement sql, Funcionario funcionario) {
             
         try {
-            sql.setString(1,  cliente.getNome() );
-            sql.setString(2,  cliente.getCpf());
-            sql.setString(3,  cliente.getDescricao());
-            sql.setString(4,  cliente.getRg());
-            sql.setString(5,  cliente.getEmail());
-            sql.setString(6,  cliente.getTelefone());
-            sql.setString(7,  cliente.getBairro());
-            sql.setString(8,  cliente.getCidade());
-            sql.setString(9,  cliente.getComplemento());
-            sql.setString(10, cliente.getRua());
-            sql.setInt(11, cliente.getNumero());
+            sql.setString(1,  funcionario.getNome() );
+            sql.setString(2,  funcionario.getCpf());
+            sql.setString(3,  funcionario.getCargo());
+            sql.setString(4,  funcionario.getCarteiraTrabalho());
+            sql.setString(5,  funcionario.getEmail());
+            sql.setString(6,  funcionario.getTelefone());
+            sql.setString(7,  funcionario.getBairro());
+            sql.setString(8,  funcionario.getCidade());
+            sql.setString(9,  funcionario.getComplemento());
+            sql.setString(10, funcionario.getRua());
+            sql.setInt(11, funcionario.getNumero());
         } catch (SQLException ex) {
-            Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+           ex.printStackTrace();
         }
     }
 
     @Override
     protected void preencheFiltros(Funcionario filtro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(filtro.getId()>0) 
+            adicionarFiltro("id", "=");
+        if(filtro.getNome() != null)
+            adicionarFiltro("nome", " like ");
+        if(filtro.getCpf()!=null)
+            adicionarFiltro("cpf", "=");
+        
     }
 
     @Override
     protected void preencheParametros(PreparedStatement sql, Funcionario filtro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+            int cont = 1;
+            if(filtro.getId() > 0)
+                sql.setInt(cont, filtro.getId());
+            cont++;
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }
     }
 
     @Override
     public Funcionario Abrir(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, cpf, cargo, "
+                    + "carteiraTrabalho, rua, bairro, cidade, complemento from Funcionarios where cpf = ? ");
+            sql.setString(1, cpf);
+            ResultSet resultado = sql.executeQuery();
+            
+            if(resultado.next())
+                return preencheObjeto(resultado);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        return null;
     }
-
  
-    
-    
-    
 }
