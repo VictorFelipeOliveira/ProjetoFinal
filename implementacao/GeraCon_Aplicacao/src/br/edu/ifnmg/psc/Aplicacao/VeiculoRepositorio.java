@@ -10,6 +10,6 @@ package br.edu.ifnmg.psc.Aplicacao;
  * @author thais
  */
 public interface VeiculoRepositorio extends Repositorio<Veiculo> {
-    public Veiculo Abir();
+    public Veiculo Abrir(String placa);
     
 }

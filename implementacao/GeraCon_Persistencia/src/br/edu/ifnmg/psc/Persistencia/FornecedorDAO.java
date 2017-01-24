@@ -95,8 +95,8 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
     public Fornecedor Abrir(String cpf) {
           try {
             
-            PreparedStatement sql = conn.prepareStatement("select id, nome, cpf, dataNascimento "
-                    + "from clientes where cpf = ?");
+            PreparedStatement sql = conn.prepareStatement("select nome, cnpj, telefone, email, rua, numero, complemento, "
+                + "bairro, cidade from Fornecedores where cnpj = ?");
             
             sql.setString(1, cpf);
             
