@@ -46,8 +46,9 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
             funcionario.setNumero(0);
         
         }catch(SQLException ex){
-           ex.printStackTrace();
+           System.out.println(ex);
        }
+       return null;
     }
 
     @Override
