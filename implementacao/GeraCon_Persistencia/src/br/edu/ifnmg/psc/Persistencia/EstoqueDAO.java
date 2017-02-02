@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifnmg.psc.Aplicacao;
+package br.edu.ifnmg.psc.Persistencia;
 
 /**
  *
- * @author thais
+ * @author victor
  */
-public interface UsuarioRepositorio extends Repositorio<Usuario> {
-    public Usuario Abrir(String login);
+public class EstoqueDAO {
     
 }

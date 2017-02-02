@@ -56,47 +56,38 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
     public boolean Salvar(T obj) {
         try {
             if (obj.getId() == 0) {
-                // Objeto não está no BD, inserir
-
-                // Cria a consulta sql
+               
                 PreparedStatement sql = conn.prepareStatement(getConsultaInserir());
-                // Passa os parâmetros para a consulta SQL
-
+               
                 preencheConsulta(sql, obj);
-
-                // Executa a consulta SQL
+               
                 sql.executeUpdate();
 
                 PreparedStatement sql2 = conn.prepareStatement(getConsultaUltimoId());
 
                 preencheConsulta(sql2, obj);
 
-                // Executo a consulta sql e pego os resultados
+                
                 ResultSet resultado = sql2.executeQuery();
 
-                // Verifica se algum registro foi retornado na consulta
+                
                 if (resultado.next()) {
 
-                    // Retorna o objeto
                     obj.setId( resultado.getInt(1) );
                 }
 
             } else {
-                // Objeto já está no BD, atualizar
-
-                // Cria a consulta sql
+                
                 PreparedStatement sql = conn.prepareStatement(getConsultaAlterar());
 
                 preencheConsulta(sql, obj);
 
-                // Executa a consulta SQL
                 sql.executeUpdate();
 
             }
             return true;
-             } catch (SQLException e) {
-            System.out.print(e);
-
+            } catch (SQLException e) {
+                e.printStackTrace();
         }
         return false;
     }
@@ -105,15 +96,11 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
     public boolean Apagar(T obj) {
         try {
             if (obj.getId() > 0) {
-                // Objeto não está no BD, inserir
-
-                // Cria a consulta sql
+                
                 PreparedStatement sql = conn.prepareStatement(getConsultaApagar());
 
-                // Passa os parâmetros para a consulta SQL
                 sql.setInt(1, obj.getId());
 
-                // Executa a consulta SQL
                 sql.executeUpdate();
 
             }
@@ -126,35 +113,35 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
         }
         return false;
     }
-     @Override
+    
+    @Override
     public T Abrir(int id) {
         try {
 
-            // Crio a consulta sql
+            
             PreparedStatement sql = conn.prepareStatement(getConsultaAbrir());
 
-            // Passo os parâmentros para a consulta sql
+            
             sql.setInt(1, id);
 
-            // Executo a consulta sql e pego os resultados
+            
             ResultSet resultado = sql.executeQuery();
 
-            // Verifica se algum registro foi retornado na consulta
+            
             if (resultado.next()) {
-
-                // Retorna o objeto
                 return preencheObjeto(resultado);
             }
 
         } catch (SQLException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return null;
     }
-     @Override
+    
+    @Override
     public List<T> Buscar(T filtro) {
-        List<T> ret = new ArrayList<>();
+        List<T> listaRetorno = new ArrayList<>();
 
         preencheFiltros(filtro);
 
@@ -164,27 +151,23 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
 
         try {
 
-            // Crio a consulta sql
             PreparedStatement sql = conn.prepareStatement(getConsultaBusca() + where);
 
             preencheParametros(sql, filtro);
 
-            // Executo a consulta sql e pego os resultados
             ResultSet resultado = sql.executeQuery();
 
-            // Verifica se algum registro foi retornado na consulta
             while (resultado.next()) {
 
-                T tmp = preencheObjeto(resultado);
+                T objeto = preencheObjeto(resultado);
 
-                // Adiciona o objeto à lista
-                ret.add(tmp);
+                listaRetorno.add(objeto);
             }
-             } catch (SQLException ex) {
-            System.out.println(ex);
+        } catch (SQLException ex) {
+        
         }
 
-        return ret;
+        return listaRetorno;
     }
 
     protected void adicionarFiltro(String campo, String operador) {
@@ -240,8 +223,5 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
     public void setConsultaUltimoId(String consultaUltimoId) {
         this.consultaUltimoId = consultaUltimoId;
     }
-
-
-            
     
 }

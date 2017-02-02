@@ -22,29 +22,36 @@ import java.util.List;
 public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteRepositorio{
 
     public ClienteDAO(){
-        setConsultaAbrir(null);
-        setConsultaApagar(null);
-        setConsultaInserir(null);
-        setConsultaAlterar(null);
-        setConsultaBusca(null);
-        setConsultaUltimoId(null);
-        
+        setConsultaAbrir("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
+                + " cidade, complemento from Clientes where codigo = ?");
+        setConsultaApagar("delete from clientes where codigo = ?");
+        setConsultaInserir("insert into clientes (nome, telefone, email, descricao, cpf, rg, rua, bairro,"
+                + " cidade, complemento) values (?, ?, ? , ?, ?, ?, ?, ?, ?, ?)");
+        setConsultaAlterar("update clientes set nome = ?, telefone = ?, email = ?, descricao = ?, cpf = ?, "
+                + "rg = ?, rua = ?, bairro = ?, cidade = ?, complemento = ? where codigo = ?");
+        setConsultaBusca("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
+                + " cidade, complemento from Clientes");
+        setConsultaUltimoId("select max(codigo) from Clientes where nome = ?, and cpf = ? and rg = ?");
     }
+    
     @Override
     protected Cliente preencheObjeto(ResultSet resultado) {
         Cliente cliente = new Cliente();
         
         try{
-            
-            cliente.setId(id);
-            cliente.setCpf(null);
-            cliente.setDescricao(null);
-            cliente.setRg(null);
-            cliente.setNome(null);
-            cliente.setTelefone(null);
-            cliente.setEmail(null);
+            cliente.setId(resultado.getInt(1));
+            cliente.setNome(resultado.getString(2));
+            cliente.setTelefone(resultado.getString(3));
+            cliente.setEmail(resultado.getString(4));
+            cliente.setDescricao(resultado.getString(5));
+            cliente.setCpf(resultado.getString(6));
+            cliente.setRg(resultado.getString(7));
+            cliente.setRua(resultado.getString(8));
+            cliente.setBairro(resultado.getString(9));
+            cliente.setCidade(resultado.getString(10));
+            cliente.setComplemento(resultado.getString(11));
         } catch(SQLException ex){
-            
+            ex.printStackTrace();
         }
         return cliente;
         
@@ -67,24 +74,55 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
             sql.setInt(11, cliente.getNumero());
             
         } catch(SQLException ex){
-            System.out.println(ex);
-            
+            ex.printStackTrace();
         }
     }
 
     @Override
     protected void preencheFiltros(Cliente filtro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(filtro.getId() > 0) adicionarFiltro("id", "=");
+        if(filtro.getNome() != null) adicionarFiltro("nome", " like ");
+        if(filtro.getCpf() != null) adicionarFiltro("cpf", "=");    
     }
 
     @Override
     protected void preencheParametros(PreparedStatement sql, Cliente filtro) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         try {
+            int cont = 1;
+            if(filtro.getId() > 0){ sql.setInt(cont, filtro.getId()); cont++; }
+            if(filtro.getNome() != null ){ sql.setString(cont, filtro.getNome() +"%"); cont++; }
+            if(filtro.getCpf() != null){ 
+                sql.setString(cont, filtro.getCpf()); 
+                cont++; 
+            }
+            
+        
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }
     }
 
     @Override
     public Cliente Abrir(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            
+            PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
+                + " cidade, complemento from Clientes where codigo = ?");
+            
+            
+            sql.setString(1, cpf);
+            
+            ResultSet resultado = sql.executeQuery();
+            
+            if(resultado.next()){
+                return preencheObjeto(resultado);
+            }
+            
+        }  catch(SQLException ex){
+            ex.printStackTrace();
+        }
+        
+        return null;
     }
     
        
