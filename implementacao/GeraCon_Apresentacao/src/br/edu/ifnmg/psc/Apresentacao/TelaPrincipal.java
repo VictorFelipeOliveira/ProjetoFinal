@@ -29,10 +29,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         menuGerenciar = new javax.swing.JMenu();
-        menuItemVendas = new javax.swing.JMenuItem();
-        menuItemClientes = new javax.swing.JMenuItem();
-        menuItemProdutos = new javax.swing.JMenuItem();
         menuItemFuncionario = new javax.swing.JMenuItem();
+        menuItemClientes = new javax.swing.JMenuItem();
+        menuItemVendas = new javax.swing.JMenuItem();
+        menuItemProdutos = new javax.swing.JMenuItem();
+        MenuItemCompras = new javax.swing.JMenuItem();
+        MenuItemEstoque = new javax.swing.JMenuItem();
+        MenuItemEntrega = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
         menuRelatorioVendas = new javax.swing.JMenuItem();
 
@@ -40,11 +43,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuGerenciar.setText("Gerenciar");
 
-        menuItemVendas.setText("Vendas");
-        menuGerenciar.add(menuItemVendas);
+        menuItemFuncionario.setText("Funcionários");
+        menuGerenciar.add(menuItemFuncionario);
 
         menuItemClientes.setText("Clientes");
         menuGerenciar.add(menuItemClientes);
+
+        menuItemVendas.setText("Vendas");
+        menuGerenciar.add(menuItemVendas);
 
         menuItemProdutos.setText("Produtos");
         menuItemProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -54,8 +60,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menuGerenciar.add(menuItemProdutos);
 
-        menuItemFuncionario.setText("Funcionários");
-        menuGerenciar.add(menuItemFuncionario);
+        MenuItemCompras.setText("Compras");
+        menuGerenciar.add(MenuItemCompras);
+
+        MenuItemEstoque.setText("Estoque");
+        menuGerenciar.add(MenuItemEstoque);
+
+        MenuItemEntrega.setText("Entregas");
+        menuGerenciar.add(MenuItemEntrega);
 
         jMenuBar1.add(menuGerenciar);
 
@@ -76,10 +88,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGap(0, 377, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(570, 428));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItemProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProdutosActionPerformed
@@ -124,6 +137,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuItemCompras;
+    private javax.swing.JMenuItem MenuItemEntrega;
+    private javax.swing.JMenuItem MenuItemEstoque;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu menuGerenciar;
     private javax.swing.JMenuItem menuItemClientes;
