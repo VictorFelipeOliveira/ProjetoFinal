@@ -13,6 +13,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemFuncionarioActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemClientes">
               <Properties>
@@ -45,6 +48,11 @@
             <MenuItem class="javax.swing.JMenuItem" name="MenuItemEntrega">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Entregas"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemVeiculo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
               </Properties>
             </MenuItem>
           </SubComponents>

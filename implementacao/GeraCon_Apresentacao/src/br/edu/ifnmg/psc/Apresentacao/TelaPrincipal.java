@@ -36,6 +36,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         MenuItemCompras = new javax.swing.JMenuItem();
         MenuItemEstoque = new javax.swing.JMenuItem();
         MenuItemEntrega = new javax.swing.JMenuItem();
+        jMenuItemVeiculo = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
         menuRelatorioVendas = new javax.swing.JMenuItem();
 
@@ -44,6 +45,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuGerenciar.setText("Gerenciar");
 
         menuItemFuncionario.setText("Funcionários");
+        menuItemFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemFuncionarioActionPerformed(evt);
+            }
+        });
         menuGerenciar.add(menuItemFuncionario);
 
         menuItemClientes.setText("Clientes");
@@ -68,6 +74,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         MenuItemEntrega.setText("Entregas");
         menuGerenciar.add(MenuItemEntrega);
+
+        jMenuItemVeiculo.setText("Veículos");
+        menuGerenciar.add(jMenuItemVeiculo);
 
         jMenuBar1.add(menuGerenciar);
 
@@ -100,6 +109,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_menuItemProdutosActionPerformed
+
+    private void menuItemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFuncionarioActionPerformed
+      
+    }//GEN-LAST:event_menuItemFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +154,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemEntrega;
     private javax.swing.JMenuItem MenuItemEstoque;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemVeiculo;
     private javax.swing.JMenu menuGerenciar;
     private javax.swing.JMenuItem menuItemClientes;
     private javax.swing.JMenuItem menuItemFuncionario;
