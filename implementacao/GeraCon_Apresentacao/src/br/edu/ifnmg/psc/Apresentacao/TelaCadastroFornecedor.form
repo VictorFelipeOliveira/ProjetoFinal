@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenuGerenc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gerenciar"/>
+          </Properties>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenuRelat">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
+          </Properties>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="602" max="32767" attributes="0"/>
+              <Component id="jTxtCityFornc" min="-2" pref="209" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanelCadastroFornc" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="303" max="32767" attributes="0"/>
+              <Component id="jTxtCityFornc" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanelCadastroFornc" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="74" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanelCadastroFornc">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Cadastro de Cliente"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="jSeparator1" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jEnderFornc" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <Component id="jComplementoFornc" min="-2" pref="115" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTxtEnderFornc" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jTxtNumFornc" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                                              <Component id="jTxtCompleFornc" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jCityFornc" min="-2" pref="68" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jBairroFornc" min="-2" pref="76" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                                  <Component id="jTxtBairroFornc" min="-2" pref="205" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Component id="jNumeroFornc" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jEmailFornc" max="32767" attributes="0"/>
+                                      <Component id="jNomeFornec" alignment="0" pref="61" max="32767" attributes="0"/>
+                                      <Component id="jCNPJ" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jTxtCNPJ" pref="319" max="32767" attributes="0"/>
+                                      <Component id="jTxtEmailFornc" max="32767" attributes="0"/>
+                                      <Component id="jTxtFornc" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="jTelefoneFornc" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                  <Component id="jFTxtTelFornc" min="-2" pref="196" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="0" pref="68" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jNomeFornec" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jTxtFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jCNPJ" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jTxtCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jEmailFornc" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jTxtEmailFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTelefoneFornc" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jFTxtTelFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jEnderFornc" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jTxtEnderFornc" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="jTxtNumFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBairroFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTxtBairroFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                          <Component id="jNumeroFornc" min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jComplementoFornc" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="jTxtCompleFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCityFornc" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jNomeFornec">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jCNPJ">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CNPJ:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jEmailFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Email:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jTelefoneFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Telefone:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jEnderFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Rua/Av:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTxtEnderFornc">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jNumeroFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jComplementoFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Complemento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jBairroFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bairro:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jCityFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cidade:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTxtNumFornc">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtNumForncActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTxtCompleFornc">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTxtCNPJ">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtCNPJActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTxtEmailFornc">
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFTxtTelFornc">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="( )"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTxtBairroFornc">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTxtFornc">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JTextField" name="jTxtCityFornc">
+    </Component>
+  </SubComponents>
+</Form>
