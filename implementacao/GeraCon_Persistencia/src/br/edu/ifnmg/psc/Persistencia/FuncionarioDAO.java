@@ -51,12 +51,8 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
         }catch(SQLException ex){
            System.out.println(ex);
        }
-<<<<<<< HEAD
-       return null;
-=======
-       
+
        return funcionario;
->>>>>>> 6d2da86d6f33e7ee0b319c41857735278ebbe635
     }
 
     @Override
