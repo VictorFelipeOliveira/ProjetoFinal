@@ -47,11 +47,22 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
         jTxtBairroFornc = new javax.swing.JTextField();
         jTxtFornc = new javax.swing.JTextField();
         jTxtCityFornc = new javax.swing.JTextField();
+        jBtnExcl = new javax.swing.JButton();
+        jBtnSalv = new javax.swing.JButton();
+        jBtnVolt = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuGerenc = new javax.swing.JMenu();
+        jFunc = new javax.swing.JMenuItem();
+        jClien = new javax.swing.JMenuItem();
+        jVendas = new javax.swing.JMenuItem();
+        jComp = new javax.swing.JMenuItem();
+        jProdut = new javax.swing.JMenuItem();
+        jEntr = new javax.swing.JMenuItem();
+        jVeic = new javax.swing.JMenuItem();
+        jEstoq = new javax.swing.JMenuItem();
         jMenuRelat = new javax.swing.JMenu();
 
-        jPanelCadastroFornc.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Cliente"));
+        jPanelCadastroFornc.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Fornecedor"));
 
         jNomeFornec.setText("Nome:");
 
@@ -149,7 +160,7 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
                     .addComponent(jTxtEmailFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTelefoneFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFTxtTelFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +182,38 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
                     .addComponent(jCityFornc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        jBtnExcl.setText("Excluir");
+
+        jBtnSalv.setText("Salvar");
+
+        jBtnVolt.setText("Voltar");
+
         jMenuGerenc.setText("Gerenciar");
+
+        jFunc.setText("Funcionários");
+        jMenuGerenc.add(jFunc);
+
+        jClien.setText("Clientes");
+        jMenuGerenc.add(jClien);
+
+        jVendas.setText("Vendas");
+        jMenuGerenc.add(jVendas);
+
+        jComp.setText("Produtos");
+        jMenuGerenc.add(jComp);
+
+        jProdut.setText("Compras");
+        jMenuGerenc.add(jProdut);
+
+        jEntr.setText("Estoque");
+        jMenuGerenc.add(jEntr);
+
+        jVeic.setText("Entregas");
+        jMenuGerenc.add(jVeic);
+
+        jEstoq.setText("Veículos");
+        jMenuGerenc.add(jEstoq);
+
         jMenuBar1.add(jMenuGerenc);
 
         jMenuRelat.setText("Relatórios");
@@ -184,8 +226,16 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(602, Short.MAX_VALUE)
-                .addComponent(jTxtCityFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 517, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jBtnExcl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(jBtnSalv, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtCityFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -196,14 +246,21 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
+                .addContainerGap(300, Short.MAX_VALUE)
                 .addComponent(jTxtCityFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBtnVolt)
+                        .addGap(48, 48, 48))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jBtnExcl)
+                        .addComponent(jBtnSalv))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanelCadastroFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(74, Short.MAX_VALUE)))
+                    .addContainerGap(88, Short.MAX_VALUE)))
         );
 
         pack();
@@ -220,18 +277,27 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jBairroFornc;
+    private javax.swing.JButton jBtnExcl;
+    private javax.swing.JButton jBtnSalv;
+    private javax.swing.JButton jBtnVolt;
     private javax.swing.JLabel jCNPJ;
     private javax.swing.JLabel jCityFornc;
+    private javax.swing.JMenuItem jClien;
+    private javax.swing.JMenuItem jComp;
     private javax.swing.JLabel jComplementoFornc;
     private javax.swing.JLabel jEmailFornc;
     private javax.swing.JLabel jEnderFornc;
+    private javax.swing.JMenuItem jEntr;
+    private javax.swing.JMenuItem jEstoq;
     private javax.swing.JFormattedTextField jFTxtTelFornc;
+    private javax.swing.JMenuItem jFunc;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuGerenc;
     private javax.swing.JMenu jMenuRelat;
     private javax.swing.JLabel jNomeFornec;
     private javax.swing.JLabel jNumeroFornc;
     private javax.swing.JPanel jPanelCadastroFornc;
+    private javax.swing.JMenuItem jProdut;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jTelefoneFornc;
     private javax.swing.JTextField jTxtBairroFornc;
@@ -242,5 +308,7 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTxtEnderFornc;
     private javax.swing.JTextField jTxtFornc;
     private javax.swing.JTextField jTxtNumFornc;
+    private javax.swing.JMenuItem jVeic;
+    private javax.swing.JMenuItem jVendas;
     // End of variables declaration//GEN-END:variables
 }
