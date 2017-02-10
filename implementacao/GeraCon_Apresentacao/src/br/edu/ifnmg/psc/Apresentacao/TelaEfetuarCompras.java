@@ -9,12 +9,12 @@ package br.edu.ifnmg.psc.Apresentacao;
  *
  * @author thais
  */
-public class TelaGerenciamentoCompras extends javax.swing.JInternalFrame {
+public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form TelaGerenciamentoCompras
      */
-    public TelaGerenciamentoCompras() {
+    public TelaEfetuarCompras() {
         initComponents();
     }
 
