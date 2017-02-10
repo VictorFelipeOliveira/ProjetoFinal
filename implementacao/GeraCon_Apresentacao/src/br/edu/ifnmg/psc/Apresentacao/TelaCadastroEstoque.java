@@ -41,7 +41,7 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
         jCBCombust = new javax.swing.JComboBox();
         jTxtQuantEstoq = new javax.swing.JTextField();
         jBtnVolt = new javax.swing.JButton();
-        jBtnExcl = new javax.swing.JButton();
+        jBtnCancel = new javax.swing.JButton();
         jBtnSalv = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jGerenc = new javax.swing.JMenu();
@@ -166,7 +166,7 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
 
         jBtnVolt.setText("Voltar");
 
-        jBtnExcl.setText("Excluir");
+        jBtnCancel.setText("Cancelar");
 
         jBtnSalv.setText("Salvar");
 
@@ -214,7 +214,7 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(284, 284, 284)
-                        .addComponent(jBtnExcl, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jBtnSalv, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -227,7 +227,7 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnVolt)
-                    .addComponent(jBtnExcl)
+                    .addComponent(jBtnCancel)
                     .addComponent(jBtnSalv))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -245,7 +245,7 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnExcl;
+    private javax.swing.JButton jBtnCancel;
     private javax.swing.JButton jBtnSalv;
     private javax.swing.JButton jBtnVolt;
     private javax.swing.JComboBox jCBCombust;
