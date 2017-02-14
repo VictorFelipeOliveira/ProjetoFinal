@@ -22,7 +22,7 @@ public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepositor
     public UsuarioDAO() {
         setConsultaAbrir("select id, login, senha from Usuario where id = ?");
         setConsultaApagar("delete from usuario where id = ?");
-        setConsultaInserir("insert into usuario(login, senha) values (?, ?, ?)");
+        setConsultaInserir("insert into usuario(login, senha) values (?, ?)");
         setConsultaAlterar("update usuario set login = ?, senha = ? where id = ?");
         setConsultaBusca("select id, login, senha from usuarios");
         setConsultaUltimoId("select max(id) from usuarios  where login = ? and senha = ?");

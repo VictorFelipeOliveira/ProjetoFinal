@@ -3,26 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/home/thais/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DAOGenerico.java</file>
-            <file>file:/home/thais/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/ClienteDAO.java</file>
-            <file>file:/home/thais/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/FuncionarioDAO.java</file>
-            <file>file:/home/thais/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DB.java</file>
-            <file>file:/home/thais/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/ProdutoDAO.java</file>
-=======
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/ClienteDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/VeiculoDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/FornecedorDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/FuncionarioDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DB.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/UsuarioDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DAOGenerico.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/ProdutoDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/CompraDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/EntregaDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/TransacaoDAO.java</file>
-            <file>file:/home/victor/Documentos/Projetos/ProjetoFinal/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/EstoqueDAO.java</file>
->>>>>>> 6d2da86d6f33e7ee0b319c41857735278ebbe635
+            <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DAOGenerico.java</file>
+            <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/UsuarioDAO.java</file>
         </group>
     </open-files>
 </project-private>

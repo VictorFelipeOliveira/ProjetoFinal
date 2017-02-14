@@ -13,10 +13,6 @@ import java.util.Scanner;
  */
 public class Principal {
   public static void main(String[]args){
-      Scanner input = new Scanner(System.in);
-      Cliente cliente = new Cliente();
-      cliente.setId(0);
-      cliente.setCpf(input.nextLine());
-      System.out.println(cliente.toString());
+     
   }  
 }

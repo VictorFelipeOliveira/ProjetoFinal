@@ -193,7 +193,8 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
     public void setConsultaApagar(String consultaApagar) {
         this.consultaApagar = consultaApagar;
     }
-     public String getConsultaInserir() {
+    
+    public String getConsultaInserir() {
         return consultaInserir;
     }
 
