@@ -30,6 +30,12 @@ public class Apresentacao {
         }
     }
     
+     public static void criar() {
+        Usuario usuario = new Usuario("admin","admin");
+        UsuarioRepositorio bd_usuario = new UsuarioDAO();
+        bd_usuario.Salvar(usuario);
+    }
+    
     public static void buscar() {
         Usuario filtro = new Usuario();
         UsuarioRepositorio bd_usuario = new UsuarioDAO();
@@ -76,13 +82,5 @@ public class Apresentacao {
         
         System.out.println(c);
         
-    }
-    
-    public static void criar() {
-        Usuario usuario = new Usuario();
-       
-        UsuarioRepositorio bd_usuario = new UsuarioDAO();
-        bd_usuario.Salvar(usuario);
-        System.out.print(usuario); 
     }
 }
