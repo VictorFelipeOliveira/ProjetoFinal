@@ -27,21 +27,21 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroUsuario = new javax.swing.JPanel();
-        jNomeFunc = new javax.swing.JLabel();
-        jLoginUsu = new javax.swing.JLabel();
+        PanelCadastro = new javax.swing.JPanel();
+        LblFuncionario = new javax.swing.JLabel();
+        LblLogin = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTxtLoginUsu = new javax.swing.JTextField();
-        jSenhaUsu = new javax.swing.JLabel();
-        jConfSenha = new javax.swing.JLabel();
-        jPassw = new javax.swing.JPasswordField();
-        jPasswConf = new javax.swing.JPasswordField();
-        jCBFunc = new javax.swing.JComboBox();
-        jBtnVolt = new javax.swing.JButton();
-        jBtnCancel = new javax.swing.JButton();
-        jBtnSalv = new javax.swing.JButton();
+        TxtLogin = new javax.swing.JTextField();
+        LblSenha = new javax.swing.JLabel();
+        LblConfirmaSenha = new javax.swing.JLabel();
+        TxtSenha = new javax.swing.JPasswordField();
+        TxtConfirmaSenha = new javax.swing.JPasswordField();
+        CBXFuncionario = new javax.swing.JComboBox();
+        BtnVoltar = new javax.swing.JButton();
+        BtnCancelar = new javax.swing.JButton();
+        BtnSalvar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jGerenc = new javax.swing.JMenu();
+        MenuGerenciar = new javax.swing.JMenu();
         jFunc = new javax.swing.JMenuItem();
         jClient = new javax.swing.JMenuItem();
         jVend = new javax.swing.JMenuItem();
@@ -50,121 +50,121 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
         jEstoq = new javax.swing.JMenuItem();
         jEntreg = new javax.swing.JMenuItem();
         jVeic = new javax.swing.JMenuItem();
-        jRelat = new javax.swing.JMenu();
+        MenuRelatorios = new javax.swing.JMenu();
 
-        jPanelCadastroUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Usuário"));
+        PanelCadastro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Usuário"));
 
-        jNomeFunc.setText("Funcionário:");
+        LblFuncionario.setText("Funcionário:");
 
-        jLoginUsu.setText("Login:");
+        LblLogin.setText("Login:");
 
-        jTxtLoginUsu.addActionListener(new java.awt.event.ActionListener() {
+        TxtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtLoginUsuActionPerformed(evt);
+                TxtLoginActionPerformed(evt);
             }
         });
 
-        jSenhaUsu.setText("Senha:");
+        LblSenha.setText("Senha:");
 
-        jConfSenha.setText("Confirmar senha:");
+        LblConfirmaSenha.setText("Confirmar senha:");
 
-        jCBFunc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
-        jCBFunc.addActionListener(new java.awt.event.ActionListener() {
+        CBXFuncionario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBFuncActionPerformed(evt);
+                CBXFuncionarioActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelCadastroUsuarioLayout = new javax.swing.GroupLayout(jPanelCadastroUsuario);
-        jPanelCadastroUsuario.setLayout(jPanelCadastroUsuarioLayout);
-        jPanelCadastroUsuarioLayout.setHorizontalGroup(
-            jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroUsuarioLayout.createSequentialGroup()
-                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroUsuarioLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelCadastroLayout = new javax.swing.GroupLayout(PanelCadastro);
+        PanelCadastro.setLayout(PanelCadastroLayout);
+        PanelCadastroLayout.setHorizontalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(jSeparator1))
-                    .addGroup(jPanelCadastroUsuarioLayout.createSequentialGroup()
-                        .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelCadastroUsuarioLayout.createSequentialGroup()
-                                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jConfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSenhaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
+                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPassw, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                                    .addComponent(jPasswConf)))
-                            .addGroup(jPanelCadastroUsuarioLayout.createSequentialGroup()
-                                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLoginUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jNomeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TxtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                                    .addComponent(TxtConfirmaSenha)))
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LblFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(44, 44, 44)
-                                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCBFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtLoginUsu, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE))))
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CBXFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE))))
                         .addGap(0, 128, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanelCadastroUsuarioLayout.setVerticalGroup(
-            jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroUsuarioLayout.createSequentialGroup()
+        PanelCadastroLayout.setVerticalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jNomeFunc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBXFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLoginUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtLoginUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSenhaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPassw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
-                .addGroup(jPanelCadastroUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jConfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswConf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(99, 99, 99))
         );
 
-        jBtnVolt.setText("Voltar");
+        BtnVoltar.setText("Voltar");
 
-        jBtnCancel.setText("Cancelar");
+        BtnCancelar.setText("Cancelar");
 
-        jBtnSalv.setText("Salvar");
+        BtnSalvar.setText("Salvar");
 
-        jGerenc.setText("Gerenciar");
+        MenuGerenciar.setText("Gerenciar");
 
         jFunc.setText("Funcionários");
-        jGerenc.add(jFunc);
+        MenuGerenciar.add(jFunc);
 
         jClient.setText("Clientes");
-        jGerenc.add(jClient);
+        MenuGerenciar.add(jClient);
 
         jVend.setText("Vendas");
-        jGerenc.add(jVend);
+        MenuGerenciar.add(jVend);
 
         jProd.setText("Produtos");
-        jGerenc.add(jProd);
+        MenuGerenciar.add(jProd);
 
         jComp.setText("Compras");
-        jGerenc.add(jComp);
+        MenuGerenciar.add(jComp);
 
         jEstoq.setText("Estoque");
-        jGerenc.add(jEstoq);
+        MenuGerenciar.add(jEstoq);
 
         jEntreg.setText("Entregas");
-        jGerenc.add(jEntreg);
+        MenuGerenciar.add(jEntreg);
 
         jVeic.setText("Veículos");
-        jGerenc.add(jVeic);
+        MenuGerenciar.add(jVeic);
 
-        jMenuBar1.add(jGerenc);
+        jMenuBar1.add(MenuGerenciar);
 
-        jRelat.setText("Relatórios");
-        jMenuBar1.add(jRelat);
+        MenuRelatorios.setText("Relatórios");
+        jMenuBar1.add(MenuRelatorios);
 
         setJMenuBar(jMenuBar1);
 
@@ -174,16 +174,16 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
-                .addComponent(jBtnCancel)
+                .addComponent(BtnCancelar)
                 .addGap(77, 77, 77)
-                .addComponent(jBtnSalv, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanelCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -191,52 +191,52 @@ public class TelaCadastroUsuario extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(299, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnVolt)
-                    .addComponent(jBtnCancel)
-                    .addComponent(jBtnSalv))
+                    .addComponent(BtnVoltar)
+                    .addComponent(BtnCancelar)
+                    .addComponent(BtnSalvar))
                 .addGap(30, 30, 30))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanelCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(62, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxtLoginUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtLoginUsuActionPerformed
+    private void TxtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtLoginUsuActionPerformed
+    }//GEN-LAST:event_TxtLoginActionPerformed
 
-    private void jCBFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBFuncActionPerformed
+    private void CBXFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBXFuncionarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBFuncActionPerformed
+    }//GEN-LAST:event_CBXFuncionarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnCancel;
-    private javax.swing.JButton jBtnSalv;
-    private javax.swing.JButton jBtnVolt;
-    private javax.swing.JComboBox jCBFunc;
+    private javax.swing.JButton BtnCancelar;
+    private javax.swing.JButton BtnSalvar;
+    private javax.swing.JButton BtnVoltar;
+    private javax.swing.JComboBox CBXFuncionario;
+    private javax.swing.JLabel LblConfirmaSenha;
+    private javax.swing.JLabel LblFuncionario;
+    private javax.swing.JLabel LblLogin;
+    private javax.swing.JLabel LblSenha;
+    private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenu MenuRelatorios;
+    private javax.swing.JPanel PanelCadastro;
+    private javax.swing.JPasswordField TxtConfirmaSenha;
+    private javax.swing.JTextField TxtLogin;
+    private javax.swing.JPasswordField TxtSenha;
     private javax.swing.JMenuItem jClient;
     private javax.swing.JMenuItem jComp;
-    private javax.swing.JLabel jConfSenha;
     private javax.swing.JMenuItem jEntreg;
     private javax.swing.JMenuItem jEstoq;
     private javax.swing.JMenuItem jFunc;
-    private javax.swing.JMenu jGerenc;
-    private javax.swing.JLabel jLoginUsu;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel jNomeFunc;
-    private javax.swing.JPanel jPanelCadastroUsuario;
-    private javax.swing.JPasswordField jPassw;
-    private javax.swing.JPasswordField jPasswConf;
     private javax.swing.JMenuItem jProd;
-    private javax.swing.JMenu jRelat;
-    private javax.swing.JLabel jSenhaUsu;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTxtLoginUsu;
     private javax.swing.JMenuItem jVeic;
     private javax.swing.JMenuItem jVend;
     // End of variables declaration//GEN-END:variables

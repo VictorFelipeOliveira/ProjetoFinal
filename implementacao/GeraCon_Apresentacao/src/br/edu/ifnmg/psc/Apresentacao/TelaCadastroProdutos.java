@@ -27,19 +27,18 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroProdut = new javax.swing.JPanel();
-        jNomeFornProd = new javax.swing.JLabel();
-        jCodProd = new javax.swing.JLabel();
-        jTxtCodProd = new javax.swing.JTextField();
-        jDescProd = new javax.swing.JLabel();
-        jPrecUnProd = new javax.swing.JLabel();
-        jCBForncProd = new javax.swing.JComboBox();
-        jTxtDesProd = new javax.swing.JTextField();
-        jTxtPrecProd = new javax.swing.JTextField();
+        PanelCadastro = new javax.swing.JPanel();
+        LblFornecedor = new javax.swing.JLabel();
+        LblCodigo = new javax.swing.JLabel();
+        TxtCodigo = new javax.swing.JTextField();
+        LblDescricao = new javax.swing.JLabel();
+        LblPrecoUnitario = new javax.swing.JLabel();
+        CBXFornecedor = new javax.swing.JComboBox();
+        TxtDescricao = new javax.swing.JTextField();
+        TxtPrecoUnitario = new javax.swing.JTextField();
         jCatProd = new javax.swing.JLabel();
-        jCBProd = new javax.swing.JComboBox();
-        jBtnVolt = new javax.swing.JButton();
-        jBtnSalv = new javax.swing.JButton();
+        BtnVoltar = new javax.swing.JButton();
+        BtnSalvar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jGerenc = new javax.swing.JMenu();
         jFunc = new javax.swing.JMenuItem();
@@ -52,93 +51,90 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         jVeic = new javax.swing.JMenuItem();
         jRelat = new javax.swing.JMenu();
 
-        jPanelCadastroProdut.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Produtos"));
+        PanelCadastro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Produtos"));
 
-        jNomeFornProd.setText("Fornecedor:");
+        LblFornecedor.setText("Fornecedor:");
 
-        jCodProd.setText("Código:");
+        LblCodigo.setText("Código:");
 
-        jTxtCodProd.addActionListener(new java.awt.event.ActionListener() {
+        TxtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtCodProdActionPerformed(evt);
+                TxtCodigoActionPerformed(evt);
             }
         });
 
-        jDescProd.setText("Descrição:");
+        LblDescricao.setText("Descrição:");
 
-        jPrecUnProd.setText("Preço Unitário:");
+        LblPrecoUnitario.setText("Preço Unitário:");
 
-        jCBForncProd.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
-        jCBForncProd.addActionListener(new java.awt.event.ActionListener() {
+        CBXFornecedor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBForncProdActionPerformed(evt);
+                CBXFornecedorActionPerformed(evt);
             }
         });
 
         jCatProd.setText("Categoria:");
 
-        jCBProd.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
-
-        javax.swing.GroupLayout jPanelCadastroProdutLayout = new javax.swing.GroupLayout(jPanelCadastroProdut);
-        jPanelCadastroProdut.setLayout(jPanelCadastroProdutLayout);
-        jPanelCadastroProdutLayout.setHorizontalGroup(
-            jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroProdutLayout.createSequentialGroup()
-                .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroProdutLayout.createSequentialGroup()
-                        .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroProdutLayout.createSequentialGroup()
-                                .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jDescProd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout PanelCadastroLayout = new javax.swing.GroupLayout(PanelCadastro);
+        PanelCadastro.setLayout(PanelCadastroLayout);
+        PanelCadastroLayout.setHorizontalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
+                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LblDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(54, 54, 54)
-                                .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jCBProd, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtDesProd, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanelCadastroProdutLayout.createSequentialGroup()
-                                .addComponent(jNomeFornProd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(TxtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addComponent(LblFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(44, 44, 44)
-                                .addComponent(jCBForncProd, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CBXFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(164, 166, Short.MAX_VALUE))
-                    .addGroup(jPanelCadastroProdutLayout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(jCatProd, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanelCadastroProdutLayout.createSequentialGroup()
-                        .addComponent(jPrecUnProd, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTxtPrecProd, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
+                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addGap(188, 188, 188)
+                                .addComponent(jCatProd, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addComponent(LblPrecoUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TxtPrecoUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
-        jPanelCadastroProdutLayout.setVerticalGroup(
-            jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroProdutLayout.createSequentialGroup()
+        PanelCadastroLayout.setVerticalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDescProd, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtDesProd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtDescricao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPrecUnProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtPrecProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCatProd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCBProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblPrecoUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtPrecoUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCatProd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelCadastroProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jNomeFornProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBForncProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBXFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54))
         );
 
-        jBtnVolt.setText("Voltar");
+        BtnVoltar.setText("Voltar");
 
-        jBtnSalv.setText("Salvar");
+        BtnSalvar.setText("Salvar");
 
         jGerenc.setText("Gerenciar");
 
@@ -180,60 +176,59 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelCadastroProdut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBtnSalv, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelCadastroProdut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnSalv)
-                    .addComponent(jBtnVolt))
+                    .addComponent(BtnSalvar)
+                    .addComponent(BtnVoltar))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxtCodProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodProdActionPerformed
+    private void TxtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtCodProdActionPerformed
+    }//GEN-LAST:event_TxtCodigoActionPerformed
 
-    private void jCBForncProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBForncProdActionPerformed
+    private void CBXFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBXFornecedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBForncProdActionPerformed
+    }//GEN-LAST:event_CBXFornecedorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnSalv;
-    private javax.swing.JButton jBtnVolt;
-    private javax.swing.JComboBox jCBForncProd;
-    private javax.swing.JComboBox jCBProd;
+    private javax.swing.JButton BtnSalvar;
+    private javax.swing.JButton BtnVoltar;
+    private javax.swing.JComboBox CBXFornecedor;
+    private javax.swing.JLabel LblCodigo;
+    private javax.swing.JLabel LblDescricao;
+    private javax.swing.JLabel LblFornecedor;
+    private javax.swing.JLabel LblPrecoUnitario;
+    private javax.swing.JPanel PanelCadastro;
+    private javax.swing.JTextField TxtCodigo;
+    private javax.swing.JTextField TxtDescricao;
+    private javax.swing.JTextField TxtPrecoUnitario;
     private javax.swing.JLabel jCatProd;
     private javax.swing.JMenuItem jClient;
-    private javax.swing.JLabel jCodProd;
     private javax.swing.JMenuItem jComp;
-    private javax.swing.JLabel jDescProd;
     private javax.swing.JMenuItem jEntr;
     private javax.swing.JMenuItem jEstoq;
     private javax.swing.JMenuItem jFunc;
     private javax.swing.JMenu jGerenc;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel jNomeFornProd;
-    private javax.swing.JPanel jPanelCadastroProdut;
-    private javax.swing.JLabel jPrecUnProd;
     private javax.swing.JMenuItem jProd;
     private javax.swing.JMenu jRelat;
-    private javax.swing.JTextField jTxtCodProd;
-    private javax.swing.JTextField jTxtDesProd;
-    private javax.swing.JTextField jTxtPrecProd;
     private javax.swing.JMenuItem jVeic;
     private javax.swing.JMenuItem jVend;
     // End of variables declaration//GEN-END:variables

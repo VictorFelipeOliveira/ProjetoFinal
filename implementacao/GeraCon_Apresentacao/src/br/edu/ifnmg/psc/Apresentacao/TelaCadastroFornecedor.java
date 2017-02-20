@@ -27,31 +27,31 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroFornc = new javax.swing.JPanel();
-        jNomeFornec = new javax.swing.JLabel();
-        jCNPJ = new javax.swing.JLabel();
-        jEmailFornc = new javax.swing.JLabel();
-        jTelefoneFornc = new javax.swing.JLabel();
+        PanelCadastro = new javax.swing.JPanel();
+        LblNome = new javax.swing.JLabel();
+        LblCNPJ = new javax.swing.JLabel();
+        LblEmail = new javax.swing.JLabel();
+        LblTelefone = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jEnderFornc = new javax.swing.JLabel();
-        jTxtEnderFornc = new javax.swing.JTextField();
-        jNumeroFornc = new javax.swing.JLabel();
-        jComplementoFornc = new javax.swing.JLabel();
-        jBairroFornc = new javax.swing.JLabel();
-        jCityFornc = new javax.swing.JLabel();
-        jTxtNumFornc = new javax.swing.JTextField();
-        jTxtCompleFornc = new javax.swing.JTextField();
-        jTxtCNPJ = new javax.swing.JTextField();
-        jTxtEmailFornc = new javax.swing.JTextField();
-        jFTxtTelFornc = new javax.swing.JFormattedTextField();
-        jTxtBairroFornc = new javax.swing.JTextField();
-        jTxtFornc = new javax.swing.JTextField();
-        jTxtCityFornc = new javax.swing.JTextField();
-        jBtnExcl = new javax.swing.JButton();
-        jBtnSalv = new javax.swing.JButton();
-        jBtnVolt = new javax.swing.JButton();
+        LblEndereco = new javax.swing.JLabel();
+        TxtEndereco = new javax.swing.JTextField();
+        LblNumero = new javax.swing.JLabel();
+        LblComplemento = new javax.swing.JLabel();
+        LblBairro = new javax.swing.JLabel();
+        LblCidade = new javax.swing.JLabel();
+        TxtNumero = new javax.swing.JTextField();
+        TxtComplemento = new javax.swing.JTextField();
+        TxtCNPJ = new javax.swing.JTextField();
+        TxtEmail = new javax.swing.JTextField();
+        TxtTelefone = new javax.swing.JFormattedTextField();
+        TxtBairro = new javax.swing.JTextField();
+        TxtNome = new javax.swing.JTextField();
+        TxtCidade = new javax.swing.JTextField();
+        BtnExcluir = new javax.swing.JButton();
+        BtnSalvar = new javax.swing.JButton();
+        BtnVoltar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuGerenc = new javax.swing.JMenu();
+        MenuGerenciar = new javax.swing.JMenu();
         jFunc = new javax.swing.JMenuItem();
         jClien = new javax.swing.JMenuItem();
         jVendas = new javax.swing.JMenuItem();
@@ -60,164 +60,164 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
         jEntr = new javax.swing.JMenuItem();
         jVeic = new javax.swing.JMenuItem();
         jEstoq = new javax.swing.JMenuItem();
-        jMenuRelat = new javax.swing.JMenu();
+        MenuRelatorios = new javax.swing.JMenu();
 
-        jPanelCadastroFornc.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Fornecedor"));
+        PanelCadastro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Fornecedor"));
 
-        jNomeFornec.setText("Nome:");
+        LblNome.setText("Nome:");
 
-        jCNPJ.setText("CNPJ:");
+        LblCNPJ.setText("CNPJ:");
 
-        jEmailFornc.setText("Email:");
+        LblEmail.setText("Email:");
 
-        jTelefoneFornc.setText("Telefone:");
+        LblTelefone.setText("Telefone:");
 
-        jEnderFornc.setText("Rua/Av:");
+        LblEndereco.setText("Rua/Av:");
 
-        jNumeroFornc.setText("Número:");
+        LblNumero.setText("Número:");
 
-        jComplementoFornc.setText("Complemento:");
+        LblComplemento.setText("Complemento:");
 
-        jBairroFornc.setText("Bairro:");
+        LblBairro.setText("Bairro:");
 
-        jCityFornc.setText("Cidade:");
+        LblCidade.setText("Cidade:");
 
-        jTxtNumFornc.addActionListener(new java.awt.event.ActionListener() {
+        TxtNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtNumForncActionPerformed(evt);
+                TxtNumeroActionPerformed(evt);
             }
         });
 
-        jTxtCNPJ.addActionListener(new java.awt.event.ActionListener() {
+        TxtCNPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtCNPJActionPerformed(evt);
+                TxtCNPJActionPerformed(evt);
             }
         });
 
-        jFTxtTelFornc.setText("( )");
+        TxtTelefone.setText("( )");
 
-        javax.swing.GroupLayout jPanelCadastroForncLayout = new javax.swing.GroupLayout(jPanelCadastroFornc);
-        jPanelCadastroFornc.setLayout(jPanelCadastroForncLayout);
-        jPanelCadastroForncLayout.setHorizontalGroup(
-            jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
-                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelCadastroLayout = new javax.swing.GroupLayout(PanelCadastro);
+        PanelCadastro.setLayout(PanelCadastroLayout);
+        PanelCadastroLayout.setHorizontalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(jSeparator1))
-                    .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
-                        .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
-                                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jEnderFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComplementoFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
+                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LblComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTxtEnderFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
-                                        .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTxtNumFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTxtCompleFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(TxtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(TxtComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(30, 30, 30)
-                                        .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCityFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
-                                                .addComponent(jBairroFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(LblCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                                .addComponent(LblBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(1, 1, 1)
-                                                .addComponent(jTxtBairroFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                            .addComponent(jNumeroFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
-                                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jEmailFornc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jNomeFornec, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                                    .addComponent(jCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(TxtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(LblNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(LblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                                    .addComponent(LblCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTxtCNPJ, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
-                                    .addComponent(jTxtEmailFornc)
-                                    .addComponent(jTxtFornc))
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TxtCNPJ, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                                    .addComponent(TxtEmail)
+                                    .addComponent(TxtNome))
                                 .addGap(105, 105, 105)
-                                .addComponent(jTelefoneFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LblTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(2, 2, 2)
-                                .addComponent(jFTxtTelFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 68, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        jPanelCadastroForncLayout.setVerticalGroup(
-            jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
+        PanelCadastroLayout.setVerticalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jNomeFornec, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jEmailFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtEmailFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTelefoneFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFTxtTelFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jEnderFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtEnderFornc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtEndereco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
-                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTxtNumFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jBairroFornc)
-                        .addComponent(jTxtBairroFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelCadastroForncLayout.createSequentialGroup()
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TxtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblBairro)
+                        .addComponent(TxtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
                         .addGap(5, 5, 5)
-                        .addComponent(jNumeroFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LblNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroForncLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComplementoFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtCompleFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCityFornc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblCidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        jBtnExcl.setText("Excluir");
+        BtnExcluir.setText("Excluir");
 
-        jBtnSalv.setText("Salvar");
+        BtnSalvar.setText("Salvar");
 
-        jBtnVolt.setText("Voltar");
+        BtnVoltar.setText("Voltar");
 
-        jMenuGerenc.setText("Gerenciar");
+        MenuGerenciar.setText("Gerenciar");
 
         jFunc.setText("Funcionários");
-        jMenuGerenc.add(jFunc);
+        MenuGerenciar.add(jFunc);
 
         jClien.setText("Clientes");
-        jMenuGerenc.add(jClien);
+        MenuGerenciar.add(jClien);
 
         jVendas.setText("Vendas");
-        jMenuGerenc.add(jVendas);
+        MenuGerenciar.add(jVendas);
 
         jComp.setText("Produtos");
-        jMenuGerenc.add(jComp);
+        MenuGerenciar.add(jComp);
 
         jProdut.setText("Compras");
-        jMenuGerenc.add(jProdut);
+        MenuGerenciar.add(jProdut);
 
         jEntr.setText("Estoque");
-        jMenuGerenc.add(jEntr);
+        MenuGerenciar.add(jEntr);
 
         jVeic.setText("Entregas");
-        jMenuGerenc.add(jVeic);
+        MenuGerenciar.add(jVeic);
 
         jEstoq.setText("Veículos");
-        jMenuGerenc.add(jEstoq);
+        MenuGerenciar.add(jEstoq);
 
-        jMenuBar1.add(jMenuGerenc);
+        jMenuBar1.add(MenuGerenciar);
 
-        jMenuRelat.setText("Relatórios");
-        jMenuBar1.add(jMenuRelat);
+        MenuRelatorios.setText("Relatórios");
+        jMenuBar1.add(MenuRelatorios);
 
         setJMenuBar(jMenuBar1);
 
@@ -227,87 +227,86 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 517, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jBtnExcl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
-                        .addComponent(jBtnSalv, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTxtCityFornc, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(94, 94, 94))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanelCadastroFornc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(300, Short.MAX_VALUE)
-                .addComponent(jTxtCityFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnVolt)
-                        .addGap(48, 48, 48))
+                    .addComponent(BtnVoltar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jBtnExcl)
-                        .addComponent(jBtnSalv))))
+                        .addComponent(BtnExcluir)
+                        .addComponent(BtnSalvar)))
+                .addGap(48, 48, 48))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jPanelCadastroFornc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(88, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxtNumForncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNumForncActionPerformed
+    private void TxtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtNumForncActionPerformed
+    }//GEN-LAST:event_TxtNumeroActionPerformed
 
-    private void jTxtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCNPJActionPerformed
+    private void TxtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCNPJActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtCNPJActionPerformed
+    }//GEN-LAST:event_TxtCNPJActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jBairroFornc;
-    private javax.swing.JButton jBtnExcl;
-    private javax.swing.JButton jBtnSalv;
-    private javax.swing.JButton jBtnVolt;
-    private javax.swing.JLabel jCNPJ;
-    private javax.swing.JLabel jCityFornc;
+    private javax.swing.JButton BtnExcluir;
+    private javax.swing.JButton BtnSalvar;
+    private javax.swing.JButton BtnVoltar;
+    private javax.swing.JLabel LblBairro;
+    private javax.swing.JLabel LblCNPJ;
+    private javax.swing.JLabel LblCidade;
+    private javax.swing.JLabel LblComplemento;
+    private javax.swing.JLabel LblEmail;
+    private javax.swing.JLabel LblEndereco;
+    private javax.swing.JLabel LblNome;
+    private javax.swing.JLabel LblNumero;
+    private javax.swing.JLabel LblTelefone;
+    private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenu MenuRelatorios;
+    private javax.swing.JPanel PanelCadastro;
+    private javax.swing.JTextField TxtBairro;
+    private javax.swing.JTextField TxtCNPJ;
+    private javax.swing.JTextField TxtCidade;
+    private javax.swing.JTextField TxtComplemento;
+    private javax.swing.JTextField TxtEmail;
+    private javax.swing.JTextField TxtEndereco;
+    private javax.swing.JTextField TxtNome;
+    private javax.swing.JTextField TxtNumero;
+    private javax.swing.JFormattedTextField TxtTelefone;
     private javax.swing.JMenuItem jClien;
     private javax.swing.JMenuItem jComp;
-    private javax.swing.JLabel jComplementoFornc;
-    private javax.swing.JLabel jEmailFornc;
-    private javax.swing.JLabel jEnderFornc;
     private javax.swing.JMenuItem jEntr;
     private javax.swing.JMenuItem jEstoq;
-    private javax.swing.JFormattedTextField jFTxtTelFornc;
     private javax.swing.JMenuItem jFunc;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jMenuGerenc;
-    private javax.swing.JMenu jMenuRelat;
-    private javax.swing.JLabel jNomeFornec;
-    private javax.swing.JLabel jNumeroFornc;
-    private javax.swing.JPanel jPanelCadastroFornc;
     private javax.swing.JMenuItem jProdut;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel jTelefoneFornc;
-    private javax.swing.JTextField jTxtBairroFornc;
-    private javax.swing.JTextField jTxtCNPJ;
-    private javax.swing.JTextField jTxtCityFornc;
-    private javax.swing.JTextField jTxtCompleFornc;
-    private javax.swing.JTextField jTxtEmailFornc;
-    private javax.swing.JTextField jTxtEnderFornc;
-    private javax.swing.JTextField jTxtFornc;
-    private javax.swing.JTextField jTxtNumFornc;
     private javax.swing.JMenuItem jVeic;
     private javax.swing.JMenuItem jVendas;
     // End of variables declaration//GEN-END:variables

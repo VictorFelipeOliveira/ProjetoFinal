@@ -4,7 +4,7 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jGerenc">
+        <Menu class="javax.swing.JMenu" name="MenuGerenciar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerenciar"/>
           </Properties>
@@ -51,7 +51,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jRelat">
+        <Menu class="javax.swing.JMenu" name="MenuRelatorios">
           <Properties>
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
           </Properties>
@@ -81,13 +81,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPanelCadastroEstoq" min="-2" pref="650" max="-2" attributes="0"/>
+                  <Component id="PanelCadastroEStoque" min="-2" pref="650" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="jBtnVolt" min="-2" pref="99" max="-2" attributes="0"/>
+                      <Component id="BtnVoltar" min="-2" pref="99" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
-                      <Component id="jBtnCancel" min="-2" pref="103" max="-2" attributes="0"/>
+                      <Component id="BtnCancelar" min="-2" pref="103" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jBtnSalv" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BtnSalvar" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -98,12 +98,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanelCadastroEstoq" min="-2" max="-2" attributes="0"/>
+              <Component id="PanelCadastroEStoque" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBtnVolt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBtnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBtnSalv" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -111,7 +111,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelCadastroEstoq">
+    <Container class="javax.swing.JPanel" name="PanelCadastroEStoque">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -131,16 +131,16 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jTxtQuantEstoq" min="-2" pref="226" max="-2" attributes="0"/>
+                          <Component id="TxtQuantidade" min="-2" pref="226" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jUniMedia" min="-2" pref="116" max="-2" attributes="0"/>
+                              <Component id="LblUnidadeMedia" min="-2" pref="116" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jCBCombust" min="-2" pref="226" max="-2" attributes="0"/>
+                              <Component id="CBXUnidadeMedia" min="-2" pref="226" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="jCBProdEstoq" min="-2" pref="243" max="-2" attributes="0"/>
+                          <Component id="CBXProduto" min="-2" pref="243" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -148,8 +148,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jProdutoEstoq" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="jQuantEstoq" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                      <Component id="LblProduto" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="LblQuantidade" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="623" max="32767" attributes="0"/>
               </Group>
@@ -165,18 +165,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jProdutoEstoq" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jCBProdEstoq" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblProduto" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="CBXProduto" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jQuantEstoq" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jTxtQuantEstoq" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblQuantidade" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="TxtQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jUniMedia" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jCBCombust" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblUnidadeMedia" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="CBXUnidadeMedia" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -188,7 +188,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jProdutoEstoq">
+        <Component class="javax.swing.JLabel" name="LblProduto">
           <Properties>
             <Property name="text" type="java.lang.String" value="Produto:"/>
           </Properties>
@@ -209,13 +209,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="jMinimo" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="LblMinimo" min="-2" pref="71" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTxtMinimo" min="-2" pref="136" max="-2" attributes="0"/>
+                      <Component id="TxtMinimo" min="-2" pref="136" max="-2" attributes="0"/>
                       <EmptySpace pref="86" max="32767" attributes="0"/>
-                      <Component id="jMaximo" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="LblMaximo" min="-2" pref="71" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jTxtMaximo" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="TxtMaximo" min="-2" pref="120" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -225,10 +225,10 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jMinimo" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jTxtMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jMaximo" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jTxtMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LblMinimo" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="TxtMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LblMaximo" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="TxtMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
@@ -236,28 +236,28 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jMinimo">
+            <Component class="javax.swing.JLabel" name="LblMinimo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="M&#xed;nimo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTxtMinimo">
+            <Component class="javax.swing.JTextField" name="TxtMinimo">
             </Component>
-            <Component class="javax.swing.JLabel" name="jMaximo">
+            <Component class="javax.swing.JLabel" name="LblMaximo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="M&#xe1;ximo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTxtMaximo">
+            <Component class="javax.swing.JTextField" name="TxtMaximo">
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jQuantEstoq">
+        <Component class="javax.swing.JLabel" name="LblQuantidade">
           <Properties>
             <Property name="text" type="java.lang.String" value="Quantidade:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBProdEstoq">
+        <Component class="javax.swing.JComboBox" name="CBXProduto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -269,12 +269,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jUniMedia">
+        <Component class="javax.swing.JLabel" name="LblUnidadeMedia">
           <Properties>
             <Property name="text" type="java.lang.String" value="Unidade M&#xe9;dia:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBCombust">
+        <Component class="javax.swing.JComboBox" name="CBXUnidadeMedia">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -286,27 +286,27 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBCombustActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBXUnidadeMediaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtQuantEstoq">
+        <Component class="javax.swing.JTextField" name="TxtQuantidade">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtQuantEstoqActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtQuantidadeActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jBtnVolt">
+    <Component class="javax.swing.JButton" name="BtnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnCancel">
+    <Component class="javax.swing.JButton" name="BtnCancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnSalv">
+    <Component class="javax.swing.JButton" name="BtnSalvar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>

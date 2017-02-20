@@ -57,7 +57,7 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame {
         jBtnSalvar = new javax.swing.JButton();
         BtnExcluir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuGerenciar = new javax.swing.JMenu();
+        MenuGerenciar = new javax.swing.JMenu();
         jMenuItemFunc = new javax.swing.JMenuItem();
         jMenuItemcli = new javax.swing.JMenuItem();
         jMenuItemVend = new javax.swing.JMenuItem();
@@ -66,7 +66,7 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame {
         jMenuItemEst = new javax.swing.JMenuItem();
         jMenuItemEntr = new javax.swing.JMenuItem();
         jMenuItemVeic = new javax.swing.JMenuItem();
-        jMenuRelatorio = new javax.swing.JMenu();
+        MenuRelatorios = new javax.swing.JMenu();
 
         PanelCadastroCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Cliente"));
 
@@ -260,36 +260,36 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame {
 
         BtnExcluir.setText("Excluir");
 
-        jMenuGerenciar.setText("Gerenciar");
+        MenuGerenciar.setText("Gerenciar");
 
         jMenuItemFunc.setText("Funcionários");
-        jMenuGerenciar.add(jMenuItemFunc);
+        MenuGerenciar.add(jMenuItemFunc);
 
         jMenuItemcli.setText("Clientes");
-        jMenuGerenciar.add(jMenuItemcli);
+        MenuGerenciar.add(jMenuItemcli);
 
         jMenuItemVend.setText("Vendas");
-        jMenuGerenciar.add(jMenuItemVend);
+        MenuGerenciar.add(jMenuItemVend);
 
         jMenuItemProd.setText("Produtos");
-        jMenuGerenciar.add(jMenuItemProd);
+        MenuGerenciar.add(jMenuItemProd);
 
         jMenuItemComp.setText("Compras");
-        jMenuGerenciar.add(jMenuItemComp);
+        MenuGerenciar.add(jMenuItemComp);
 
         jMenuItemEst.setText("Estoque");
-        jMenuGerenciar.add(jMenuItemEst);
+        MenuGerenciar.add(jMenuItemEst);
 
         jMenuItemEntr.setText("Entregas");
-        jMenuGerenciar.add(jMenuItemEntr);
+        MenuGerenciar.add(jMenuItemEntr);
 
         jMenuItemVeic.setText("Veículos");
-        jMenuGerenciar.add(jMenuItemVeic);
+        MenuGerenciar.add(jMenuItemVeic);
 
-        jMenuBar1.add(jMenuGerenciar);
+        jMenuBar1.add(MenuGerenciar);
 
-        jMenuRelatorio.setText("Relatórios");
-        jMenuBar1.add(jMenuRelatorio);
+        MenuRelatorios.setText("Relatórios");
+        jMenuBar1.add(MenuRelatorios);
 
         setJMenuBar(jMenuBar1);
 
@@ -382,6 +382,8 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LblNumero;
     private javax.swing.JLabel LblRG;
     private javax.swing.JLabel LblSexo;
+    private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenu MenuRelatorios;
     private javax.swing.JPanel PanelCadastroCliente;
     private javax.swing.JLabel Telefone;
     private javax.swing.JTextField TxtBairro;
@@ -397,7 +399,6 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField TxtTelefone;
     private javax.swing.JButton jBtnSalvar;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jMenuGerenciar;
     private javax.swing.JMenuItem jMenuItemComp;
     private javax.swing.JMenuItem jMenuItemEntr;
     private javax.swing.JMenuItem jMenuItemEst;
@@ -406,7 +407,6 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame {
     private javax.swing.JMenuItem jMenuItemVeic;
     private javax.swing.JMenuItem jMenuItemVend;
     private javax.swing.JMenuItem jMenuItemcli;
-    private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

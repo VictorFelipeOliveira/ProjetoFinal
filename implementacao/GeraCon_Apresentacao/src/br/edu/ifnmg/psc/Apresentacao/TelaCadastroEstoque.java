@@ -27,24 +27,24 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroEstoq = new javax.swing.JPanel();
-        jProdutoEstoq = new javax.swing.JLabel();
+        PanelCadastroEStoque = new javax.swing.JPanel();
+        LblProduto = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanelLimEstoq = new javax.swing.JPanel();
-        jMinimo = new javax.swing.JLabel();
-        jTxtMinimo = new javax.swing.JTextField();
-        jMaximo = new javax.swing.JLabel();
-        jTxtMaximo = new javax.swing.JTextField();
-        jQuantEstoq = new javax.swing.JLabel();
-        jCBProdEstoq = new javax.swing.JComboBox();
-        jUniMedia = new javax.swing.JLabel();
-        jCBCombust = new javax.swing.JComboBox();
-        jTxtQuantEstoq = new javax.swing.JTextField();
-        jBtnVolt = new javax.swing.JButton();
-        jBtnCancel = new javax.swing.JButton();
-        jBtnSalv = new javax.swing.JButton();
+        LblMinimo = new javax.swing.JLabel();
+        TxtMinimo = new javax.swing.JTextField();
+        LblMaximo = new javax.swing.JLabel();
+        TxtMaximo = new javax.swing.JTextField();
+        LblQuantidade = new javax.swing.JLabel();
+        CBXProduto = new javax.swing.JComboBox();
+        LblUnidadeMedia = new javax.swing.JLabel();
+        CBXUnidadeMedia = new javax.swing.JComboBox();
+        TxtQuantidade = new javax.swing.JTextField();
+        BtnVoltar = new javax.swing.JButton();
+        BtnCancelar = new javax.swing.JButton();
+        BtnSalvar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jGerenc = new javax.swing.JMenu();
+        MenuGerenciar = new javax.swing.JMenu();
         jFunc = new javax.swing.JMenuItem();
         jClient = new javax.swing.JMenuItem();
         jVend = new javax.swing.JMenuItem();
@@ -53,17 +53,17 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
         jEstoq = new javax.swing.JMenuItem();
         jEntr = new javax.swing.JMenuItem();
         jVeic = new javax.swing.JMenuItem();
-        jRelat = new javax.swing.JMenu();
+        MenuRelatorios = new javax.swing.JMenu();
 
-        jPanelCadastroEstoq.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Estoque"));
+        PanelCadastroEStoque.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Estoque"));
 
-        jProdutoEstoq.setText("Produto:");
+        LblProduto.setText("Produto:");
 
         jPanelLimEstoq.setBorder(javax.swing.BorderFactory.createTitledBorder("Limite de Estoque"));
 
-        jMinimo.setText("Mínimo:");
+        LblMinimo.setText("Mínimo:");
 
-        jMaximo.setText("Máximo:");
+        LblMaximo.setText("Máximo:");
 
         javax.swing.GroupLayout jPanelLimEstoqLayout = new javax.swing.GroupLayout(jPanelLimEstoq);
         jPanelLimEstoq.setLayout(jPanelLimEstoqLayout);
@@ -71,13 +71,13 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
             jPanelLimEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLimEstoqLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LblMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTxtMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                .addComponent(jMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LblMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jTxtMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         jPanelLimEstoqLayout.setVerticalGroup(
@@ -85,78 +85,78 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
             .addGroup(jPanelLimEstoqLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanelLimEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LblMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jQuantEstoq.setText("Quantidade:");
+        LblQuantidade.setText("Quantidade:");
 
-        jCBProdEstoq.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXProduto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
 
-        jUniMedia.setText("Unidade Média:");
+        LblUnidadeMedia.setText("Unidade Média:");
 
-        jCBCombust.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
-        jCBCombust.addActionListener(new java.awt.event.ActionListener() {
+        CBXUnidadeMedia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXUnidadeMedia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBCombustActionPerformed(evt);
+                CBXUnidadeMediaActionPerformed(evt);
             }
         });
 
-        jTxtQuantEstoq.addActionListener(new java.awt.event.ActionListener() {
+        TxtQuantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtQuantEstoqActionPerformed(evt);
+                TxtQuantidadeActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelCadastroEstoqLayout = new javax.swing.GroupLayout(jPanelCadastroEstoq);
-        jPanelCadastroEstoq.setLayout(jPanelCadastroEstoqLayout);
-        jPanelCadastroEstoqLayout.setHorizontalGroup(
-            jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroEstoqLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelCadastroEStoqueLayout = new javax.swing.GroupLayout(PanelCadastroEStoque);
+        PanelCadastroEStoque.setLayout(PanelCadastroEStoqueLayout);
+        PanelCadastroEStoqueLayout.setHorizontalGroup(
+            PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroEStoqueLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addComponent(jSeparator1))
-            .addGroup(jPanelCadastroEstoqLayout.createSequentialGroup()
+            .addGroup(PanelCadastroEStoqueLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jTxtQuantEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanelCadastroEstoqLayout.createSequentialGroup()
-                            .addComponent(jUniMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(TxtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelCadastroEStoqueLayout.createSequentialGroup()
+                            .addComponent(LblUnidadeMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCBCombust, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelCadastroEstoqLayout.createSequentialGroup()
+                            .addComponent(CBXUnidadeMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PanelCadastroEStoqueLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(jCBProdEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CBXProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanelCadastroEstoqLayout.createSequentialGroup()
+            .addGroup(PanelCadastroEStoqueLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProdutoEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jQuantEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroEstoqLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCadastroEStoqueLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanelLimEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
         );
-        jPanelCadastroEstoqLayout.setVerticalGroup(
-            jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroEstoqLayout.createSequentialGroup()
+        PanelCadastroEStoqueLayout.setVerticalGroup(
+            PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroEStoqueLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jProdutoEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBProdEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBXProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addGroup(jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jQuantEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTxtQuantEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelCadastroEstoqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jUniMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBCombust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelCadastroEStoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LblUnidadeMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBXUnidadeMedia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -164,42 +164,42 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        jBtnVolt.setText("Voltar");
+        BtnVoltar.setText("Voltar");
 
-        jBtnCancel.setText("Cancelar");
+        BtnCancelar.setText("Cancelar");
 
-        jBtnSalv.setText("Salvar");
+        BtnSalvar.setText("Salvar");
 
-        jGerenc.setText("Gerenciar");
+        MenuGerenciar.setText("Gerenciar");
 
         jFunc.setText("Funcionários");
-        jGerenc.add(jFunc);
+        MenuGerenciar.add(jFunc);
 
         jClient.setText("Clientes");
-        jGerenc.add(jClient);
+        MenuGerenciar.add(jClient);
 
         jVend.setText("Vendas");
-        jGerenc.add(jVend);
+        MenuGerenciar.add(jVend);
 
         jProd.setText("Produtos");
-        jGerenc.add(jProd);
+        MenuGerenciar.add(jProd);
 
         jComp.setText("Compras");
-        jGerenc.add(jComp);
+        MenuGerenciar.add(jComp);
 
         jEstoq.setText("Estoque");
-        jGerenc.add(jEstoq);
+        MenuGerenciar.add(jEstoq);
 
         jEntr.setText("Entregas");
-        jGerenc.add(jEntr);
+        MenuGerenciar.add(jEntr);
 
         jVeic.setText("Veículos");
-        jGerenc.add(jVeic);
+        MenuGerenciar.add(jVeic);
 
-        jMenuBar1.add(jGerenc);
+        jMenuBar1.add(MenuGerenciar);
 
-        jRelat.setText("Relatórios");
-        jMenuBar1.add(jRelat);
+        MenuRelatorios.setText("Relatórios");
+        jMenuBar1.add(MenuRelatorios);
 
         setJMenuBar(jMenuBar1);
 
@@ -210,66 +210,66 @@ public class TelaCadastroEstoque extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelCadastroEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCadastroEStoque, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(284, 284, 284)
-                        .addComponent(jBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBtnSalv, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelCadastroEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelCadastroEStoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnVolt)
-                    .addComponent(jBtnCancel)
-                    .addComponent(jBtnSalv))
+                    .addComponent(BtnVoltar)
+                    .addComponent(BtnCancelar)
+                    .addComponent(BtnSalvar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCBCombustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBCombustActionPerformed
+    private void CBXUnidadeMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBXUnidadeMediaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBCombustActionPerformed
+    }//GEN-LAST:event_CBXUnidadeMediaActionPerformed
 
-    private void jTxtQuantEstoqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtQuantEstoqActionPerformed
+    private void TxtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtQuantidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtQuantEstoqActionPerformed
+    }//GEN-LAST:event_TxtQuantidadeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnCancel;
-    private javax.swing.JButton jBtnSalv;
-    private javax.swing.JButton jBtnVolt;
-    private javax.swing.JComboBox jCBCombust;
-    private javax.swing.JComboBox jCBProdEstoq;
+    private javax.swing.JButton BtnCancelar;
+    private javax.swing.JButton BtnSalvar;
+    private javax.swing.JButton BtnVoltar;
+    private javax.swing.JComboBox CBXProduto;
+    private javax.swing.JComboBox CBXUnidadeMedia;
+    private javax.swing.JLabel LblMaximo;
+    private javax.swing.JLabel LblMinimo;
+    private javax.swing.JLabel LblProduto;
+    private javax.swing.JLabel LblQuantidade;
+    private javax.swing.JLabel LblUnidadeMedia;
+    private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenu MenuRelatorios;
+    private javax.swing.JPanel PanelCadastroEStoque;
+    private javax.swing.JTextField TxtMaximo;
+    private javax.swing.JTextField TxtMinimo;
+    private javax.swing.JTextField TxtQuantidade;
     private javax.swing.JMenuItem jClient;
     private javax.swing.JMenuItem jComp;
     private javax.swing.JMenuItem jEntr;
     private javax.swing.JMenuItem jEstoq;
     private javax.swing.JMenuItem jFunc;
-    private javax.swing.JMenu jGerenc;
-    private javax.swing.JLabel jMaximo;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel jMinimo;
-    private javax.swing.JPanel jPanelCadastroEstoq;
     private javax.swing.JPanel jPanelLimEstoq;
     private javax.swing.JMenuItem jProd;
-    private javax.swing.JLabel jProdutoEstoq;
-    private javax.swing.JLabel jQuantEstoq;
-    private javax.swing.JMenu jRelat;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTxtMaximo;
-    private javax.swing.JTextField jTxtMinimo;
-    private javax.swing.JTextField jTxtQuantEstoq;
-    private javax.swing.JLabel jUniMedia;
     private javax.swing.JMenuItem jVeic;
     private javax.swing.JMenuItem jVend;
     // End of variables declaration//GEN-END:variables

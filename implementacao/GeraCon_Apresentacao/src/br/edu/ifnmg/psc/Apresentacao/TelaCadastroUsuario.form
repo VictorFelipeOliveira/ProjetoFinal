@@ -4,7 +4,7 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jGerenc">
+        <Menu class="javax.swing.JMenu" name="MenuGerenciar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerenciar"/>
           </Properties>
@@ -51,7 +51,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jRelat">
+        <Menu class="javax.swing.JMenu" name="MenuRelatorios">
           <Properties>
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
           </Properties>
@@ -80,17 +80,17 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="jBtnVolt" min="-2" pref="65" max="-2" attributes="0"/>
+              <Component id="BtnVoltar" min="-2" pref="65" max="-2" attributes="0"/>
               <EmptySpace pref="274" max="32767" attributes="0"/>
-              <Component id="jBtnCancel" min="-2" max="-2" attributes="0"/>
+              <Component id="BtnCancelar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-              <Component id="jBtnSalv" min="-2" pref="66" max="-2" attributes="0"/>
+              <Component id="BtnSalvar" min="-2" pref="66" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanelCadastroUsuario" min="-2" max="-2" attributes="0"/>
+                  <Component id="PanelCadastro" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -101,16 +101,16 @@
           <Group type="102" attributes="0">
               <EmptySpace pref="299" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBtnVolt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBtnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBtnSalv" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanelCadastroUsuario" min="-2" pref="284" max="-2" attributes="0"/>
+                  <Component id="PanelCadastro" min="-2" pref="284" max="-2" attributes="0"/>
                   <EmptySpace pref="62" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -118,7 +118,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelCadastroUsuario">
+    <Container class="javax.swing.JPanel" name="PanelCadastro">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -140,24 +140,24 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jConfSenha" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                      <Component id="jSenhaUsu" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
+                                      <Component id="LblConfirmaSenha" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                                      <Component id="LblSenha" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jPassw" pref="318" max="32767" attributes="0"/>
-                                      <Component id="jPasswConf" max="32767" attributes="0"/>
+                                      <Component id="TxtSenha" pref="318" max="32767" attributes="0"/>
+                                      <Component id="TxtConfirmaSenha" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLoginUsu" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                      <Component id="jNomeFunc" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="LblLogin" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="LblFuncionario" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jCBFunc" min="-2" pref="226" max="-2" attributes="0"/>
-                                      <Component id="jTxtLoginUsu" pref="318" max="32767" attributes="0"/>
+                                      <Component id="CBXFuncionario" min="-2" pref="226" max="-2" attributes="0"/>
+                                      <Component id="TxtLogin" pref="318" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -173,23 +173,23 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jNomeFunc" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jCBFunc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblFuncionario" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="CBXFuncionario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLoginUsu" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jTxtLoginUsu" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblLogin" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtLogin" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jSenhaUsu" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jPassw" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblSenha" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="TxtSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jConfSenha" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jPasswConf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblConfirmaSenha" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtConfirmaSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
@@ -199,38 +199,38 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jNomeFunc">
+        <Component class="javax.swing.JLabel" name="LblFuncionario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLoginUsu">
+        <Component class="javax.swing.JLabel" name="LblLogin">
           <Properties>
             <Property name="text" type="java.lang.String" value="Login:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtLoginUsu">
+        <Component class="javax.swing.JTextField" name="TxtLogin">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtLoginUsuActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtLoginActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jSenhaUsu">
+        <Component class="javax.swing.JLabel" name="LblSenha">
           <Properties>
             <Property name="text" type="java.lang.String" value="Senha:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jConfSenha">
+        <Component class="javax.swing.JLabel" name="LblConfirmaSenha">
           <Properties>
             <Property name="text" type="java.lang.String" value="Confirmar senha:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPassw">
+        <Component class="javax.swing.JPasswordField" name="TxtSenha">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswConf">
+        <Component class="javax.swing.JPasswordField" name="TxtConfirmaSenha">
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBFunc">
+        <Component class="javax.swing.JComboBox" name="CBXFuncionario">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -242,22 +242,22 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBFuncActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBXFuncionarioActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jBtnVolt">
+    <Component class="javax.swing.JButton" name="BtnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnCancel">
+    <Component class="javax.swing.JButton" name="BtnCancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnSalv">
+    <Component class="javax.swing.JButton" name="BtnSalvar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>

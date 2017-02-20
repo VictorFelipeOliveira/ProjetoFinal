@@ -4,7 +4,7 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenuGerenc">
+        <Menu class="javax.swing.JMenu" name="MenuGerenciar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerenciar"/>
           </Properties>
@@ -51,7 +51,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenuRelat">
+        <Menu class="javax.swing.JMenu" name="MenuRelatorios">
           <Properties>
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
           </Properties>
@@ -80,23 +80,23 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="jBtnVolt" min="-2" pref="64" max="-2" attributes="0"/>
+              <Component id="BtnVoltar" min="-2" pref="64" max="-2" attributes="0"/>
               <EmptySpace pref="517" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                      <Component id="jBtnExcl" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="BtnExcluir" min="-2" pref="72" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="jBtnSalv" min="-2" pref="66" max="-2" attributes="0"/>
+                      <Component id="BtnSalvar" min="-2" pref="66" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jTxtCityFornc" min="-2" pref="209" max="-2" attributes="0"/>
+                  <Component id="TxtCidade" min="-2" pref="209" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanelCadastroFornc" max="32767" attributes="0"/>
+                  <Component id="PanelCadastro" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -106,23 +106,21 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="300" max="32767" attributes="0"/>
-              <Component id="jTxtCityFornc" min="-2" max="-2" attributes="0"/>
+              <Component id="TxtCidade" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jBtnVolt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="BtnVoltar" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="jBtnExcl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jBtnSalv" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanelCadastroFornc" min="-2" max="-2" attributes="0"/>
+                  <Component id="PanelCadastro" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="88" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -130,7 +128,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelCadastroFornc">
+    <Container class="javax.swing.JPanel" name="PanelCadastro">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -152,46 +150,46 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jEnderFornc" min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="jComplementoFornc" min="-2" pref="115" max="-2" attributes="0"/>
+                                      <Component id="LblEndereco" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <Component id="LblComplemento" min="-2" pref="115" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTxtEnderFornc" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
+                                      <Component id="TxtEndereco" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTxtNumFornc" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
-                                              <Component id="jTxtCompleFornc" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
+                                              <Component id="TxtNumero" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
+                                              <Component id="TxtComplemento" alignment="0" min="-2" pref="350" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jCityFornc" min="-2" pref="68" max="-2" attributes="0"/>
+                                              <Component id="LblCidade" min="-2" pref="68" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jBairroFornc" min="-2" pref="76" max="-2" attributes="0"/>
+                                                  <Component id="LblBairro" min="-2" pref="76" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                                  <Component id="jTxtBairroFornc" min="-2" pref="205" max="-2" attributes="0"/>
+                                                  <Component id="TxtBairro" min="-2" pref="205" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <Component id="jNumeroFornc" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                              <Component id="LblNumero" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jEmailFornc" max="32767" attributes="0"/>
-                                      <Component id="jNomeFornec" alignment="0" pref="61" max="32767" attributes="0"/>
-                                      <Component id="jCNPJ" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
+                                      <Component id="LblEmail" max="32767" attributes="0"/>
+                                      <Component id="LblNome" alignment="0" pref="61" max="32767" attributes="0"/>
+                                      <Component id="LblCNPJ" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTxtCNPJ" pref="319" max="32767" attributes="0"/>
-                                      <Component id="jTxtEmailFornc" max="32767" attributes="0"/>
-                                      <Component id="jTxtFornc" max="32767" attributes="0"/>
+                                      <Component id="TxtCNPJ" pref="319" max="32767" attributes="0"/>
+                                      <Component id="TxtEmail" max="32767" attributes="0"/>
+                                      <Component id="TxtNome" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                                  <Component id="jTelefoneFornc" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="LblTelefone" min="-2" pref="80" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="jFTxtTelFornc" min="-2" pref="196" max="-2" attributes="0"/>
+                                  <Component id="TxtTelefone" min="-2" pref="196" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="68" max="32767" attributes="0"/>
@@ -206,138 +204,138 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jNomeFornec" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jTxtFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblNome" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jCNPJ" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jTxtCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblCNPJ" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jEmailFornc" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jTxtEmailFornc" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTelefoneFornc" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jFTxtTelFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblEmail" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblTelefone" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="39" max="32767" attributes="0"/>
                   <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jEnderFornc" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="jTxtEnderFornc" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblEndereco" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="TxtEndereco" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jTxtNumFornc" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jBairroFornc" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTxtBairroFornc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LblBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TxtBairro" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                          <Component id="jNumeroFornc" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="LblNumero" min="-2" pref="23" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComplementoFornc" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="jTxtCompleFornc" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCityFornc" alignment="3" max="32767" attributes="0"/>
+                      <Component id="LblComplemento" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                      <Component id="TxtComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblCidade" alignment="3" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jNomeFornec">
+        <Component class="javax.swing.JLabel" name="LblNome">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jCNPJ">
+        <Component class="javax.swing.JLabel" name="LblCNPJ">
           <Properties>
             <Property name="text" type="java.lang.String" value="CNPJ:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jEmailFornc">
+        <Component class="javax.swing.JLabel" name="LblEmail">
           <Properties>
             <Property name="text" type="java.lang.String" value="Email:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jTelefoneFornc">
+        <Component class="javax.swing.JLabel" name="LblTelefone">
           <Properties>
             <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
         </Component>
-        <Component class="javax.swing.JLabel" name="jEnderFornc">
+        <Component class="javax.swing.JLabel" name="LblEndereco">
           <Properties>
             <Property name="text" type="java.lang.String" value="Rua/Av:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtEnderFornc">
+        <Component class="javax.swing.JTextField" name="TxtEndereco">
         </Component>
-        <Component class="javax.swing.JLabel" name="jNumeroFornc">
+        <Component class="javax.swing.JLabel" name="LblNumero">
           <Properties>
             <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jComplementoFornc">
+        <Component class="javax.swing.JLabel" name="LblComplemento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Complemento:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jBairroFornc">
+        <Component class="javax.swing.JLabel" name="LblBairro">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bairro:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jCityFornc">
+        <Component class="javax.swing.JLabel" name="LblCidade">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cidade:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtNumFornc">
+        <Component class="javax.swing.JTextField" name="TxtNumero">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtNumForncActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtNumeroActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtCompleFornc">
+        <Component class="javax.swing.JTextField" name="TxtComplemento">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtCNPJ">
+        <Component class="javax.swing.JTextField" name="TxtCNPJ">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtCNPJActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtCNPJActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtEmailFornc">
+        <Component class="javax.swing.JTextField" name="TxtEmail">
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jFTxtTelFornc">
+        <Component class="javax.swing.JFormattedTextField" name="TxtTelefone">
           <Properties>
             <Property name="text" type="java.lang.String" value="( )"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtBairroFornc">
+        <Component class="javax.swing.JTextField" name="TxtBairro">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtFornc">
+        <Component class="javax.swing.JTextField" name="TxtNome">
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="jTxtCityFornc">
+    <Component class="javax.swing.JTextField" name="TxtCidade">
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnExcl">
+    <Component class="javax.swing.JButton" name="BtnExcluir">
       <Properties>
         <Property name="text" type="java.lang.String" value="Excluir"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnSalv">
+    <Component class="javax.swing.JButton" name="BtnSalvar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnVolt">
+    <Component class="javax.swing.JButton" name="BtnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>

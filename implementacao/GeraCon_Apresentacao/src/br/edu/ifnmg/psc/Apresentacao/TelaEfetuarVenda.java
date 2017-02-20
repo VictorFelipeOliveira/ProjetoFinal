@@ -49,7 +49,7 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
         jBtnCancel = new javax.swing.JButton();
         jBtnFinal = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jGerenc = new javax.swing.JMenu();
+        MenuGerenciar = new javax.swing.JMenu();
         jFunc = new javax.swing.JMenuItem();
         jClient = new javax.swing.JMenuItem();
         jVend = new javax.swing.JMenuItem();
@@ -58,7 +58,7 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
         jEstoq = new javax.swing.JMenuItem();
         jEntr = new javax.swing.JMenuItem();
         jVeic = new javax.swing.JMenuItem();
-        jRelat = new javax.swing.JMenu();
+        MenuRelatorios = new javax.swing.JMenu();
 
         jPanelEfeVend.setBorder(javax.swing.BorderFactory.createTitledBorder("Efetuar Venda"));
 
@@ -191,36 +191,36 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
 
         jBtnFinal.setText("Finalizar Venda");
 
-        jGerenc.setText("Gerenciar");
+        MenuGerenciar.setText("Gerenciar");
 
         jFunc.setText("Funcionários");
-        jGerenc.add(jFunc);
+        MenuGerenciar.add(jFunc);
 
         jClient.setText("Clientes");
-        jGerenc.add(jClient);
+        MenuGerenciar.add(jClient);
 
         jVend.setText("Vendas");
-        jGerenc.add(jVend);
+        MenuGerenciar.add(jVend);
 
         jProd.setText("Produtos");
-        jGerenc.add(jProd);
+        MenuGerenciar.add(jProd);
 
         jComp.setText("Compras");
-        jGerenc.add(jComp);
+        MenuGerenciar.add(jComp);
 
         jEstoq.setText("Estoque");
-        jGerenc.add(jEstoq);
+        MenuGerenciar.add(jEstoq);
 
         jEntr.setText("Entregas");
-        jGerenc.add(jEntr);
+        MenuGerenciar.add(jEntr);
 
         jVeic.setText("Veículos");
-        jGerenc.add(jVeic);
+        MenuGerenciar.add(jVeic);
 
-        jMenuBar1.add(jGerenc);
+        jMenuBar1.add(MenuGerenciar);
 
-        jRelat.setText("Relatórios");
-        jMenuBar1.add(jRelat);
+        MenuRelatorios.setText("Relatórios");
+        jMenuBar1.add(MenuRelatorios);
 
         setJMenuBar(jMenuBar1);
 
@@ -292,6 +292,8 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenu MenuRelatorios;
     private javax.swing.JButton jBtnAddGeren1;
     private javax.swing.JButton jBtnCancel;
     private javax.swing.JButton jBtnFinal;
@@ -308,7 +310,6 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
     private javax.swing.JMenuItem jEstoq;
     private javax.swing.JLabel jFormPagVen;
     private javax.swing.JMenuItem jFunc;
-    private javax.swing.JMenu jGerenc;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelCarrEfVend;
     private javax.swing.JPanel jPanelDadosVend;
@@ -316,7 +317,6 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
     private javax.swing.JMenuItem jProd;
     private javax.swing.JLabel jProdVend;
     private javax.swing.JLabel jQuantVend;
-    private javax.swing.JMenu jRelat;
     private javax.swing.JSpinner jSpinQuantVend;
     private javax.swing.JFormattedTextField jTextFielddat;
     private javax.swing.JTextField jTxtDesc;

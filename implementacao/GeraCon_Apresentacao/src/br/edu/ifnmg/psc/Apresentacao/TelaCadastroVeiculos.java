@@ -27,26 +27,26 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCadastroVeic = new javax.swing.JPanel();
-        jModel = new javax.swing.JLabel();
-        jTipoVeic = new javax.swing.JLabel();
-        jAnoVeic = new javax.swing.JLabel();
-        jTextFieldAnoVeic = new javax.swing.JFormattedTextField();
+        PanelCadastro = new javax.swing.JPanel();
+        LblModelo = new javax.swing.JLabel();
+        LblTipo = new javax.swing.JLabel();
+        LblAno = new javax.swing.JLabel();
+        TxtAno = new javax.swing.JFormattedTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanelObs = new javax.swing.JPanel();
-        jBtnVolt = new javax.swing.JButton();
-        jBtnExcl = new javax.swing.JButton();
-        jBtnSalv = new javax.swing.JButton();
-        jMarcVeic = new javax.swing.JLabel();
-        jPlaca = new javax.swing.JLabel();
-        jTxtMarc = new javax.swing.JTextField();
-        jCBTipo = new javax.swing.JComboBox();
-        jTxtPlac = new javax.swing.JTextField();
-        jCombust = new javax.swing.JLabel();
-        jCBCombust = new javax.swing.JComboBox();
-        jTxtModel = new javax.swing.JTextField();
+        PanelObs = new javax.swing.JPanel();
+        BtnVoltar = new javax.swing.JButton();
+        BtnExcluir = new javax.swing.JButton();
+        BtnSalvar = new javax.swing.JButton();
+        LblMarca = new javax.swing.JLabel();
+        LblPlaca = new javax.swing.JLabel();
+        TxtModelo = new javax.swing.JTextField();
+        CBXTipo = new javax.swing.JComboBox();
+        TxtPlaca = new javax.swing.JTextField();
+        LblCombustivel = new javax.swing.JLabel();
+        CBXCombustivel = new javax.swing.JComboBox();
+        TxtMarca = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jGerenc = new javax.swing.JMenu();
+        MenuGerenciar = new javax.swing.JMenu();
         jFunc = new javax.swing.JMenuItem();
         jClient = new javax.swing.JMenuItem();
         jVend = new javax.swing.JMenuItem();
@@ -55,182 +55,182 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
         jEstoq = new javax.swing.JMenuItem();
         jEntr = new javax.swing.JMenuItem();
         jVeic = new javax.swing.JMenuItem();
-        jRelat = new javax.swing.JMenu();
+        MenuRelatorios = new javax.swing.JMenu();
 
-        jPanelCadastroVeic.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Veículo"));
+        PanelCadastro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Veículo"));
 
-        jModel.setText("Modelo:");
+        LblModelo.setText("Modelo:");
 
-        jTipoVeic.setText("Tipo:");
+        LblTipo.setText("Tipo:");
 
-        jAnoVeic.setText("Ano:");
+        LblAno.setText("Ano:");
 
-        jTextFieldAnoVeic.setText("       /  /");
+        TxtAno.setText("       /  /");
 
-        jPanelObs.setBorder(javax.swing.BorderFactory.createTitledBorder("Observações"));
+        PanelObs.setBorder(javax.swing.BorderFactory.createTitledBorder("Observações"));
 
-        javax.swing.GroupLayout jPanelObsLayout = new javax.swing.GroupLayout(jPanelObs);
-        jPanelObs.setLayout(jPanelObsLayout);
-        jPanelObsLayout.setHorizontalGroup(
-            jPanelObsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PanelObsLayout = new javax.swing.GroupLayout(PanelObs);
+        PanelObs.setLayout(PanelObsLayout);
+        PanelObsLayout.setHorizontalGroup(
+            PanelObsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 702, Short.MAX_VALUE)
         );
-        jPanelObsLayout.setVerticalGroup(
-            jPanelObsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PanelObsLayout.setVerticalGroup(
+            PanelObsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 160, Short.MAX_VALUE)
         );
 
-        jBtnVolt.setText("Voltar");
+        BtnVoltar.setText("Voltar");
 
-        jBtnExcl.setText("Excluir");
+        BtnExcluir.setText("Excluir");
 
-        jBtnSalv.setText("Salvar");
+        BtnSalvar.setText("Salvar");
 
-        jMarcVeic.setText("Marca:");
+        LblMarca.setText("Marca:");
 
-        jPlaca.setText("Placa:");
+        LblPlaca.setText("Placa:");
 
-        jCBTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXTipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
 
-        jCombust.setText("Combustível:");
+        LblCombustivel.setText("Combustível:");
 
-        jCBCombust.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
-        jCBCombust.addActionListener(new java.awt.event.ActionListener() {
+        CBXCombustivel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXCombustivel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBCombustActionPerformed(evt);
+                CBXCombustivelActionPerformed(evt);
             }
         });
 
-        jTxtModel.addActionListener(new java.awt.event.ActionListener() {
+        TxtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxtModelActionPerformed(evt);
+                TxtMarcaActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanelCadastroVeicLayout = new javax.swing.GroupLayout(jPanelCadastroVeic);
-        jPanelCadastroVeic.setLayout(jPanelCadastroVeicLayout);
-        jPanelCadastroVeicLayout.setHorizontalGroup(
-            jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
-                .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout PanelCadastroLayout = new javax.swing.GroupLayout(PanelCadastro);
+        PanelCadastro.setLayout(PanelCadastroLayout);
+        PanelCadastroLayout.setHorizontalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnExcl, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(181, 181, 181))
-            .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
-                .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
                         .addGap(616, 616, 616)
-                        .addComponent(jBtnSalv, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
+                        .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
-                                .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
-                                        .addComponent(jMarcVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                        .addComponent(LblMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(1, 1, 1)
-                                        .addComponent(jTxtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
-                                        .addComponent(jPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TxtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                        .addComponent(LblPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTxtPlac, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(TxtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(93, 93, 93)
-                                .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jModel, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jAnoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LblAno, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(36, 36, 36)
-                                .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldAnoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtMarc, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
-                                .addComponent(jTipoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TxtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                                .addComponent(LblTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(4, 4, 4)
-                                .addComponent(jCBTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CBXTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(76, 76, 76)
-                                .addComponent(jCombust, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LblCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(4, 4, 4)
-                                .addComponent(jCBCombust, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(CBXCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroVeicLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCadastroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addComponent(jSeparator1))
         );
-        jPanelCadastroVeicLayout.setVerticalGroup(
-            jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
-                .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
+        PanelCadastroLayout.setVerticalGroup(
+            PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCadastroLayout.createSequentialGroup()
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PanelCadastroLayout.createSequentialGroup()
                             .addGap(51, 51, 51)
-                            .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jModel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTxtMarc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastroVeicLayout.createSequentialGroup()
+                            .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(LblModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCadastroLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jMarcVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTxtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanelCadastroVeicLayout.createSequentialGroup()
+                            .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(LblMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TxtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(PanelCadastroLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTipoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCBTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCombust, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCBCombust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CBXTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CBXCombustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldAnoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAnoVeic)
-                    .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTxtPlac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LblAno)
+                    .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LblPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(46, 46, 46)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelCadastroVeicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jBtnSalv)
-                        .addComponent(jBtnExcl))
-                    .addComponent(jBtnVolt))
+                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BtnSalvar)
+                        .addComponent(BtnExcluir))
+                    .addComponent(BtnVoltar))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jGerenc.setText("Gerenciar");
+        MenuGerenciar.setText("Gerenciar");
 
         jFunc.setText("Funcionários");
-        jGerenc.add(jFunc);
+        MenuGerenciar.add(jFunc);
 
         jClient.setText("Clientes");
-        jGerenc.add(jClient);
+        MenuGerenciar.add(jClient);
 
         jVend.setText("Vendas");
-        jGerenc.add(jVend);
+        MenuGerenciar.add(jVend);
 
         jProd.setText("Produtos");
-        jGerenc.add(jProd);
+        MenuGerenciar.add(jProd);
 
         jComp.setText("Compras");
-        jGerenc.add(jComp);
+        MenuGerenciar.add(jComp);
 
         jEstoq.setText("Estoque");
-        jGerenc.add(jEstoq);
+        MenuGerenciar.add(jEstoq);
 
         jEntr.setText("Entregas");
-        jGerenc.add(jEntr);
+        MenuGerenciar.add(jEntr);
 
         jVeic.setText("Veículos");
-        jGerenc.add(jVeic);
+        MenuGerenciar.add(jVeic);
 
-        jMenuBar1.add(jGerenc);
+        jMenuBar1.add(MenuGerenciar);
 
-        jRelat.setText("Relatórios");
-        jMenuBar1.add(jRelat);
+        MenuRelatorios.setText("Relatórios");
+        jMenuBar1.add(MenuRelatorios);
 
         setJMenuBar(jMenuBar1);
 
@@ -240,57 +240,57 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelCadastroVeic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelCadastroVeic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxtModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtModelActionPerformed
+    private void TxtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtMarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxtModelActionPerformed
+    }//GEN-LAST:event_TxtMarcaActionPerformed
 
-    private void jCBCombustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBCombustActionPerformed
+    private void CBXCombustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBXCombustivelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBCombustActionPerformed
+    }//GEN-LAST:event_CBXCombustivelActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jAnoVeic;
-    private javax.swing.JButton jBtnExcl;
-    private javax.swing.JButton jBtnSalv;
-    private javax.swing.JButton jBtnVolt;
-    private javax.swing.JComboBox jCBCombust;
-    private javax.swing.JComboBox jCBTipo;
+    private javax.swing.JButton BtnExcluir;
+    private javax.swing.JButton BtnSalvar;
+    private javax.swing.JButton BtnVoltar;
+    private javax.swing.JComboBox CBXCombustivel;
+    private javax.swing.JComboBox CBXTipo;
+    private javax.swing.JLabel LblAno;
+    private javax.swing.JLabel LblCombustivel;
+    private javax.swing.JLabel LblMarca;
+    private javax.swing.JLabel LblModelo;
+    private javax.swing.JLabel LblPlaca;
+    private javax.swing.JLabel LblTipo;
+    private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenu MenuRelatorios;
+    private javax.swing.JPanel PanelCadastro;
+    private javax.swing.JPanel PanelObs;
+    private javax.swing.JFormattedTextField TxtAno;
+    private javax.swing.JTextField TxtMarca;
+    private javax.swing.JTextField TxtModelo;
+    private javax.swing.JTextField TxtPlaca;
     private javax.swing.JMenuItem jClient;
-    private javax.swing.JLabel jCombust;
     private javax.swing.JMenuItem jComp;
     private javax.swing.JMenuItem jEntr;
     private javax.swing.JMenuItem jEstoq;
     private javax.swing.JMenuItem jFunc;
-    private javax.swing.JMenu jGerenc;
-    private javax.swing.JLabel jMarcVeic;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel jModel;
-    private javax.swing.JPanel jPanelCadastroVeic;
-    private javax.swing.JPanel jPanelObs;
-    private javax.swing.JLabel jPlaca;
     private javax.swing.JMenuItem jProd;
-    private javax.swing.JMenu jRelat;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JFormattedTextField jTextFieldAnoVeic;
-    private javax.swing.JLabel jTipoVeic;
-    private javax.swing.JTextField jTxtMarc;
-    private javax.swing.JTextField jTxtModel;
-    private javax.swing.JTextField jTxtPlac;
     private javax.swing.JMenuItem jVeic;
     private javax.swing.JMenuItem jVend;
     // End of variables declaration//GEN-END:variables

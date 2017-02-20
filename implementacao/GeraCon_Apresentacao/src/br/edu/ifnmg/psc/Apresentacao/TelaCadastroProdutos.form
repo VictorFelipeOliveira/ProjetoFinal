@@ -81,11 +81,11 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanelCadastroProdut" max="32767" attributes="0"/>
+                  <Component id="PanelCadastro" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="jBtnVolt" min="-2" pref="124" max="-2" attributes="0"/>
+                      <Component id="BtnVoltar" min="-2" pref="124" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jBtnSalv" min="-2" pref="125" max="-2" attributes="0"/>
+                      <Component id="BtnSalvar" min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -96,11 +96,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanelCadastroProdut" min="-2" max="-2" attributes="0"/>
+              <Component id="PanelCadastro" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBtnSalv" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBtnVolt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
@@ -108,7 +108,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelCadastroProdut">
+    <Container class="javax.swing.JPanel" name="PanelCadastro">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -126,33 +126,35 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jCodProd" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
-                                      <Component id="jDescProd" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Component id="LblCodigo" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
+                                      <Component id="LblDescricao" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jCBProd" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <Component id="jTxtDesProd" min="-2" pref="352" max="-2" attributes="0"/>
-                                      <Component id="jTxtCodProd" min="-2" pref="352" max="-2" attributes="0"/>
+                                      <Component id="TxtDescricao" min="-2" pref="352" max="-2" attributes="0"/>
+                                      <Component id="TxtCodigo" min="-2" pref="352" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jNomeFornProd" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="LblFornecedor" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Component id="jCBForncProd" min="-2" pref="226" max="-2" attributes="0"/>
+                                  <Component id="CBXFornecedor" min="-2" pref="226" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="164" pref="166" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                          <Component id="jCatProd" min="-2" pref="81" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPrecUnProd" min="-2" pref="132" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTxtPrecProd" min="-2" pref="120" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
+                                  <Component id="jCatProd" min="-2" pref="81" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="LblPrecoUnitario" min="-2" pref="132" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="TxtPrecoUnitario" min="-2" pref="120" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -165,25 +167,24 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jCodProd" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jTxtCodProd" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblCodigo" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtCodigo" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jDescProd" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jTxtDesProd" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblDescricao" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="TxtDescricao" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jPrecUnProd" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jTxtPrecProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblPrecoUnitario" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="TxtPrecoUnitario" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jCatProd" alignment="3" max="32767" attributes="0"/>
-                      <Component id="jCBProd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jNomeFornProd" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jCBForncProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblFornecedor" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="CBXFornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               </Group>
@@ -191,32 +192,32 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jNomeFornProd">
+        <Component class="javax.swing.JLabel" name="LblFornecedor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fornecedor:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jCodProd">
+        <Component class="javax.swing.JLabel" name="LblCodigo">
           <Properties>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtCodProd">
+        <Component class="javax.swing.JTextField" name="TxtCodigo">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTxtCodProdActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtCodigoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jDescProd">
+        <Component class="javax.swing.JLabel" name="LblDescricao">
           <Properties>
             <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jPrecUnProd">
+        <Component class="javax.swing.JLabel" name="LblPrecoUnitario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pre&#xe7;o Unit&#xe1;rio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBForncProd">
+        <Component class="javax.swing.JComboBox" name="CBXFornecedor">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -228,38 +229,26 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBForncProdActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBXFornecedorActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtDesProd">
+        <Component class="javax.swing.JTextField" name="TxtDescricao">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTxtPrecProd">
+        <Component class="javax.swing.JTextField" name="TxtPrecoUnitario">
         </Component>
         <Component class="javax.swing.JLabel" name="jCatProd">
           <Properties>
             <Property name="text" type="java.lang.String" value="Categoria:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBProd">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Selecione"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
-        </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jBtnVolt">
+    <Component class="javax.swing.JButton" name="BtnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnSalv">
+    <Component class="javax.swing.JButton" name="BtnSalvar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
