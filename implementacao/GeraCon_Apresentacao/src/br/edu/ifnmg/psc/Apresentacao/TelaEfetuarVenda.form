@@ -90,25 +90,25 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanelCarrEfVend" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jDescVend" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="LblDesconto" min="-2" pref="105" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jTxtDesc" min="-2" pref="84" max="-2" attributes="0"/>
+                                      <Component id="TxtDesconto" min="-2" pref="84" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jValTotal" min="-2" pref="88" max="-2" attributes="0"/>
+                                      <Component id="LblValorTotal" min="-2" pref="88" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jBtnCancel" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
+                                  <Component id="BtnCancelar" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jBtnFinal" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTxtValorTot" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="BtnFinal" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TxtValorTotal" min="-2" pref="79" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <Component id="jBtnVolt" min="-2" pref="105" max="-2" attributes="0"/>
+                  <Component id="BtnVoltar" min="-2" pref="105" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="97" max="32767" attributes="0"/>
           </Group>
@@ -122,10 +122,10 @@
                       <Component id="jPanelCarrEfVend" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jDescVend" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jTxtDesc" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jValTotal" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jTxtValorTot" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LblDesconto" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="TxtDesconto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LblValorTotal" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="TxtValorTotal" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -138,13 +138,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jBtnVolt" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnVoltar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jBtnFinal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jBtnCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtnFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -169,17 +169,17 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jBtnAddGeren1" alignment="1" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="BtnAdicionar" alignment="1" min="-2" pref="105" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jQuantVend" min="-2" pref="96" max="-2" attributes="0"/>
+                              <Component id="LblQuantidade" min="-2" pref="96" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jSpinQuantVend" max="32767" attributes="0"/>
+                              <Component id="SpinQuantidade" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jProdVend" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                          <Component id="LblProduto" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                              <Component id="jCBProdVend" min="-2" pref="218" max="-2" attributes="0"/>
+                              <Component id="CBXProduto" min="-2" pref="218" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -193,37 +193,37 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="jCBProdVend" min="-2" max="-2" attributes="0"/>
+                          <Component id="CBXProduto" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jQuantVend" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jSpinQuantVend" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LblQuantidade" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="SpinQuantidade" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jProdVend" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="LblProduto" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jBtnAddGeren1" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnAdicionar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jProdVend">
+        <Component class="javax.swing.JLabel" name="LblProduto">
           <Properties>
             <Property name="text" type="java.lang.String" value="Produto:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jQuantVend">
+        <Component class="javax.swing.JLabel" name="LblQuantidade">
           <Properties>
             <Property name="text" type="java.lang.String" value="Quantidade:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBProdVend">
+        <Component class="javax.swing.JComboBox" name="CBXProduto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -235,9 +235,9 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinQuantVend">
+        <Component class="javax.swing.JSpinner" name="SpinQuantidade">
         </Component>
-        <Component class="javax.swing.JButton" name="jBtnAddGeren1">
+        <Component class="javax.swing.JButton" name="BtnAdicionar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Adicionar"/>
           </Properties>
@@ -260,22 +260,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jClienVend" min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="LblCliente" min="-2" pref="81" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jDatGerenc" min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Component id="LblData" min="-2" pref="43" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jFormPagVen" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                              <Component id="LblFormaPagamento" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextFielddat" min="-2" pref="92" max="-2" attributes="0"/>
-                              <Component id="jCBClienVend" min="-2" pref="194" max="-2" attributes="0"/>
-                              <Component id="jCBFormPag" min="-2" pref="203" max="-2" attributes="0"/>
+                              <Component id="Txtdata" min="-2" pref="92" max="-2" attributes="0"/>
+                              <Component id="CBXCliente" min="-2" pref="194" max="-2" attributes="0"/>
+                              <Component id="CBXFormaPagamento" min="-2" pref="203" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -288,18 +288,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jDatGerenc" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jTextFielddat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblData" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="Txtdata" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jFormPagVen" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="jCBFormPag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblFormaPagamento" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="CBXFormaPagamento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jClienVend" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                      <Component id="jCBClienVend" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LblCliente" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="CBXCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
@@ -307,12 +307,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jFormPagVen">
+        <Component class="javax.swing.JLabel" name="LblFormaPagamento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Forma de pagamento:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBFormPag">
+        <Component class="javax.swing.JComboBox" name="CBXFormaPagamento">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -324,25 +324,25 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBFormPagActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBXFormaPagamentoActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jDatGerenc">
+        <Component class="javax.swing.JLabel" name="LblData">
           <Properties>
             <Property name="text" type="java.lang.String" value="Data:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jTextFielddat">
+        <Component class="javax.swing.JFormattedTextField" name="Txtdata">
           <Properties>
             <Property name="text" type="java.lang.String" value="       /  /"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jClienVend">
+        <Component class="javax.swing.JLabel" name="LblCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cliente:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jCBClienVend">
+        <Component class="javax.swing.JComboBox" name="CBXCliente">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -378,31 +378,31 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.JLabel" name="jDescVend">
+    <Component class="javax.swing.JLabel" name="LblDesconto">
       <Properties>
         <Property name="text" type="java.lang.String" value="Desconto(%):"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTxtDesc">
+    <Component class="javax.swing.JTextField" name="TxtDesconto">
     </Component>
-    <Component class="javax.swing.JLabel" name="jValTotal">
+    <Component class="javax.swing.JLabel" name="LblValorTotal">
       <Properties>
         <Property name="text" type="java.lang.String" value="Valor Total:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTxtValorTot">
+    <Component class="javax.swing.JTextField" name="TxtValorTotal">
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnVolt">
+    <Component class="javax.swing.JButton" name="BtnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnCancel">
+    <Component class="javax.swing.JButton" name="BtnCancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jBtnFinal">
+    <Component class="javax.swing.JButton" name="BtnFinal">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finalizar Venda"/>
       </Properties>

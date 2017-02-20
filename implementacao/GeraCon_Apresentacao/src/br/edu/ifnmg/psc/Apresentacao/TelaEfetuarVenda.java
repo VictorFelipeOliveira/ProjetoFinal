@@ -28,26 +28,26 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanelEfeVend = new javax.swing.JPanel();
-        jProdVend = new javax.swing.JLabel();
-        jQuantVend = new javax.swing.JLabel();
-        jCBProdVend = new javax.swing.JComboBox();
-        jSpinQuantVend = new javax.swing.JSpinner();
-        jBtnAddGeren1 = new javax.swing.JButton();
+        LblProduto = new javax.swing.JLabel();
+        LblQuantidade = new javax.swing.JLabel();
+        CBXProduto = new javax.swing.JComboBox();
+        SpinQuantidade = new javax.swing.JSpinner();
+        BtnAdicionar = new javax.swing.JButton();
         jPanelDadosVend = new javax.swing.JPanel();
-        jFormPagVen = new javax.swing.JLabel();
-        jCBFormPag = new javax.swing.JComboBox();
-        jDatGerenc = new javax.swing.JLabel();
-        jTextFielddat = new javax.swing.JFormattedTextField();
-        jClienVend = new javax.swing.JLabel();
-        jCBClienVend = new javax.swing.JComboBox();
+        LblFormaPagamento = new javax.swing.JLabel();
+        CBXFormaPagamento = new javax.swing.JComboBox();
+        LblData = new javax.swing.JLabel();
+        Txtdata = new javax.swing.JFormattedTextField();
+        LblCliente = new javax.swing.JLabel();
+        CBXCliente = new javax.swing.JComboBox();
         jPanelCarrEfVend = new javax.swing.JPanel();
-        jDescVend = new javax.swing.JLabel();
-        jTxtDesc = new javax.swing.JTextField();
-        jValTotal = new javax.swing.JLabel();
-        jTxtValorTot = new javax.swing.JTextField();
-        jBtnVolt = new javax.swing.JButton();
-        jBtnCancel = new javax.swing.JButton();
-        jBtnFinal = new javax.swing.JButton();
+        LblDesconto = new javax.swing.JLabel();
+        TxtDesconto = new javax.swing.JTextField();
+        LblValorTotal = new javax.swing.JLabel();
+        TxtValorTotal = new javax.swing.JTextField();
+        BtnVoltar = new javax.swing.JButton();
+        BtnCancelar = new javax.swing.JButton();
+        BtnFinal = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuGerenciar = new javax.swing.JMenu();
         jFunc = new javax.swing.JMenuItem();
@@ -62,13 +62,13 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
 
         jPanelEfeVend.setBorder(javax.swing.BorderFactory.createTitledBorder("Efetuar Venda"));
 
-        jProdVend.setText("Produto:");
+        LblProduto.setText("Produto:");
 
-        jQuantVend.setText("Quantidade:");
+        LblQuantidade.setText("Quantidade:");
 
-        jCBProdVend.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXProduto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
 
-        jBtnAddGeren1.setText("Adicionar");
+        BtnAdicionar.setText("Adicionar");
 
         javax.swing.GroupLayout jPanelEfeVendLayout = new javax.swing.GroupLayout(jPanelEfeVend);
         jPanelEfeVend.setLayout(jPanelEfeVendLayout);
@@ -77,16 +77,16 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
             .addGroup(jPanelEfeVendLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelEfeVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBtnAddGeren1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelEfeVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanelEfeVendLayout.createSequentialGroup()
-                            .addComponent(jQuantVend, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jSpinQuantVend))
-                        .addComponent(jProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SpinQuantidade))
+                        .addComponent(LblProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanelEfeVendLayout.createSequentialGroup()
                             .addGap(108, 108, 108)
-                            .addComponent(jCBProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(CBXProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelEfeVendLayout.setVerticalGroup(
@@ -95,37 +95,37 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
                 .addGroup(jPanelEfeVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelEfeVendLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jCBProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CBXProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelEfeVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jQuantVend, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinQuantVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(LblQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SpinQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelEfeVendLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LblProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jBtnAddGeren1)
+                .addComponent(BtnAdicionar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanelDadosVend.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados da venda"));
 
-        jFormPagVen.setText("Forma de pagamento:");
+        LblFormaPagamento.setText("Forma de pagamento:");
 
-        jCBFormPag.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
-        jCBFormPag.addActionListener(new java.awt.event.ActionListener() {
+        CBXFormaPagamento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXFormaPagamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBFormPagActionPerformed(evt);
+                CBXFormaPagamentoActionPerformed(evt);
             }
         });
 
-        jDatGerenc.setText("Data:");
+        LblData.setText("Data:");
 
-        jTextFielddat.setText("       /  /");
+        Txtdata.setText("       /  /");
 
-        jClienVend.setText("Cliente:");
+        LblCliente.setText("Cliente:");
 
-        jCBClienVend.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
+        CBXCliente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanelDadosVendLayout = new javax.swing.GroupLayout(jPanelDadosVend);
         jPanelDadosVend.setLayout(jPanelDadosVendLayout);
@@ -135,19 +135,19 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDadosVendLayout.createSequentialGroup()
-                        .addComponent(jClienVend, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanelDadosVendLayout.createSequentialGroup()
                         .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelDadosVendLayout.createSequentialGroup()
-                                .addComponent(jDatGerenc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LblData, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(121, 121, 121))
-                            .addComponent(jFormPagVen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LblFormaPagamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFielddat, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCBClienVend, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCBFormPag, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CBXCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CBXFormaPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanelDadosVendLayout.setVerticalGroup(
@@ -155,16 +155,16 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
             .addGroup(jPanelDadosVendLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jDatGerenc, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFielddat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LblData, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormPagVen, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBFormPag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LblFormaPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBXFormaPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jClienVend, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBClienVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LblCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CBXCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -181,15 +181,15 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
             .addGap(0, 269, Short.MAX_VALUE)
         );
 
-        jDescVend.setText("Desconto(%):");
+        LblDesconto.setText("Desconto(%):");
 
-        jValTotal.setText("Valor Total:");
+        LblValorTotal.setText("Valor Total:");
 
-        jBtnVolt.setText("Voltar");
+        BtnVoltar.setText("Voltar");
 
-        jBtnCancel.setText("Cancelar");
+        BtnCancelar.setText("Cancelar");
 
-        jBtnFinal.setText("Finalizar Venda");
+        BtnFinal.setText("Finalizar Venda");
 
         MenuGerenciar.setText("Gerenciar");
 
@@ -239,19 +239,19 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanelCarrEfVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jDescVend, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LblDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(4, 4, 4)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTxtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TxtDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jValTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(LblValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jBtnFinal)
-                                    .addComponent(jTxtValorTot, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jBtnVolt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(BtnFinal)
+                                    .addComponent(TxtValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(97, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -262,10 +262,10 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
                         .addComponent(jPanelCarrEfVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jDescVend, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTxtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jValTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTxtValorTot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(LblDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LblValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanelEfeVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,54 +274,54 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnVolt))
+                        .addComponent(BtnVoltar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBtnFinal)
-                            .addComponent(jBtnCancel))))
+                            .addComponent(BtnFinal)
+                            .addComponent(BtnCancelar))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCBFormPagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBFormPagActionPerformed
+    private void CBXFormaPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBXFormaPagamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCBFormPagActionPerformed
+    }//GEN-LAST:event_CBXFormaPagamentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAdicionar;
+    private javax.swing.JButton BtnCancelar;
+    private javax.swing.JButton BtnFinal;
+    private javax.swing.JButton BtnVoltar;
+    private javax.swing.JComboBox CBXCliente;
+    private javax.swing.JComboBox CBXFormaPagamento;
+    private javax.swing.JComboBox CBXProduto;
+    private javax.swing.JLabel LblCliente;
+    private javax.swing.JLabel LblData;
+    private javax.swing.JLabel LblDesconto;
+    private javax.swing.JLabel LblFormaPagamento;
+    private javax.swing.JLabel LblProduto;
+    private javax.swing.JLabel LblQuantidade;
+    private javax.swing.JLabel LblValorTotal;
     private javax.swing.JMenu MenuGerenciar;
     private javax.swing.JMenu MenuRelatorios;
-    private javax.swing.JButton jBtnAddGeren1;
-    private javax.swing.JButton jBtnCancel;
-    private javax.swing.JButton jBtnFinal;
-    private javax.swing.JButton jBtnVolt;
-    private javax.swing.JComboBox jCBClienVend;
-    private javax.swing.JComboBox jCBFormPag;
-    private javax.swing.JComboBox jCBProdVend;
-    private javax.swing.JLabel jClienVend;
+    private javax.swing.JSpinner SpinQuantidade;
+    private javax.swing.JTextField TxtDesconto;
+    private javax.swing.JTextField TxtValorTotal;
+    private javax.swing.JFormattedTextField Txtdata;
     private javax.swing.JMenuItem jClient;
     private javax.swing.JMenuItem jComp;
-    private javax.swing.JLabel jDatGerenc;
-    private javax.swing.JLabel jDescVend;
     private javax.swing.JMenuItem jEntr;
     private javax.swing.JMenuItem jEstoq;
-    private javax.swing.JLabel jFormPagVen;
     private javax.swing.JMenuItem jFunc;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelCarrEfVend;
     private javax.swing.JPanel jPanelDadosVend;
     private javax.swing.JPanel jPanelEfeVend;
     private javax.swing.JMenuItem jProd;
-    private javax.swing.JLabel jProdVend;
-    private javax.swing.JLabel jQuantVend;
-    private javax.swing.JSpinner jSpinQuantVend;
-    private javax.swing.JFormattedTextField jTextFielddat;
-    private javax.swing.JTextField jTxtDesc;
-    private javax.swing.JTextField jTxtValorTot;
-    private javax.swing.JLabel jValTotal;
     private javax.swing.JMenuItem jVeic;
     private javax.swing.JMenuItem jVend;
     // End of variables declaration//GEN-END:variables
