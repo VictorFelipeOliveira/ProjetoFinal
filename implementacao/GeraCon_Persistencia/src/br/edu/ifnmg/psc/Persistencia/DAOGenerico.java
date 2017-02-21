@@ -58,30 +58,20 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
             if (obj.getId() == 0) {
                
                 PreparedStatement sql = conn.prepareStatement(getConsultaInserir());
-               
                 preencheConsulta(sql, obj);
-               
                 sql.executeUpdate();
-
                 PreparedStatement sql2 = conn.prepareStatement(getConsultaUltimoId());
-
                 preencheConsulta(sql2, obj);
-
-                
                 ResultSet resultado = sql2.executeQuery();
 
-                
                 if (resultado.next()) {
-
                     obj.setId( resultado.getInt(1) );
                 }
 
-            } else {
+            }else{
                 
                 PreparedStatement sql = conn.prepareStatement(getConsultaAlterar());
-
                 preencheConsulta(sql, obj);
-
                 sql.executeUpdate();
 
             }

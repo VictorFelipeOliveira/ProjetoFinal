@@ -2,14 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DAOGenerico.java</file>
             <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/UsuarioDAO.java</file>
             <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/ClienteDAO.java</file>
+            <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Persistencia/src/br/edu/ifnmg/psc/Persistencia/DB.java</file>
         </group>
->>>>>>> 726b3b54b2afa4c5a256dcd2635d6362d537381f
     </open-files>
 </project-private>

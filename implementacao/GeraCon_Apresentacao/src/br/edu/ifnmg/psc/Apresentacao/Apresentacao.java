@@ -13,27 +13,14 @@ import java.util.Scanner;
 public class Apresentacao {
 
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("1 - Cadastrar\n2 - Apagar\n3 - Atualizar\n4 - Buscar\n");
-        System.out.println("Informe a opção desejada: ");
-        int opcao = entrada.nextInt();
-        switch(opcao){
-            case 1: criar();
-                    break;
-            case 2: apagar();
-                    break;
-            case 3: atualizar();
-                    break;
-            case 4: buscar();
-                    break;
-            default: return;
-        }
+      criar();
     }
     
      public static void criar() {
-        Usuario usuario = new Usuario("admin","admin");
+        Usuario usuario = new Usuario("felipe","felipe");
         UsuarioRepositorio bd_usuario = new UsuarioDAO();
         bd_usuario.Salvar(usuario);
+        System.out.println("Usuario salvo!!!");
     }
     
     public static void buscar() {

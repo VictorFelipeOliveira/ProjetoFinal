@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/home/thais/sistemaPSC/ProjetoFinal/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaCadastroClientes.java</file>
-=======
             <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaPrincipal.java</file>
             <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaLogin.java</file>
             <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/Apresentacao.java</file>
             <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaCadastroClientes.java</file>
->>>>>>> 726b3b54b2afa4c5a256dcd2635d6362d537381f
+            <file>file:/home/victor/Documentos/Projetos/sistemaPSC/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/ListagemDeClientes.jrxml</file>
         </group>
     </open-files>
 </project-private>

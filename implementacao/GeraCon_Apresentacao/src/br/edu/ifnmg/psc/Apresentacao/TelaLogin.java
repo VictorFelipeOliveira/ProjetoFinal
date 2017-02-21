@@ -5,12 +5,18 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import br.edu.ifnmg.psc.Aplicacao.Usuario;
+import br.edu.ifnmg.psc.Aplicacao.UsuarioRepositorio;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author thais
  */
 public class TelaLogin extends javax.swing.JFrame {
 
+    UsuarioRepositorio dao = GerenciadorReferencias.getUsuario();
+    Usuario novo = new Usuario();
     /**
      * Creates new form TelaLogin
      */
@@ -27,41 +33,41 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonEntrar = new javax.swing.JButton();
-        jButtonCancelar = new javax.swing.JButton();
-        jLabelLogin = new javax.swing.JLabel();
-        jLabelSenha = new javax.swing.JLabel();
-        jTxtLogin = new javax.swing.JTextField();
-        jPasswordFieldSenha = new javax.swing.JPasswordField();
+        btnEntrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        lblLogin = new javax.swing.JLabel();
+        lblSenha = new javax.swing.JLabel();
+        txtLogin = new javax.swing.JTextField();
+        txtSenha = new javax.swing.JPasswordField();
         jLabelFundoLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButtonEntrar.setText("Entrar");
-        jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
+        btnEntrar.setText("Entrar");
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEntrarActionPerformed(evt);
+                btnEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEntrar);
-        jButtonEntrar.setBounds(340, 170, 90, 40);
+        getContentPane().add(btnEntrar);
+        btnEntrar.setBounds(280, 170, 90, 40);
 
-        jButtonCancelar.setText("Cancelar");
-        getContentPane().add(jButtonCancelar);
-        jButtonCancelar.setBounds(230, 170, 100, 40);
+        btnCancelar.setText("Cancelar");
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(150, 170, 100, 40);
 
-        jLabelLogin.setText("Login:");
-        getContentPane().add(jLabelLogin);
-        jLabelLogin.setBounds(180, 100, 49, 17);
+        lblLogin.setText("Login:");
+        getContentPane().add(lblLogin);
+        lblLogin.setBounds(100, 100, 49, 17);
 
-        jLabelSenha.setText("Senha:");
-        getContentPane().add(jLabelSenha);
-        jLabelSenha.setBounds(180, 130, 47, 17);
-        getContentPane().add(jTxtLogin);
-        jTxtLogin.setBounds(230, 100, 220, 27);
-        getContentPane().add(jPasswordFieldSenha);
-        jPasswordFieldSenha.setBounds(230, 130, 220, 27);
+        lblSenha.setText("Senha:");
+        getContentPane().add(lblSenha);
+        lblSenha.setBounds(100, 130, 47, 17);
+        getContentPane().add(txtLogin);
+        txtLogin.setBounds(150, 100, 220, 27);
+        getContentPane().add(txtSenha);
+        txtSenha.setBounds(150, 130, 220, 27);
 
         jLabelFundoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telaLogin.jpg"))); // NOI18N
         getContentPane().add(jLabelFundoLogin);
@@ -71,10 +77,17 @@ public class TelaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-       TelaPrincipal tela = new TelaPrincipal();
-       tela.setVisible(true);
-    }//GEN-LAST:event_jButtonEntrarActionPerformed
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+       this.extrairCampos();
+       
+       if(dao.VerificaLogin(novo.getLogin(), novo.getSenha())){
+            JOptionPane.showMessageDialog(rootPane,"Usuário: "+novo.getLogin()+""
+                    + " logado com sucesso");
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+            telaPrincipal.setVisible(true);
+            this.dispose();
+        }else JOptionPane.showMessageDialog(this,"O Usuário ou senha incorretos\nInforme os campos novamente");
+    }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,14 +123,29 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void extrairCampos() {
+       String login = txtLogin.getText().trim();
+       String senha = new String( txtSenha.getPassword());
+        
+        if( !login.equals("")){
+            novo.setLogin(login);
+        }
+      
+        if( !senha.equals("")){
+             novo.setSenha(senha);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JButton jButtonEntrar;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel jLabelFundoLogin;
-    private javax.swing.JLabel jLabelLogin;
-    private javax.swing.JLabel jLabelSenha;
-    private javax.swing.JPasswordField jPasswordFieldSenha;
-    private javax.swing.JTextField jTxtLogin;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblSenha;
+    private javax.swing.JTextField txtLogin;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
+
+    
 }
