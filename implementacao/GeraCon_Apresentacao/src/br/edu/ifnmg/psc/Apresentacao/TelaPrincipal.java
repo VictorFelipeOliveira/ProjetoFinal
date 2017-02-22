@@ -53,9 +53,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuGerenciar.add(menuItemFuncionario);
 
         menuItemClientes.setText("Clientes");
+        menuItemClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemClientesActionPerformed(evt);
+            }
+        });
         menuGerenciar.add(menuItemClientes);
 
         menuItemVendas.setText("Vendas");
+        menuItemVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemVendasActionPerformed(evt);
+            }
+        });
         menuGerenciar.add(menuItemVendas);
 
         menuItemProdutos.setText("Produtos");
@@ -111,8 +121,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemProdutosActionPerformed
 
     private void menuItemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFuncionarioActionPerformed
-      
+        TelaGerenciarFuncionarios telaFuncionarios = new TelaGerenciarFuncionarios();
+        this.add(telaFuncionarios);
+        telaFuncionarios.setVisible(true);
     }//GEN-LAST:event_menuItemFuncionarioActionPerformed
+
+    private void menuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemClientesActionPerformed
+        TelaGerenciarClientes telaClientes = new TelaGerenciarClientes();
+        this.add(telaClientes);
+        telaClientes.setVisible(true);
+    }//GEN-LAST:event_menuItemClientesActionPerformed
+
+    private void menuItemVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemVendasActionPerformed
+        TelaGerenciamentoVendas telaVendas = new TelaGerenciamentoVendas();
+        this.add(telaVendas);
+        telaVendas.setVisible(true);
+    }//GEN-LAST:event_menuItemVendasActionPerformed
 
     /**
      * @param args the command line arguments
