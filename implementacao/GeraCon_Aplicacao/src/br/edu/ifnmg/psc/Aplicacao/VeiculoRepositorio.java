@@ -11,5 +11,6 @@ package br.edu.ifnmg.psc.Aplicacao;
  */
 public interface VeiculoRepositorio extends Repositorio<Veiculo> {
     public Veiculo Abrir(String placa);
+    public boolean verificaVeiculo(String placa,int ano);
     
 }

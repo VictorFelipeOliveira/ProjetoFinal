@@ -54,6 +54,11 @@ public class TelaLogin extends javax.swing.JFrame {
         btnEntrar.setBounds(280, 170, 90, 40);
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCancelar);
         btnCancelar.setBounds(150, 170, 100, 40);
 
@@ -88,6 +93,10 @@ public class TelaLogin extends javax.swing.JFrame {
             this.dispose();
         }else JOptionPane.showMessageDialog(this,"O Usuário ou senha incorretos\nInforme os campos novamente");
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

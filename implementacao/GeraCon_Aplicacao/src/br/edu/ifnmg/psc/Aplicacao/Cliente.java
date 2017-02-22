@@ -21,8 +21,7 @@ public class Cliente extends Pessoa implements Entidade{
         this.codigo=0;
     }
 
-    public Cliente(int codigo, String descricao, String cpf, String rg) {
-        this.codigo = codigo;
+    public Cliente(String descricao, String cpf, String rg) {
         this.descricao = descricao;
         this.cpf = cpf;
         this.rg = rg;
