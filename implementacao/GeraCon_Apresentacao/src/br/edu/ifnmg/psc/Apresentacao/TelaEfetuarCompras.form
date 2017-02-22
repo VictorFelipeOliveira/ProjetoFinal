@@ -91,7 +91,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="BtnEncaminhar" min="-2" pref="155" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jPanelCarrGerenComp" min="-2" max="-2" attributes="0"/>
+                  <Component id="PanelCarrGerenComp" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
           </Group>
@@ -114,7 +114,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="jPanelCarrGerenComp" max="32767" attributes="0"/>
+                      <Component id="PanelCarrGerenComp" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -136,7 +136,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanelCarrGerenComp">
+    <Container class="javax.swing.JPanel" name="PanelCarrGerenComp">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">

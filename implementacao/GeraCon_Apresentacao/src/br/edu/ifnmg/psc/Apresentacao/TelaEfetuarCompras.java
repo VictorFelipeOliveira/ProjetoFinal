@@ -27,7 +27,7 @@ public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelCarrGerenComp = new javax.swing.JPanel();
+        PanelCarrGerenComp = new javax.swing.JPanel();
         PanelDadosCompra = new javax.swing.JPanel();
         LblForncedor = new javax.swing.JLabel();
         CBXFornecedor = new javax.swing.JComboBox();
@@ -54,16 +54,16 @@ public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
         jVeic = new javax.swing.JMenuItem();
         MenuRelatorios = new javax.swing.JMenu();
 
-        jPanelCarrGerenComp.setBorder(javax.swing.BorderFactory.createTitledBorder("Carrinho de compras"));
+        PanelCarrGerenComp.setBorder(javax.swing.BorderFactory.createTitledBorder("Carrinho de compras"));
 
-        javax.swing.GroupLayout jPanelCarrGerenCompLayout = new javax.swing.GroupLayout(jPanelCarrGerenComp);
-        jPanelCarrGerenComp.setLayout(jPanelCarrGerenCompLayout);
-        jPanelCarrGerenCompLayout.setHorizontalGroup(
-            jPanelCarrGerenCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PanelCarrGerenCompLayout = new javax.swing.GroupLayout(PanelCarrGerenComp);
+        PanelCarrGerenComp.setLayout(PanelCarrGerenCompLayout);
+        PanelCarrGerenCompLayout.setHorizontalGroup(
+            PanelCarrGerenCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 386, Short.MAX_VALUE)
         );
-        jPanelCarrGerenCompLayout.setVerticalGroup(
-            jPanelCarrGerenCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PanelCarrGerenCompLayout.setVerticalGroup(
+            PanelCarrGerenCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -213,7 +213,7 @@ public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
                         .addComponent(BtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnEncaminhar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanelCarrGerenComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PanelCarrGerenComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -230,7 +230,7 @@ public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
                         .addComponent(PanelDadosCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jPanelCarrGerenComp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(PanelCarrGerenComp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnVoltar)
@@ -265,6 +265,7 @@ public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LblQuantidade;
     private javax.swing.JMenu MenuGerenciar;
     private javax.swing.JMenu MenuRelatorios;
+    private javax.swing.JPanel PanelCarrGerenComp;
     private javax.swing.JPanel PanelCompras;
     private javax.swing.JPanel PanelDadosCompra;
     private javax.swing.JSpinner SpinnerQuantidade;
@@ -275,7 +276,6 @@ public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
     private javax.swing.JMenuItem jEstoq;
     private javax.swing.JMenuItem jFunc;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanelCarrGerenComp;
     private javax.swing.JMenuItem jProd;
     private javax.swing.JMenuItem jVeic;
     private javax.swing.JMenuItem jVend;
