@@ -11,5 +11,6 @@ package br.edu.ifnmg.psc.Aplicacao;
  */
 public interface UsuarioRepositorio extends Repositorio<Usuario> {
     public Usuario Abrir(String login);
+    public boolean VerificaLogin(String login, String senha);
     
 }

@@ -7,13 +7,9 @@ package br.edu.ifnmg.psc.Persistencia;
 
 import br.edu.ifnmg.psc.Aplicacao.Cliente;
 import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  *
@@ -22,16 +18,23 @@ import java.util.List;
 public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteRepositorio{
 
     public ClienteDAO(){
-        setConsultaAbrir("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
-                + " cidade, complemento from Clientes where codigo = ?");
+      
+        setConsultaAbrir("select descricao, cpf, rg, pessoas_fk from Clientes where codigo = ?");
+        setConsultaAbrir("select nome, telefone, email, rua, bairro, cidade, "
+                + "complemento, numero from Pessoas where codigo = pessoas_fk");
+        
         setConsultaApagar("delete from clientes where codigo = ?");
-        setConsultaInserir("insert into clientes (nome, telefone, email, descricao, cpf, rg, rua, bairro,"
-                + " cidade, complemento) values (?, ?, ? , ?, ?, ?, ?, ?, ?, ?)");
+        
+        setConsultaInserir("insert into Pessoas (nome, telefone, email, rua, bairro, cidade, "
+                + "complemento, numero) values (?, ?, ?, ?, ?, ?, ?, ?)");
+        setConsultaInserir("insert into Clientes (descricao, cpf, rg, pessoas_fk) values (?, ?, ?, (select LAST_INSERT_ID()))");
+       
+        
         setConsultaAlterar("update clientes set nome = ?, telefone = ?, email = ?, descricao = ?, cpf = ?, "
                 + "rg = ?, rua = ?, bairro = ?, cidade = ?, complemento = ? where codigo = ?");
         setConsultaBusca("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
-                + " cidade, complemento from Clientes");
-        setConsultaUltimoId("select max(codigo) from Clientes where nome = ?, and cpf = ? and rg = ?");
+                + " cidade, complemento, numero from Clientes");
+        setConsultaUltimoId("select max(codigo) from Clientes where codigo = ?, and cpf = ? and rg = ?");
     }
     
     @Override
@@ -60,7 +63,6 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
     @Override
     protected void preencheConsulta(PreparedStatement sql, Cliente cliente) {
         try{
-            
             sql.setString(1,  cliente.getNome() );
             sql.setString(2,  cliente.getCpf());
             sql.setString(3,  cliente.getDescricao());
@@ -107,7 +109,7 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
         try {
             
             PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
-                + " cidade, complemento from Clientes where codigo = ?");
+                + " cidade, complemento, numero from Clientes where codigo = ?");
             
             
             sql.setString(1, cpf);
@@ -125,5 +127,4 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
         return null;
     }
     
-       
 }

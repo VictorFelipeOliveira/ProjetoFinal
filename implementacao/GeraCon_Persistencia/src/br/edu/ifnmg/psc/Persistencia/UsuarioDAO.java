@@ -20,12 +20,12 @@ import java.sql.SQLException;
 public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepositorio{
 
     public UsuarioDAO() {
-        setConsultaAbrir("select id, login, senha from Usuario where id = ?");
-        setConsultaApagar("delete from usuario where id = ?");
-        setConsultaInserir("insert into usuario(login, senha) values (?, ?)");
-        setConsultaAlterar("update usuario set login = ?, senha = ? where id = ?");
-        setConsultaBusca("select id, login, senha from usuarios");
-        setConsultaUltimoId("select max(id) from usuarios  where login = ? and senha = ?");
+        setConsultaAbrir("select id, login, senha from Usuarios where id = ?");
+        setConsultaApagar("delete from Usuarios where id = ?");
+        setConsultaInserir("insert into Usuarios(login, senha) values (?, ?)");
+        setConsultaAlterar("update Usuarios set login = ?, senha = ? where id = ?");
+        setConsultaBusca("select id, login, senha from Usuarios");
+        setConsultaUltimoId("select max(id) from Usuarios  where login = ? and senha = ?");
     }
 
     @Override
@@ -86,20 +86,35 @@ public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepositor
         try {
             
             PreparedStatement sql = conn.prepareStatement("select id,login,senha from usuarios where login = ?");
-           
             sql.setString(1,login);
-            
             ResultSet resultado = sql.executeQuery();
-            
+           
             if(resultado.next()){
-            
                 return preencheObjeto(resultado);
-            }            
+            }
+            
         }  catch(SQLException ex){
             ex.printStackTrace();
         }
         
         return null;
+    }
+
+    @Override
+    public boolean VerificaLogin(String login, String senha) {
+        try {
+            PreparedStatement sql = conn.prepareStatement("select id from Usuarios where login = ? AND senha = ?");
+            sql.setString(1, login);
+            sql.setString(2, senha);
+            ResultSet resultado = sql.executeQuery();
+            if(resultado.next()){
+                return true ;
+            }else
+                return false;
+        } catch (SQLException ex) {
+           System.out.println(ex);
+        }
+        return false;
     }
     
 }

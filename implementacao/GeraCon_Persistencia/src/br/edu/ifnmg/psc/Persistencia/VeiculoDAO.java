@@ -106,5 +106,22 @@ public class VeiculoDAO extends DAOGenerico<Veiculo> implements VeiculoRepositor
         }
         return null;
     }
+
+    @Override
+    public boolean verificaVeiculo(String placa, int ano) {
+        try {
+            PreparedStatement sql = conn.prepareStatement("select id from Veiculos where placa = ? AND ano = ?");
+            sql.setString(1, placa);
+            sql.setInt(2, ano);
+            ResultSet resultado = sql.executeQuery();
+            if(resultado.next()){
+                return true ;
+            }else
+                return false;
+        } catch (SQLException ex) {
+           System.out.println(ex);
+        }
+        return false;
+    }
     
 }

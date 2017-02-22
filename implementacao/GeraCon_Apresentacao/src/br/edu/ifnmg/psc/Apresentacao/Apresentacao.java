@@ -6,44 +6,44 @@ import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.Usuario;
 import br.edu.ifnmg.psc.Aplicacao.UsuarioRepositorio;
 import br.edu.ifnmg.psc.Persistencia.UsuarioDAO;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Apresentacao {
 
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("1 - Cadastrar\n2 - Apagar\n3 - Atualizar\n4 - Buscar\n");
-        System.out.println("Informe a opção desejada: ");
-        int opcao = entrada.nextInt();
-        switch(opcao){
-            case 1: criar();
-                    break;
-            case 2: apagar();
-                    break;
-            case 3: atualizar();
-                    break;
-            case 4: buscar();
-                    break;
-            default: return;
-        }
+      criar();
     }
     
      public static void criar() {
-        Usuario usuario = new Usuario("admin","admin");
-        UsuarioRepositorio bd_usuario = new UsuarioDAO();
-        bd_usuario.Salvar(usuario);
+        Cliente cliente = new Cliente();
+        ClienteRepositorio bd_cliente = new ClienteDAO();
+        
+        cliente.setNome("Victor");
+        cliente.setEmail("victorfelipe1608@gmail.com");
+        cliente.setCpf("12686566663");
+        cliente.setRg("MG-19.024.107");
+        cliente.setDescricao("Filho de Armando");
+        cliente.setTelefone("38998570754");
+        cliente.setBairro("São Lucas");
+        cliente.setCidade("São Francisco");
+        cliente.setRua("AV. Oscar Caetano");
+        cliente.setNumero(2917);
+        cliente.setComplemento("nenhum");
+        
+        if(bd_cliente.Salvar(cliente))
+         JOptionPane.showMessageDialog(null,"Cliente: "+cliente.getNome()+" cadastrado"
+                 + " com sucesso!!! ");
+        else System.out.println("Nao salvo");
     }
     
     public static void buscar() {
         Usuario filtro = new Usuario();
         UsuarioRepositorio bd_usuario = new UsuarioDAO();
         
-        List<Usuario> resultadobusca = bd_usuario.Buscar(filtro);
+       // List<Usuario> resultadobusca = bd_usuario.Buscar(filtro);
         
-        for(Usuario usuario : resultadobusca)
-            System.out.println(usuario);
+   //     for(Usuario usuario : resultadobusca)
+   //         System.out.println(usuario);
     }
     
     
