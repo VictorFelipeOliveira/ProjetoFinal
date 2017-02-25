@@ -9,12 +9,12 @@ package br.edu.ifnmg.psc.Apresentacao;
  *
  * @author thais
  */
-public class TelaGerenciarEstoque extends javax.swing.JInternalFrame {
+public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form TelaGerenciarEstoque
      */
-    public TelaGerenciarEstoque() {
+    public TelaGerenciarProduto() {
         initComponents();
     }
 
@@ -27,7 +27,7 @@ public class TelaGerenciarEstoque extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PanelGerencEstoque = new javax.swing.JPanel();
+        PanelGerencProduto = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         PanelBuscar = new javax.swing.JPanel();
@@ -50,7 +50,7 @@ public class TelaGerenciarEstoque extends javax.swing.JInternalFrame {
         MenuRelatorios = new javax.swing.JMenu();
         MenuAjuda = new javax.swing.JMenu();
 
-        PanelGerencEstoque.setBorder(javax.swing.BorderFactory.createTitledBorder("Gerenciamento de estoque"));
+        PanelGerencProduto.setBorder(javax.swing.BorderFactory.createTitledBorder("Gerenciamento de produtos"));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,18 +77,18 @@ public class TelaGerenciarEstoque extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout PanelGerencEstoqueLayout = new javax.swing.GroupLayout(PanelGerencEstoque);
-        PanelGerencEstoque.setLayout(PanelGerencEstoqueLayout);
-        PanelGerencEstoqueLayout.setHorizontalGroup(
-            PanelGerencEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGerencEstoqueLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelGerencProdutoLayout = new javax.swing.GroupLayout(PanelGerencProduto);
+        PanelGerencProduto.setLayout(PanelGerencProdutoLayout);
+        PanelGerencProdutoLayout.setHorizontalGroup(
+            PanelGerencProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGerencProdutoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        PanelGerencEstoqueLayout.setVerticalGroup(
-            PanelGerencEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelGerencEstoqueLayout.createSequentialGroup()
+        PanelGerencProdutoLayout.setVerticalGroup(
+            PanelGerencProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelGerencProdutoLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 15, Short.MAX_VALUE))
         );
@@ -192,7 +192,7 @@ public class TelaGerenciarEstoque extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PanelGerencEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelGerencProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -217,8 +217,8 @@ public class TelaGerenciarEstoque extends javax.swing.JInternalFrame {
                         .addComponent(BtonVoltar))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(PanelGerencEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(PanelGerencProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -244,7 +244,7 @@ public class TelaGerenciarEstoque extends javax.swing.JInternalFrame {
     private javax.swing.JMenu MenuRelatorios;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelFuncionalidades;
-    private javax.swing.JPanel PanelGerencEstoque;
+    private javax.swing.JPanel PanelGerencProduto;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

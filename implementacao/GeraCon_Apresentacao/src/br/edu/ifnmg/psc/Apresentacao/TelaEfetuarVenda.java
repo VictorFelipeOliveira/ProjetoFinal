@@ -87,7 +87,7 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
                         .addGroup(jPanelEfeVendLayout.createSequentialGroup()
                             .addGap(108, 108, 108)
                             .addComponent(CBXProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanelEfeVendLayout.setVerticalGroup(
             jPanelEfeVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,10 +144,10 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
                                 .addGap(121, 121, 121))
                             .addComponent(LblFormaPagamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelDadosVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Txtdata, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CBXCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CBXFormaPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(CBXFormaPagamento, 0, 203, Short.MAX_VALUE)
+                            .addComponent(CBXCliente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanelDadosVendLayout.setVerticalGroup(
