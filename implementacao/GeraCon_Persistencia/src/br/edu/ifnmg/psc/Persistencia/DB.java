@@ -19,6 +19,6 @@ public class DB {
     }
     
     public static Connection criarConexao() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost/sistemaPSC","root","root");
+        return DriverManager.getConnection("jdbc:mysql://localhost/sistemaPSC","root","123");
     }
 }

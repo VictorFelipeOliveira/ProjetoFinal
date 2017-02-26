@@ -40,15 +40,14 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         BtnVoltar = new javax.swing.JButton();
         BtnSalvar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jGerenc = new javax.swing.JMenu();
-        jFunc = new javax.swing.JMenuItem();
-        jClient = new javax.swing.JMenuItem();
-        jVend = new javax.swing.JMenuItem();
-        jProd = new javax.swing.JMenuItem();
-        jComp = new javax.swing.JMenuItem();
-        jEstoq = new javax.swing.JMenuItem();
-        jEntr = new javax.swing.JMenuItem();
-        jVeic = new javax.swing.JMenuItem();
+        MenuGerenciar = new javax.swing.JMenu();
+        MenuItemFuncionarios = new javax.swing.JMenuItem();
+        MenuItemClientes = new javax.swing.JMenuItem();
+        MenuItemVendas = new javax.swing.JMenuItem();
+        MenuItemProdutos = new javax.swing.JMenuItem();
+        MenuItemCompras = new javax.swing.JMenuItem();
+        MenuItemEntregas = new javax.swing.JMenuItem();
+        MenuItemVeiculos = new javax.swing.JMenuItem();
         jRelat = new javax.swing.JMenu();
 
         PanelCadastro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Produtos"));
@@ -136,33 +135,65 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
 
         BtnSalvar.setText("Salvar");
 
-        jGerenc.setText("Gerenciar");
+        MenuGerenciar.setText("Gerenciar");
 
-        jFunc.setText("Funcionários");
-        jGerenc.add(jFunc);
+        MenuItemFuncionarios.setText("Funcionários");
+        MenuItemFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemFuncionariosActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemFuncionarios);
 
-        jClient.setText("Clientes");
-        jGerenc.add(jClient);
+        MenuItemClientes.setText("Clientes");
+        MenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemClientesActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemClientes);
 
-        jVend.setText("Vendas");
-        jGerenc.add(jVend);
+        MenuItemVendas.setText("Vendas");
+        MenuItemVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemVendasActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemVendas);
 
-        jProd.setText("Produtos");
-        jGerenc.add(jProd);
+        MenuItemProdutos.setText("Produtos");
+        MenuItemProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemProdutosActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemProdutos);
 
-        jComp.setText("Compras");
-        jGerenc.add(jComp);
+        MenuItemCompras.setText("Compras");
+        MenuItemCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemComprasActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemCompras);
 
-        jEstoq.setText("Estoque");
-        jGerenc.add(jEstoq);
+        MenuItemEntregas.setText("Entregas");
+        MenuItemEntregas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemEntregasActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemEntregas);
 
-        jEntr.setText("Entregas");
-        jGerenc.add(jEntr);
+        MenuItemVeiculos.setText("Veículos");
+        MenuItemVeiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemVeiculosActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemVeiculos);
 
-        jVeic.setText("Veículos");
-        jGerenc.add(jVeic);
-
-        jMenuBar1.add(jGerenc);
+        jMenuBar1.add(MenuGerenciar);
 
         jRelat.setText("Relatórios");
         jMenuBar1.add(jRelat);
@@ -206,6 +237,48 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CBXFornecedorActionPerformed
 
+    private void MenuItemProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemProdutosActionPerformed
+       TelaGerenciarProduto telaProduto = new TelaGerenciarProduto();
+        this.add(telaProduto);
+        telaProduto.setVisible(true);
+    }//GEN-LAST:event_MenuItemProdutosActionPerformed
+
+    private void MenuItemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemFuncionariosActionPerformed
+        TelaGerenciarFuncionarios telaFuncionarios = new TelaGerenciarFuncionarios();
+        this.add(telaFuncionarios);
+        telaFuncionarios.setVisible(true);
+    }//GEN-LAST:event_MenuItemFuncionariosActionPerformed
+
+    private void MenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemClientesActionPerformed
+        TelaGerenciarClientes telaClientes = new TelaGerenciarClientes();
+        this.add(telaClientes);
+        telaClientes.setVisible(true);
+    }//GEN-LAST:event_MenuItemClientesActionPerformed
+
+    private void MenuItemVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVendasActionPerformed
+         TelaGerenciamentoVendas telaVendas = new TelaGerenciamentoVendas();
+        this.add(telaVendas);
+        telaVendas.setVisible(true);
+    }//GEN-LAST:event_MenuItemVendasActionPerformed
+
+    private void MenuItemComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemComprasActionPerformed
+       TelaEfetuarCompras telaCompras = new TelaEfetuarCompras();
+        this.add(telaCompras);
+        telaCompras.setVisible(true);
+    }//GEN-LAST:event_MenuItemComprasActionPerformed
+
+    private void MenuItemEntregasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemEntregasActionPerformed
+        TelaEfetuarEntrega telaEntregas = new TelaEfetuarEntrega();
+        this.add(telaEntregas);
+        telaEntregas.setVisible(true);
+    }//GEN-LAST:event_MenuItemEntregasActionPerformed
+
+    private void MenuItemVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVeiculosActionPerformed
+        TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
+        this.add(telaVeiculos);
+        telaVeiculos.setVisible(true);
+    }//GEN-LAST:event_MenuItemVeiculosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnSalvar;
@@ -215,21 +288,20 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LblDescricao;
     private javax.swing.JLabel LblFornecedor;
     private javax.swing.JLabel LblPrecoUnitario;
+    private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenuItem MenuItemClientes;
+    private javax.swing.JMenuItem MenuItemCompras;
+    private javax.swing.JMenuItem MenuItemEntregas;
+    private javax.swing.JMenuItem MenuItemFuncionarios;
+    private javax.swing.JMenuItem MenuItemProdutos;
+    private javax.swing.JMenuItem MenuItemVeiculos;
+    private javax.swing.JMenuItem MenuItemVendas;
     private javax.swing.JPanel PanelCadastro;
     private javax.swing.JTextField TxtCodigo;
     private javax.swing.JTextField TxtDescricao;
     private javax.swing.JTextField TxtPrecoUnitario;
     private javax.swing.JLabel jCatProd;
-    private javax.swing.JMenuItem jClient;
-    private javax.swing.JMenuItem jComp;
-    private javax.swing.JMenuItem jEntr;
-    private javax.swing.JMenuItem jEstoq;
-    private javax.swing.JMenuItem jFunc;
-    private javax.swing.JMenu jGerenc;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jProd;
     private javax.swing.JMenu jRelat;
-    private javax.swing.JMenuItem jVeic;
-    private javax.swing.JMenuItem jVend;
     // End of variables declaration//GEN-END:variables
 }

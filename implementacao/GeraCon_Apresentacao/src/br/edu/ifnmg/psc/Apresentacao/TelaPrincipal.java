@@ -43,13 +43,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         BtnAbrirFechar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuGerenciar = new javax.swing.JMenu();
-        menuItemFuncionario = new javax.swing.JMenuItem();
+        menuItemFuncionarios = new javax.swing.JMenuItem();
         menuItemClientes = new javax.swing.JMenuItem();
         menuItemVendas = new javax.swing.JMenuItem();
         menuItemProdutos = new javax.swing.JMenuItem();
         MenuItemCompras = new javax.swing.JMenuItem();
         MenuItemEntrega = new javax.swing.JMenuItem();
-        jMenuItemVeiculo = new javax.swing.JMenuItem();
+        MenuItemVeiculo = new javax.swing.JMenuItem();
         menuRelatorios = new javax.swing.JMenu();
         menuRelatorioVendas = new javax.swing.JMenuItem();
 
@@ -160,13 +160,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuGerenciar.setText("Gerenciar");
 
-        menuItemFuncionario.setText("Funcionários");
-        menuItemFuncionario.addActionListener(new java.awt.event.ActionListener() {
+        menuItemFuncionarios.setText("Funcionários");
+        menuItemFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemFuncionarioActionPerformed(evt);
+                menuItemFuncionariosActionPerformed(evt);
             }
         });
-        menuGerenciar.add(menuItemFuncionario);
+        menuGerenciar.add(menuItemFuncionarios);
 
         menuItemClientes.setText("Clientes");
         menuItemClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -208,13 +208,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menuGerenciar.add(MenuItemEntrega);
 
-        jMenuItemVeiculo.setText("Veículos");
-        jMenuItemVeiculo.addActionListener(new java.awt.event.ActionListener() {
+        MenuItemVeiculo.setText("Veículos");
+        MenuItemVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemVeiculoActionPerformed(evt);
+                MenuItemVeiculoActionPerformed(evt);
             }
         });
-        menuGerenciar.add(jMenuItemVeiculo);
+        menuGerenciar.add(MenuItemVeiculo);
 
         jMenuBar1.add(menuGerenciar);
 
@@ -277,11 +277,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaProduto.setVisible(true);
     }//GEN-LAST:event_menuItemProdutosActionPerformed
 
-    private void menuItemFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFuncionarioActionPerformed
+    private void menuItemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFuncionariosActionPerformed
         TelaGerenciarFuncionarios telaFuncionarios = new TelaGerenciarFuncionarios();
         this.add(telaFuncionarios);
         telaFuncionarios.setVisible(true);
-    }//GEN-LAST:event_menuItemFuncionarioActionPerformed
+    }//GEN-LAST:event_menuItemFuncionariosActionPerformed
 
     private void menuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemClientesActionPerformed
         TelaGerenciarClientes telaClientes = new TelaGerenciarClientes();
@@ -332,11 +332,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                      
     }//GEN-LAST:event_MenuItemEntregaActionPerformed
 
-    private void jMenuItemVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVeiculoActionPerformed
-       TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
+    private void MenuItemVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVeiculoActionPerformed
+        TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
         this.add(telaVeiculos);
         telaVeiculos.setVisible(true);
-    }//GEN-LAST:event_jMenuItemVeiculoActionPerformed
+    }//GEN-LAST:event_MenuItemVeiculoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,16 +385,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LblUsuarioLogado;
     private javax.swing.JMenuItem MenuItemCompras;
     private javax.swing.JMenuItem MenuItemEntrega;
+    private javax.swing.JMenuItem MenuItemVeiculo;
     private javax.swing.JPanel PanelCaixa;
     private javax.swing.JPanel PanelDadosUsuario;
     private javax.swing.JTextField TxtFuncao;
     private javax.swing.JTextField TxtStatus;
     private javax.swing.JTextField TxtUsuarioLogado;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItemVeiculo;
     private javax.swing.JMenu menuGerenciar;
     private javax.swing.JMenuItem menuItemClientes;
-    private javax.swing.JMenuItem menuItemFuncionario;
+    private javax.swing.JMenuItem menuItemFuncionarios;
     private javax.swing.JMenuItem menuItemProdutos;
     private javax.swing.JMenuItem menuItemVendas;
     private javax.swing.JMenuItem menuRelatorioVendas;

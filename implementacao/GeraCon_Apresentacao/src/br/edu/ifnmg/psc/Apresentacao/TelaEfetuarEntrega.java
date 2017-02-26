@@ -50,14 +50,13 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
         BtnSalvar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuGerenciar = new javax.swing.JMenu();
-        MtemFuncionarios = new javax.swing.JMenuItem();
-        MItemClientes = new javax.swing.JMenuItem();
-        MItemVendas = new javax.swing.JMenuItem();
-        MItemProdutos = new javax.swing.JMenuItem();
-        MItemCompras = new javax.swing.JMenuItem();
-        MtemEstoque = new javax.swing.JMenuItem();
-        MItemEntregas = new javax.swing.JMenuItem();
-        MItemVeiculos = new javax.swing.JMenuItem();
+        MenutemFuncionarios = new javax.swing.JMenuItem();
+        MenuItemClientes = new javax.swing.JMenuItem();
+        MenuItemVendas = new javax.swing.JMenuItem();
+        MenuItemProdutos = new javax.swing.JMenuItem();
+        MenuItemCompras = new javax.swing.JMenuItem();
+        MenuItemEntregas = new javax.swing.JMenuItem();
+        MenuItemVeiculos = new javax.swing.JMenuItem();
         MenuRelatorios = new javax.swing.JMenu();
         MenuAjuda = new javax.swing.JMenu();
 
@@ -185,29 +184,61 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
 
         MenuGerenciar.setText("Gerenciar");
 
-        MtemFuncionarios.setText("Funcionários");
-        MenuGerenciar.add(MtemFuncionarios);
+        MenutemFuncionarios.setText("Funcionários");
+        MenutemFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenutemFuncionariosActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenutemFuncionarios);
 
-        MItemClientes.setText("Clientes");
-        MenuGerenciar.add(MItemClientes);
+        MenuItemClientes.setText("Clientes");
+        MenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemClientesActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemClientes);
 
-        MItemVendas.setText("Vendas");
-        MenuGerenciar.add(MItemVendas);
+        MenuItemVendas.setText("Vendas");
+        MenuItemVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemVendasActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemVendas);
 
-        MItemProdutos.setText("Produtos");
-        MenuGerenciar.add(MItemProdutos);
+        MenuItemProdutos.setText("Produtos");
+        MenuItemProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemProdutosActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemProdutos);
 
-        MItemCompras.setText("Compras");
-        MenuGerenciar.add(MItemCompras);
+        MenuItemCompras.setText("Compras");
+        MenuItemCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemComprasActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemCompras);
 
-        MtemEstoque.setText("Estoque");
-        MenuGerenciar.add(MtemEstoque);
+        MenuItemEntregas.setText("Entregas");
+        MenuItemEntregas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemEntregasActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemEntregas);
 
-        MItemEntregas.setText("Entregas");
-        MenuGerenciar.add(MItemEntregas);
-
-        MItemVeiculos.setText("Veículos");
-        MenuGerenciar.add(MItemVeiculos);
+        MenuItemVeiculos.setText("Veículos");
+        MenuItemVeiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemVeiculosActionPerformed(evt);
+            }
+        });
+        MenuGerenciar.add(MenuItemVeiculos);
 
         jMenuBar1.add(MenuGerenciar);
 
@@ -263,6 +294,48 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CBXVeiculoActionPerformed
 
+    private void MenuItemProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemProdutosActionPerformed
+        TelaGerenciarProduto telaProduto = new TelaGerenciarProduto();
+        this.add(telaProduto);
+        telaProduto.setVisible(true);
+    }//GEN-LAST:event_MenuItemProdutosActionPerformed
+
+    private void MenutemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenutemFuncionariosActionPerformed
+        TelaGerenciarFuncionarios telaFuncionarios = new TelaGerenciarFuncionarios();
+        this.add(telaFuncionarios);
+        telaFuncionarios.setVisible(true);
+    }//GEN-LAST:event_MenutemFuncionariosActionPerformed
+
+    private void MenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemClientesActionPerformed
+         TelaGerenciarClientes telaClientes = new TelaGerenciarClientes();
+        this.add(telaClientes);
+        telaClientes.setVisible(true);
+    }//GEN-LAST:event_MenuItemClientesActionPerformed
+
+    private void MenuItemVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVendasActionPerformed
+       TelaGerenciamentoVendas telaVendas = new TelaGerenciamentoVendas();
+        this.add(telaVendas);
+        telaVendas.setVisible(true);
+    }//GEN-LAST:event_MenuItemVendasActionPerformed
+
+    private void MenuItemComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemComprasActionPerformed
+        TelaEfetuarCompras telaCompras = new TelaEfetuarCompras();
+        this.add(telaCompras);
+        telaCompras.setVisible(true);
+    }//GEN-LAST:event_MenuItemComprasActionPerformed
+
+    private void MenuItemEntregasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemEntregasActionPerformed
+       TelaEfetuarEntrega telaEntregas = new TelaEfetuarEntrega();
+        this.add(telaEntregas);
+        telaEntregas.setVisible(true);
+    }//GEN-LAST:event_MenuItemEntregasActionPerformed
+
+    private void MenuItemVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVeiculosActionPerformed
+        TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
+        this.add(telaVeiculos);
+        telaVeiculos.setVisible(true);
+    }//GEN-LAST:event_MenuItemVeiculosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;
@@ -279,17 +352,16 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LblNumero;
     private javax.swing.JLabel LblRua;
     private javax.swing.JLabel LblVeiculo;
-    private javax.swing.JMenuItem MItemClientes;
-    private javax.swing.JMenuItem MItemCompras;
-    private javax.swing.JMenuItem MItemEntregas;
-    private javax.swing.JMenuItem MItemProdutos;
-    private javax.swing.JMenuItem MItemVeiculos;
-    private javax.swing.JMenuItem MItemVendas;
     private javax.swing.JMenu MenuAjuda;
     private javax.swing.JMenu MenuGerenciar;
+    private javax.swing.JMenuItem MenuItemClientes;
+    private javax.swing.JMenuItem MenuItemCompras;
+    private javax.swing.JMenuItem MenuItemEntregas;
+    private javax.swing.JMenuItem MenuItemProdutos;
+    private javax.swing.JMenuItem MenuItemVeiculos;
+    private javax.swing.JMenuItem MenuItemVendas;
     private javax.swing.JMenu MenuRelatorios;
-    private javax.swing.JMenuItem MtemEstoque;
-    private javax.swing.JMenuItem MtemFuncionarios;
+    private javax.swing.JMenuItem MenutemFuncionarios;
     private javax.swing.JPanel PanelDadosEntrega;
     private javax.swing.JPanel PanelEfetuarEntrega;
     private javax.swing.JTextField TxtBairro;
