@@ -18,7 +18,6 @@ import br.edu.ifnmg.psc.Persistencia.FornecedorDAO;
 import br.edu.ifnmg.psc.Persistencia.FuncionarioDAO;
 import br.edu.ifnmg.psc.Persistencia.UsuarioDAO;
 import br.edu.ifnmg.psc.Persistencia.VeiculoDAO;
-import org.apache.xmlbeans.impl.inst2xsd.VenetianBlindStrategy;
 
 /**
  *
