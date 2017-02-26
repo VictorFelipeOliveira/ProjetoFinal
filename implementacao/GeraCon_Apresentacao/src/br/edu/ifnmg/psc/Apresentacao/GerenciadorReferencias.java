@@ -7,18 +7,15 @@ package br.edu.ifnmg.psc.Apresentacao;
 
 import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.CompraRepositorio;
-import br.edu.ifnmg.psc.Aplicacao.Fornecedor;
 import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.FuncionarioRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.UsuarioRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.VeiculoRepositorio;
 import br.edu.ifnmg.psc.Persistencia.ClienteDAO;
-import br.edu.ifnmg.psc.Persistencia.CompraDAO;
 import br.edu.ifnmg.psc.Persistencia.FornecedorDAO;
 import br.edu.ifnmg.psc.Persistencia.FuncionarioDAO;
 import br.edu.ifnmg.psc.Persistencia.UsuarioDAO;
 import br.edu.ifnmg.psc.Persistencia.VeiculoDAO;
-import org.apache.xmlbeans.impl.inst2xsd.VenetianBlindStrategy;
 
 /**
  *
