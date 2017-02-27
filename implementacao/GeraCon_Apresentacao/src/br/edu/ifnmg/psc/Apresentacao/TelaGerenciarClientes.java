@@ -14,7 +14,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
     /**
      * Creates new form TelaGerenciarClientes
      */
-    public TelaGerenciarClientes() {
+    public TelaGerenciarClientes(){
         initComponents();
     }
 
@@ -36,17 +36,8 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
         btnAlterar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        MenuGerenciar = new javax.swing.JMenu();
-        MIenutemFuncionarios = new javax.swing.JMenuItem();
-        MenuItemClientes = new javax.swing.JMenuItem();
-        MenuItemVendas = new javax.swing.JMenuItem();
-        MenuItemProdutos = new javax.swing.JMenuItem();
-        MenuItemCompras = new javax.swing.JMenuItem();
-        MenuItemEntregas = new javax.swing.JMenuItem();
-        MenuItemVeiculos = new javax.swing.JMenuItem();
-        MenuRelatorios = new javax.swing.JMenu();
-        MenuAjuda = new javax.swing.JMenu();
+
+        setMaximizable(true);
 
         PanelClientesCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes cadastrados"));
 
@@ -123,74 +114,6 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
 
         btnVoltar.setText("Voltar");
 
-        MenuGerenciar.setText("Gerenciar");
-
-        MIenutemFuncionarios.setText("Funcionários");
-        MIenutemFuncionarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MIenutemFuncionariosActionPerformed(evt);
-            }
-        });
-        MenuGerenciar.add(MIenutemFuncionarios);
-
-        MenuItemClientes.setText("Clientes");
-        MenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemClientesActionPerformed(evt);
-            }
-        });
-        MenuGerenciar.add(MenuItemClientes);
-
-        MenuItemVendas.setText("Vendas");
-        MenuItemVendas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemVendasActionPerformed(evt);
-            }
-        });
-        MenuGerenciar.add(MenuItemVendas);
-
-        MenuItemProdutos.setText("Produtos");
-        MenuItemProdutos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemProdutosActionPerformed(evt);
-            }
-        });
-        MenuGerenciar.add(MenuItemProdutos);
-
-        MenuItemCompras.setText("Compras");
-        MenuItemCompras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemComprasActionPerformed(evt);
-            }
-        });
-        MenuGerenciar.add(MenuItemCompras);
-
-        MenuItemEntregas.setText("Entregas");
-        MenuItemEntregas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemEntregasActionPerformed(evt);
-            }
-        });
-        MenuGerenciar.add(MenuItemEntregas);
-
-        MenuItemVeiculos.setText("Veículos");
-        MenuItemVeiculos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemVeiculosActionPerformed(evt);
-            }
-        });
-        MenuGerenciar.add(MenuItemVeiculos);
-
-        jMenuBar1.add(MenuGerenciar);
-
-        MenuRelatorios.setText("Relatórios");
-        jMenuBar1.add(MenuRelatorios);
-
-        MenuAjuda.setText("Ajuda");
-        jMenuBar1.add(MenuAjuda);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -203,7 +126,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
                     .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGap(71, 71, 71))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,66 +140,14 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
                         .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnVoltar)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(58, 58, 58))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuItemProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemProdutosActionPerformed
-       TelaGerenciarProduto telaProduto = new TelaGerenciarProduto();
-        this.add(telaProduto);
-        telaProduto.setVisible(true);
-    }//GEN-LAST:event_MenuItemProdutosActionPerformed
-
-    private void MIenutemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MIenutemFuncionariosActionPerformed
-        TelaGerenciarFuncionarios telaFuncionarios = new TelaGerenciarFuncionarios();
-        this.add(telaFuncionarios);
-        telaFuncionarios.setVisible(true);
-    }//GEN-LAST:event_MIenutemFuncionariosActionPerformed
-
-    private void MenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemClientesActionPerformed
-        TelaGerenciarClientes telaClientes = new TelaGerenciarClientes();
-        this.add(telaClientes);
-        telaClientes.setVisible(true);
-    }//GEN-LAST:event_MenuItemClientesActionPerformed
-
-    private void MenuItemVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVendasActionPerformed
-        TelaGerenciamentoVendas telaVendas = new TelaGerenciamentoVendas();
-        this.add(telaVendas);
-        telaVendas.setVisible(true);
-    }//GEN-LAST:event_MenuItemVendasActionPerformed
-
-    private void MenuItemComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemComprasActionPerformed
-        TelaEfetuarCompras telaCompras = new TelaEfetuarCompras();
-        this.add(telaCompras);
-        telaCompras.setVisible(true);
-    }//GEN-LAST:event_MenuItemComprasActionPerformed
-
-    private void MenuItemEntregasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemEntregasActionPerformed
-        TelaEfetuarEntrega telaEntregas = new TelaEfetuarEntrega();
-        this.add(telaEntregas);
-        telaEntregas.setVisible(true);
-    }//GEN-LAST:event_MenuItemEntregasActionPerformed
-
-    private void MenuItemVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemVeiculosActionPerformed
-        TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
-        this.add(telaVeiculos);
-        telaVeiculos.setVisible(true);
-    }//GEN-LAST:event_MenuItemVeiculosActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem MIenutemFuncionarios;
-    private javax.swing.JMenu MenuAjuda;
-    private javax.swing.JMenu MenuGerenciar;
-    private javax.swing.JMenuItem MenuItemClientes;
-    private javax.swing.JMenuItem MenuItemCompras;
-    private javax.swing.JMenuItem MenuItemEntregas;
-    private javax.swing.JMenuItem MenuItemProdutos;
-    private javax.swing.JMenuItem MenuItemVeiculos;
-    private javax.swing.JMenuItem MenuItemVendas;
-    private javax.swing.JMenu MenuRelatorios;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelClientesCadastrados;
     private javax.swing.JPanel PanelFuncionalidades;
@@ -285,7 +156,6 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnNovoCliente;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JMenuBar jMenuBar1;
     private java.awt.ScrollPane scrollPaneClientesCadastrados;
     // End of variables declaration//GEN-END:variables
 }

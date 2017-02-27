@@ -5,6 +5,9 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
 
 /**
@@ -18,6 +21,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     
     public TelaPrincipal() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
          
     /**
@@ -34,13 +38,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
         BtnCompras = new javax.swing.JButton();
         BtnVendas = new javax.swing.JButton();
         BtnProdutos = new javax.swing.JButton();
-        PanelDadosUsuario = new javax.swing.JPanel();
+        PainelLateral = new javax.swing.JPanel();
+        PainelDadosUsuario = new javax.swing.JPanel();
         LblUsuarioLogado = new javax.swing.JLabel();
         LblFuncao = new javax.swing.JLabel();
         TxtUsuarioLogado = new javax.swing.JTextField();
         TxtFuncao = new javax.swing.JTextField();
         BtnSair = new javax.swing.JButton();
-        PanelCaixa = new javax.swing.JPanel();
+        PainelCaixa = new javax.swing.JPanel();
         LblStatus = new javax.swing.JLabel();
         TxtStatus = new javax.swing.JTextField();
         BtnAbrirFechar = new javax.swing.JButton();
@@ -57,6 +62,9 @@ public class TelaPrincipal extends javax.swing.JFrame{
         menuRelatorioVendas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        PainelPrincipal.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        PainelPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         BtnClientes.setText("Clientes");
         BtnClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +94,36 @@ public class TelaPrincipal extends javax.swing.JFrame{
             }
         });
 
-        PanelDadosUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do usuário"));
+        javax.swing.GroupLayout PainelPrincipalLayout = new javax.swing.GroupLayout(PainelPrincipal);
+        PainelPrincipal.setLayout(PainelPrincipalLayout);
+        PainelPrincipalLayout.setHorizontalGroup(
+            PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelPrincipalLayout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(161, 161, 161)
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(178, 178, 178))
+        );
+        PainelPrincipalLayout.setVerticalGroup(
+            PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelPrincipalLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(103, 103, 103))
+        );
+
+        PainelDadosUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do usuário"));
 
         LblUsuarioLogado.setText("Usuário logado:");
 
@@ -94,26 +131,26 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         BtnSair.setText("Sair");
 
-        javax.swing.GroupLayout PanelDadosUsuarioLayout = new javax.swing.GroupLayout(PanelDadosUsuario);
-        PanelDadosUsuario.setLayout(PanelDadosUsuarioLayout);
-        PanelDadosUsuarioLayout.setHorizontalGroup(
-            PanelDadosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelDadosUsuarioLayout.createSequentialGroup()
+        javax.swing.GroupLayout PainelDadosUsuarioLayout = new javax.swing.GroupLayout(PainelDadosUsuario);
+        PainelDadosUsuario.setLayout(PainelDadosUsuarioLayout);
+        PainelDadosUsuarioLayout.setHorizontalGroup(
+            PainelDadosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelDadosUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelDadosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(PainelDadosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(LblFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                     .addComponent(TxtFuncao))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDadosUsuarioLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelDadosUsuarioLayout.createSequentialGroup()
                 .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
-        PanelDadosUsuarioLayout.setVerticalGroup(
-            PanelDadosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelDadosUsuarioLayout.createSequentialGroup()
+        PainelDadosUsuarioLayout.setVerticalGroup(
+            PainelDadosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelDadosUsuarioLayout.createSequentialGroup()
                 .addComponent(LblUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TxtUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,81 +163,57 @@ public class TelaPrincipal extends javax.swing.JFrame{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PanelCaixa.setBorder(javax.swing.BorderFactory.createTitledBorder("Caixa"));
+        PainelCaixa.setBorder(javax.swing.BorderFactory.createTitledBorder("Caixa"));
 
         LblStatus.setText("Status:");
 
         BtnAbrirFechar.setText("Abrir/Fechar");
 
-        javax.swing.GroupLayout PanelCaixaLayout = new javax.swing.GroupLayout(PanelCaixa);
-        PanelCaixa.setLayout(PanelCaixaLayout);
-        PanelCaixaLayout.setHorizontalGroup(
-            PanelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCaixaLayout.createSequentialGroup()
+        javax.swing.GroupLayout PainelCaixaLayout = new javax.swing.GroupLayout(PainelCaixa);
+        PainelCaixa.setLayout(PainelCaixaLayout);
+        PainelCaixaLayout.setHorizontalGroup(
+            PainelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelCaixaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TxtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCaixaLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCaixaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnAbrirFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(55, 55, 55))
         );
-        PanelCaixaLayout.setVerticalGroup(
-            PanelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCaixaLayout.createSequentialGroup()
-                .addGroup(PanelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelCaixaLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(TxtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelCaixaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        PainelCaixaLayout.setVerticalGroup(
+            PainelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelCaixaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PainelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(BtnAbrirFechar)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout PainelPrincipalLayout = new javax.swing.GroupLayout(PainelPrincipal);
-        PainelPrincipal.setLayout(PainelPrincipalLayout);
-        PainelPrincipalLayout.setHorizontalGroup(
-            PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelPrincipalLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94)
-                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelDadosUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(61, 61, 61))
+        javax.swing.GroupLayout PainelLateralLayout = new javax.swing.GroupLayout(PainelLateral);
+        PainelLateral.setLayout(PainelLateralLayout);
+        PainelLateralLayout.setHorizontalGroup(
+            PainelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLateralLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addGroup(PainelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PainelCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(PainelDadosUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        PainelPrincipalLayout.setVerticalGroup(
-            PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelPrincipalLayout.createSequentialGroup()
-                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PainelPrincipalLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(PanelDadosUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PainelPrincipalLayout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelPrincipalLayout.createSequentialGroup()
-                        .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)))
+        PainelLateralLayout.setVerticalGroup(
+            PainelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLateralLayout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(PainelDadosUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(PainelCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
@@ -277,14 +290,18 @@ public class TelaPrincipal extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PainelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(PainelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PainelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PainelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PainelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(864, 500));
+        setSize(new java.awt.Dimension(1020, 500));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -385,9 +402,10 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem MenuItemCompras;
     private javax.swing.JMenuItem MenuItemEntrega;
     private javax.swing.JMenuItem MenuItemVeiculo;
+    private javax.swing.JPanel PainelCaixa;
+    private javax.swing.JPanel PainelDadosUsuario;
+    private javax.swing.JPanel PainelLateral;
     private javax.swing.JPanel PainelPrincipal;
-    private javax.swing.JPanel PanelCaixa;
-    private javax.swing.JPanel PanelDadosUsuario;
     private javax.swing.JTextField TxtFuncao;
     private javax.swing.JTextField TxtStatus;
     private javax.swing.JTextField TxtUsuarioLogado;
@@ -402,7 +420,15 @@ public class TelaPrincipal extends javax.swing.JFrame{
     // End of variables declaration//GEN-END:variables
 
     private void abreInternalFrame(JInternalFrame frame) {
-       PainelPrincipal.add(frame);
-       frame.setVisible(true);
+        PainelPrincipal.removeAll();
+        PainelLateral.setVisible(true);
+        PainelPrincipal.add(frame);
+        frame.setVisible(true);
+        try {
+            frame.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        PainelPrincipal.setVisible(true);
     }
 }

@@ -1,87 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
-  <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="MenuGerenciar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Gerenciar"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="MIenutemFuncionarios">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MIenutemFuncionariosActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemClientes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Clientes"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemClientesActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemVendas">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Vendas"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemVendasActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemProdutos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Produtos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemProdutosActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemCompras">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Compras"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemComprasActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemEntregas">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Entregas"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemEntregasActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemVeiculos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemVeiculosActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="MenuRelatorios">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="MenuAjuda">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ajuda"/>
-          </Properties>
-        </Menu>
-      </SubComponents>
-    </Menu>
-  </NonVisualComponents>
+  <Properties>
+    <Property name="maximizable" type="boolean" value="true"/>
+  </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
   <AuxValues>
@@ -108,7 +31,7 @@
                   <Component id="PanelFuncionalidades" min="-2" max="-2" attributes="0"/>
                   <Component id="btnVoltar" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="88" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -126,7 +49,7 @@
                       <Component id="btnVoltar" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
