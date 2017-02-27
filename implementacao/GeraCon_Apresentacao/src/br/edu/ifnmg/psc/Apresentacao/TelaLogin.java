@@ -51,7 +51,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEntrar);
-        btnEntrar.setBounds(280, 170, 90, 40);
+        btnEntrar.setBounds(260, 170, 110, 50);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +60,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(150, 170, 100, 40);
+        btnCancelar.setBounds(150, 170, 100, 50);
 
         lblLogin.setText("Login:");
         getContentPane().add(lblLogin);
