@@ -16,6 +16,15 @@ public class Cliente extends Pessoa implements Entidade{
     private String descricao;
     private String cpf;
     private String rg;
+    private String sexo;
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
 
     public Cliente() {
         this.codigo=0;
