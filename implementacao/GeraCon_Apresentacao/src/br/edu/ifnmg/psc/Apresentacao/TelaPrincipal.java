@@ -336,7 +336,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
         this.add(telaVeiculos);
         telaVeiculos.setVisible(true);
-        this.set
+        this.dispose();
     }//GEN-LAST:event_MenuItemVeiculoActionPerformed
 
     /**

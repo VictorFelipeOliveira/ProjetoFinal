@@ -22,9 +22,9 @@ public class TelaListagemProdutos extends javax.swing.JInternalFrame {
     public TelaListagemProdutos() {
         initComponents();
         
-        List<Produto> busca = dao.Buscar(null);
+       // List<Produto> busca = dao.Buscar(null);
         
-        preencheTabela(busca);
+      //  preencheTabela(busca);
     }
     private void preencheTabela(List<Produto> lista){
         DefaultTableModel modelo = new DefaultTableModel();
@@ -42,7 +42,7 @@ public class TelaListagemProdutos extends javax.swing.JInternalFrame {
     }
     
     public void buscar(String descricao){
-        Produto filtro = new
+        
     }
 
     /**
