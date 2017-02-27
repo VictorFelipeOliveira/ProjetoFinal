@@ -30,12 +30,12 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
         PanelClientesCadastrados = new javax.swing.JPanel();
         scrollPaneClientesCadastrados = new java.awt.ScrollPane();
         PanelBuscar = new javax.swing.JPanel();
-        BtnBuscar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         PanelFuncionalidades = new javax.swing.JPanel();
-        BtnNovoCliente = new javax.swing.JButton();
-        BtnAlterar = new javax.swing.JButton();
-        BtnExcluir = new javax.swing.JButton();
-        BtnVoltar = new javax.swing.JButton();
+        btnNovoCliente = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuGerenciar = new javax.swing.JMenu();
         MIenutemFuncionarios = new javax.swing.JMenuItem();
@@ -68,32 +68,32 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
 
         PanelBuscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar"));
 
-        BtnBuscar.setText("Buscar Cliente");
+        btnBuscar.setText("Buscar Cliente");
 
         javax.swing.GroupLayout PanelBuscarLayout = new javax.swing.GroupLayout(PanelBuscar);
         PanelBuscar.setLayout(PanelBuscarLayout);
         PanelBuscarLayout.setHorizontalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBuscarLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         PanelBuscarLayout.setVerticalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBuscarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnBuscar)
+                .addComponent(btnBuscar)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
-        BtnNovoCliente.setText("Novo Cliente");
+        btnNovoCliente.setText("Novo Cliente");
 
-        BtnAlterar.setText("Alterar");
+        btnAlterar.setText("Alterar");
 
-        BtnExcluir.setText("Excluir");
+        btnExcluir.setText("Excluir");
 
         javax.swing.GroupLayout PanelFuncionalidadesLayout = new javax.swing.GroupLayout(PanelFuncionalidades);
         PanelFuncionalidades.setLayout(PanelFuncionalidadesLayout);
@@ -103,25 +103,25 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
                 .addGap(39, 39, 39)
                 .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelFuncionalidadesLayout.createSequentialGroup()
-                        .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BtnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnNovoCliente)
+                .addComponent(btnNovoCliente)
                 .addGap(28, 28, 28)
                 .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnAlterar)
-                    .addComponent(BtnExcluir))
+                    .addComponent(btnAlterar)
+                    .addComponent(btnExcluir))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        BtnVoltar.setText("Voltar");
+        btnVoltar.setText("Voltar");
 
         MenuGerenciar.setText("Gerenciar");
 
@@ -202,7 +202,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -216,7 +216,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnVoltar)))
+                        .addComponent(btnVoltar)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -267,11 +267,6 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAlterar;
-    private javax.swing.JButton BtnBuscar;
-    private javax.swing.JButton BtnExcluir;
-    private javax.swing.JButton BtnNovoCliente;
-    private javax.swing.JButton BtnVoltar;
     private javax.swing.JMenuItem MIenutemFuncionarios;
     private javax.swing.JMenu MenuAjuda;
     private javax.swing.JMenu MenuGerenciar;
@@ -285,6 +280,11 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame {
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelClientesCadastrados;
     private javax.swing.JPanel PanelFuncionalidades;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnNovoCliente;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JMenuBar jMenuBar1;
     private java.awt.ScrollPane scrollPaneClientesCadastrados;
     // End of variables declaration//GEN-END:variables

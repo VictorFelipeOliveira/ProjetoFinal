@@ -70,7 +70,7 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(lblSenha);
         lblSenha.setBounds(100, 130, 47, 17);
         getContentPane().add(txtLogin);
-        txtLogin.setBounds(150, 100, 220, 27);
+        txtLogin.setBounds(150, 90, 220, 27);
         getContentPane().add(txtSenha);
         txtSenha.setBounds(150, 130, 220, 27);
 
