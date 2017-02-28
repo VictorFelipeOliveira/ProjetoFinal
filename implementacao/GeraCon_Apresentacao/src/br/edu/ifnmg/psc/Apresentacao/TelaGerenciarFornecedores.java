@@ -118,6 +118,11 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         );
 
         BtonVoltar.setText("Voltar");
+        BtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtonVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,6 +163,10 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
     private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnBuscarActionPerformed
+
+    private void BtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtonVoltarActionPerformed
+        this.doDefaultCloseAction();
+    }//GEN-LAST:event_BtonVoltarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

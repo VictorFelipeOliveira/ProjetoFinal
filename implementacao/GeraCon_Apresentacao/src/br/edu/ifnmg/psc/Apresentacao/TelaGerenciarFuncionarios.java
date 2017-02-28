@@ -111,6 +111,11 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
         );
 
         BtnVoltar.setText("Voltar");
+        BtnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,6 +148,10 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
+        this.doDefaultCloseAction();
+    }//GEN-LAST:event_BtnVoltarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

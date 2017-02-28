@@ -5,6 +5,7 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import java.awt.Container;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,11 +19,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
     /**
      * Creates new form TelaPrincipal
      */
-    
+    Container c = new Container();
     public TelaPrincipal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        //c.add(PainelPrincipal);
+        //c.setVisible(true);
     }
+    
          
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,13 +46,13 @@ public class TelaPrincipal extends javax.swing.JFrame{
         PainelDadosUsuario = new javax.swing.JPanel();
         LblUsuarioLogado = new javax.swing.JLabel();
         LblFuncao = new javax.swing.JLabel();
-        TxtUsuarioLogado = new javax.swing.JTextField();
-        TxtFuncao = new javax.swing.JTextField();
-        BtnSair = new javax.swing.JButton();
+        txtUsuarioLogado = new javax.swing.JTextField();
+        txtFuncao = new javax.swing.JTextField();
+        btnSair = new javax.swing.JButton();
         PainelCaixa = new javax.swing.JPanel();
         LblStatus = new javax.swing.JLabel();
-        TxtStatus = new javax.swing.JTextField();
-        BtnAbrirFechar = new javax.swing.JButton();
+        txtStatus = new javax.swing.JTextField();
+        btnAbrirFechar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuGerenciar = new javax.swing.JMenu();
         menuItemFuncionarios = new javax.swing.JMenuItem();
@@ -98,29 +102,29 @@ public class TelaPrincipal extends javax.swing.JFrame{
         PainelPrincipal.setLayout(PainelPrincipalLayout);
         PainelPrincipalLayout.setHorizontalGroup(
             PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelPrincipalLayout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BtnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(161, 161, 161)
+            .addGroup(PainelPrincipalLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
+                .addGap(152, 152, 152)
                 .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BtnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(178, 178, 178))
+                .addGap(123, 123, 123))
         );
         PainelPrincipalLayout.setVerticalGroup(
             PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelPrincipalLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(97, 97, 97)
                 .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(77, 77, 77)
                 .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(103, 103, 103))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PainelDadosUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do usuário"));
@@ -129,7 +133,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
 
         LblFuncao.setText("Função:");
 
-        BtnSair.setText("Sair");
+        btnSair.setText("Sair");
 
         javax.swing.GroupLayout PainelDadosUsuarioLayout = new javax.swing.GroupLayout(PainelDadosUsuario);
         PainelDadosUsuario.setLayout(PainelDadosUsuarioLayout);
@@ -140,12 +144,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
                 .addGroup(PainelDadosUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(LblFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LblUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addComponent(TxtFuncao))
+                    .addComponent(txtUsuarioLogado, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(txtFuncao))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelDadosUsuarioLayout.createSequentialGroup()
                 .addContainerGap(60, Short.MAX_VALUE)
-                .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         PainelDadosUsuarioLayout.setVerticalGroup(
@@ -153,36 +157,36 @@ public class TelaPrincipal extends javax.swing.JFrame{
             .addGroup(PainelDadosUsuarioLayout.createSequentialGroup()
                 .addComponent(LblUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(LblFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(BtnSair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(txtFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(btnSair)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         PainelCaixa.setBorder(javax.swing.BorderFactory.createTitledBorder("Caixa"));
 
         LblStatus.setText("Status:");
 
-        BtnAbrirFechar.setText("Abrir/Fechar");
+        btnAbrirFechar.setText("Abrir/Fechar");
 
         javax.swing.GroupLayout PainelCaixaLayout = new javax.swing.GroupLayout(PainelCaixa);
         PainelCaixa.setLayout(PainelCaixaLayout);
         PainelCaixaLayout.setHorizontalGroup(
             PainelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelCaixaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCaixaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnAbrirFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAbrirFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55))
+            .addGroup(PainelCaixaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LblStatus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         PainelCaixaLayout.setVerticalGroup(
             PainelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,10 +194,10 @@ public class TelaPrincipal extends javax.swing.JFrame{
                 .addContainerGap()
                 .addGroup(PainelCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(BtnAbrirFechar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnAbrirFechar)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PainelLateralLayout = new javax.swing.GroupLayout(PainelLateral);
@@ -201,20 +205,22 @@ public class TelaPrincipal extends javax.swing.JFrame{
         PainelLateralLayout.setHorizontalGroup(
             PainelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLateralLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addGroup(PainelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PainelCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(PainelDadosUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PainelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PainelLateralLayout.createSequentialGroup()
+                        .addComponent(PainelCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2))
+                    .addComponent(PainelDadosUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         PainelLateralLayout.setVerticalGroup(
             PainelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLateralLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
                 .addComponent(PainelDadosUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(35, 35, 35)
                 .addComponent(PainelCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
 
         menuGerenciar.setText("Gerenciar");
@@ -293,7 +299,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
             .addGroup(layout.createSequentialGroup()
                 .addComponent(PainelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PainelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(PainelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +307,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
             .addComponent(PainelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1020, 500));
+        setSize(new java.awt.Dimension(1043, 500));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -384,17 +390,12 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
     }
     
-    public void fechaPainel(JInternalFrame frame){
-        frame.setVisible(false);
-        this.remove(frame);
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAbrirFechar;
     private javax.swing.JButton BtnClientes;
     private javax.swing.JButton BtnCompras;
     private javax.swing.JButton BtnProdutos;
-    private javax.swing.JButton BtnSair;
     private javax.swing.JButton BtnVendas;
     private javax.swing.JLabel LblFuncao;
     private javax.swing.JLabel LblStatus;
@@ -406,9 +407,8 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JPanel PainelDadosUsuario;
     private javax.swing.JPanel PainelLateral;
     private javax.swing.JPanel PainelPrincipal;
-    private javax.swing.JTextField TxtFuncao;
-    private javax.swing.JTextField TxtStatus;
-    private javax.swing.JTextField TxtUsuarioLogado;
+    private javax.swing.JButton btnAbrirFechar;
+    private javax.swing.JButton btnSair;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu menuGerenciar;
     private javax.swing.JMenuItem menuItemClientes;
@@ -417,11 +417,13 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem menuItemVendas;
     private javax.swing.JMenuItem menuRelatorioVendas;
     private javax.swing.JMenu menuRelatorios;
+    private javax.swing.JTextField txtFuncao;
+    private javax.swing.JTextField txtStatus;
+    private javax.swing.JTextField txtUsuarioLogado;
     // End of variables declaration//GEN-END:variables
 
     private void abreInternalFrame(JInternalFrame frame) {
         PainelPrincipal.removeAll();
-        PainelLateral.setVisible(true);
         PainelPrincipal.add(frame);
         frame.setVisible(true);
         try {
@@ -429,6 +431,17 @@ public class TelaPrincipal extends javax.swing.JFrame{
         } catch (PropertyVetoException ex) {
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         PainelPrincipal.setVisible(true);
+    }
+    
+    public void fechaPainel(JInternalFrame frame){
+        frame.setVisible(false);
+        this.remove(frame);
+        reabrirPainel();
+    }
+    
+    public void reabrirPainel(){
+        c.setVisible(true);
     }
 }

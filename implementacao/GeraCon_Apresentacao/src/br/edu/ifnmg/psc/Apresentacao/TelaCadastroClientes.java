@@ -7,7 +7,6 @@ package br.edu.ifnmg.psc.Apresentacao;
 
 import br.edu.ifnmg.psc.Aplicacao.Cliente;
 import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
-import java.beans.PropertyVetoException;
 
 /**
  *
@@ -16,7 +15,7 @@ import java.beans.PropertyVetoException;
 public class TelaCadastroClientes extends javax.swing.JInternalFrame{
     ClienteRepositorio dao = GerenciadorReferencias.getCliente();
     Cliente clientes = new Cliente();
-    TelaPrincipal main = new TelaPrincipal();
+    //TelaPrincipal main = new TelaPrincipal();
             
     /**
      * Creates new form TelaCadastroClientes
@@ -262,7 +261,7 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        
+        this.doDefaultCloseAction();   
     }//GEN-LAST:event_btnVoltarActionPerformed
 
 
@@ -314,25 +313,24 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
         if(!txtTelefone.getText().equals(""))
             clientes.setTelefone(txtTelefone.getText());
         
+        String sexo = "";
+        
         switch(cmbSexo.getSelectedIndex()){
             case 1:{
-                clientes.setSexo("Masculino");
+                sexo = "Masculino";
                 break;
             }
             case 2:{
-                clientes.setSexo("Feminino");
+                sexo = "Feminino";
                 break;
             }
             case 3:{
-                clientes.setSexo("Outro");
+                sexo = "Outro";
                 break;
             }
             default:{throw new Error("Erro na validação");}
             
         }
-    }
-    
-    private void fechaFrame(javax.swing.event.InternalFrameEvent evento) throws PropertyVetoException{
-       main.remove(this);
+        clientes.setSexo(sexo);
     }
 }

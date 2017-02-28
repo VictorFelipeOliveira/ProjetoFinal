@@ -175,6 +175,11 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
         LblValorTotal.setText("Valor Total:");
 
         BtnVoltar.setText("Voltar");
+        BtnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVoltarActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
 
@@ -245,6 +250,10 @@ public class TelaEfetuarVenda extends javax.swing.JInternalFrame {
     private void CBXFormaPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBXFormaPagamentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CBXFormaPagamentoActionPerformed
+
+    private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
+        this.doDefaultCloseAction();
+    }//GEN-LAST:event_BtnVoltarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
