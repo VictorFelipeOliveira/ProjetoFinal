@@ -19,22 +19,21 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
 
     public ClienteDAO(){
       
-        setConsultaAbrir("select descricao, cpf, rg, pessoas_fk from Clientes where codigo = ?");
-        setConsultaAbrir("select nome, telefone, email, rua, bairro, cidade, "
-                + "complemento, numero from Pessoas where codigo = pessoas_fk");
+        setConsultaAbrir("select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
+                + "numero, descricao, cpf, rg from Clientes where codigo = ?");
         
-        setConsultaApagar("delete from clientes where codigo = ?");
+        setConsultaApagar("DELETE from Clientes where codigo = ?");
         
-        setConsultaInserir("insert into Pessoas (nome, telefone, email, rua, bairro, cidade, "
-                + "complemento, numero) values (?, ?, ?, ?, ?, ?, ?, ?)");
-        setConsultaInserir("insert into Clientes (descricao, cpf, rg, pessoas_fk) values (?, ?, ?, (select LAST_INSERT_ID()))");
-       
+        setConsultaInserir("INSERT INTO Clientes (nome, telefone, email, rua, bairro, cidade, complemento, "
+                + "numero, descricao, cpf, rg) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
-        setConsultaAlterar("update clientes set nome = ?, telefone = ?, email = ?, descricao = ?, cpf = ?, "
-                + "rg = ?, rua = ?, bairro = ?, cidade = ?, complemento = ? where codigo = ?");
-        setConsultaBusca("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
-                + " cidade, complemento, numero from Clientes");
-        setConsultaUltimoId("select max(codigo) from Clientes where codigo = ?, and cpf = ? and rg = ?");
+        setConsultaAlterar("UPDATE Clientes SET nome = ?, telefone = ?, email = ?, rua = ?, bairro = ?, cidade = ?, "
+                + "complemento = ?, numero = ?, descricao = ?, cpf = ?, rg = ? where codigo = ?");
+        
+        setConsultaBusca("select codigo, nome, telefone, email, rua, bairro, cidade, complemento," +
+"                +numero, descricao, cpf, rg from Clientes");
+        
+        setConsultaUltimoId("select max(codigo) from Clientes where codigo = ? and cpf = ? and rg = ?");
     }
     
     @Override
@@ -46,13 +45,15 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
             cliente.setNome(resultado.getString(2));
             cliente.setTelefone(resultado.getString(3));
             cliente.setEmail(resultado.getString(4));
-            cliente.setDescricao(resultado.getString(5));
-            cliente.setCpf(resultado.getString(6));
-            cliente.setRg(resultado.getString(7));
-            cliente.setRua(resultado.getString(8));
-            cliente.setBairro(resultado.getString(9));
-            cliente.setCidade(resultado.getString(10));
-            cliente.setComplemento(resultado.getString(11));
+            cliente.setRua(resultado.getString(5));
+            cliente.setBairro(resultado.getString(6));
+            cliente.setCidade(resultado.getString(7));
+            cliente.setComplemento(resultado.getString(8));
+            cliente.setNumero(resultado.getInt(9));
+            cliente.setDescricao(resultado.getString(10));
+            cliente.setCpf(resultado.getString(11));
+            cliente.setRg(resultado.getString(12));
+            
         } catch(SQLException ex){
             ex.printStackTrace();
         }
@@ -63,18 +64,18 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
     @Override
     protected void preencheConsulta(PreparedStatement sql, Cliente cliente) {
         try{
-            sql.setString(1,  cliente.getNome() );
-            sql.setString(2,  cliente.getCpf());
-            sql.setString(3,  cliente.getDescricao());
-            sql.setString(4,  cliente.getRg());
-            sql.setString(5,  cliente.getEmail());
-            sql.setString(6,  cliente.getTelefone());
-            sql.setString(7,  cliente.getBairro());
-            sql.setString(8,  cliente.getCidade());
-            sql.setString(9,  cliente.getComplemento());
-            sql.setString(10, cliente.getRua());
-            sql.setInt(11, cliente.getNumero());
-            
+            sql.setString(1, cliente.getNome());
+            sql.setString(2, cliente.getTelefone());
+            sql.setString(3, cliente.getEmail());
+            sql.setString(4, cliente.getRua());
+            sql.setString(5, cliente.getBairro());
+            sql.setString(6, cliente.getCidade());
+            sql.setString(7, cliente.getComplemento());
+            sql.setInt(8, cliente.getNumero());
+            sql.setString(9, cliente.getDescricao());
+            sql.setString(10, cliente.getCpf());
+            sql.setString(11, cliente.getRg());
+        
         } catch(SQLException ex){
             ex.printStackTrace();
         }
@@ -91,8 +92,16 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
     protected void preencheParametros(PreparedStatement sql, Cliente filtro) {
          try {
             int cont = 1;
-            if(filtro.getId() > 0){ sql.setInt(cont, filtro.getId()); cont++; }
-            if(filtro.getNome() != null ){ sql.setString(cont, filtro.getNome() +"%"); cont++; }
+            if(filtro.getId() > 0){ 
+                sql.setInt(cont, filtro.getId()); 
+                cont++; 
+            }
+            
+            if(filtro.getNome() != null ){
+                sql.setString(cont, filtro.getNome() +"%");
+                cont++;
+            }
+            
             if(filtro.getCpf() != null){ 
                 sql.setString(cont, filtro.getCpf()); 
                 cont++; 
@@ -108,9 +117,8 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
     public Cliente Abrir(String cpf) {
         try {
             
-            PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, descricao, cpf, rg, rua, bairro,"
-                + " cidade, complemento, numero from Clientes where codigo = ?");
-            
+            PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
+                + "numero, descricao, cpf, rg from Clientes where cpf = ?");
             
             sql.setString(1, cpf);
             

@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author thais
  */
 public class Funcionario  extends Pessoa implements Entidade {
-
+    private int codigo;
     private String carteiraTrabalho;
     private String cargo;
     private String cpf;
@@ -43,12 +43,12 @@ public class Funcionario  extends Pessoa implements Entidade {
     
     @Override
     public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           return this.codigo;
     }
 
     @Override
     public void setId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.codigo = id;
     }
 
     @Override

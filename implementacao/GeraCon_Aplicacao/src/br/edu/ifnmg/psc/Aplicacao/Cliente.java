@@ -43,7 +43,7 @@ public class Cliente extends Pessoa implements Entidade{
 
     @Override
     public void setId(int id) {
-        this.codigo=codigo;
+        this.codigo=id;
     }
     
     
