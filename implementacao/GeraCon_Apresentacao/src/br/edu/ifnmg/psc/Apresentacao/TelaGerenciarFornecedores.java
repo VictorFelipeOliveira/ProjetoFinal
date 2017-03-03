@@ -5,6 +5,10 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author thais
@@ -32,10 +36,10 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         PanelBuscar = new javax.swing.JPanel();
         BtnBuscar = new javax.swing.JButton();
         PanelFuncionalidades = new javax.swing.JPanel();
-        BtnNovoCliente = new javax.swing.JButton();
+        BtnNovoFornecedor = new javax.swing.JButton();
         BtnAlterar = new javax.swing.JButton();
         BtnExcluir = new javax.swing.JButton();
-        BtonVoltar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -85,7 +89,12 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
-        BtnNovoCliente.setText("Novo Fornecedor");
+        BtnNovoFornecedor.setText("Novo Fornecedor");
+        BtnNovoFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnNovoFornecedorActionPerformed(evt);
+            }
+        });
 
         BtnAlterar.setText("Alterar");
 
@@ -102,25 +111,25 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
                         .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BtnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnNovoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnNovoCliente)
-                .addGap(28, 28, 28)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnAlterar)
-                    .addComponent(BtnExcluir))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(BtnNovoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(BtnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        BtonVoltar.setText("Voltar");
-        BtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtonVoltarActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
@@ -139,7 +148,7 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
                             .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(BtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -152,7 +161,7 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
                         .addGap(26, 26, 26)
                         .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtonVoltar))
+                        .addComponent(btnVoltar))
                     .addComponent(PanelFornCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -164,20 +173,35 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnBuscarActionPerformed
 
-    private void BtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtonVoltarActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.doDefaultCloseAction();
-    }//GEN-LAST:event_BtonVoltarActionPerformed
+        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
+        TelaPrincipal.PainelLateral.setVisible(true);           
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void BtnNovoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFornecedorActionPerformed
+        this.doDefaultCloseAction();
+        TelaCadastroFornecedor telaFornecedor = new TelaCadastroFornecedor();
+        telaFornecedor.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(telaFornecedor);
+        try {
+            telaFornecedor.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+    }//GEN-LAST:event_BtnNovoFornecedorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAlterar;
     private javax.swing.JButton BtnBuscar;
     private javax.swing.JButton BtnExcluir;
-    private javax.swing.JButton BtnNovoCliente;
-    private javax.swing.JButton BtonVoltar;
+    private javax.swing.JButton BtnNovoFornecedor;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelFornCadastrados;
     private javax.swing.JPanel PanelFuncionalidades;
+    private javax.swing.JButton btnVoltar;
     private java.awt.ScrollPane scrollPaneForncCadastrados;
     // End of variables declaration//GEN-END:variables
 }

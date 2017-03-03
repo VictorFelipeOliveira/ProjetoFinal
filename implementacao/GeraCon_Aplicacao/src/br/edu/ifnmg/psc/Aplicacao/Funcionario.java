@@ -16,6 +16,10 @@ public class Funcionario  extends Pessoa implements Entidade {
     private String carteiraTrabalho;
     private String cargo;
     private String cpf;
+    
+    public Funcionario(){
+        this.codigo = 0;
+    }
 
     public String getCarteiraTrabalho() {
         return carteiraTrabalho;
@@ -43,7 +47,7 @@ public class Funcionario  extends Pessoa implements Entidade {
     
     @Override
     public int getId() {
-           return this.codigo;
+        return this.codigo;
     }
 
     @Override

@@ -58,7 +58,6 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
             if (obj.getId() == 0) {
                
                 PreparedStatement sql = conn.prepareStatement(getConsultaInserir());
-                System.out.println("SQL: "+sql);
                 preencheConsulta(sql, obj);
                 sql.executeUpdate();
                 PreparedStatement sql2 = conn.prepareStatement(getConsultaUltimoId());
@@ -78,7 +77,7 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
             }
             return true;
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.out.print(e);
         }
         return false;
     }
@@ -87,16 +86,12 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
     public boolean Apagar(T obj) {
         try {
             if (obj.getId() > 0) {
-                
                 PreparedStatement sql = conn.prepareStatement(getConsultaApagar());
-
                 sql.setInt(1, obj.getId());
-
                 sql.executeUpdate();
-
             }
 
-    return true;
+            return true;
 
         } catch (SQLException e) {
             System.out.print(e);
@@ -111,14 +106,9 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
 
             
             PreparedStatement sql = conn.prepareStatement(getConsultaAbrir());
-
-            
             sql.setInt(1, id);
-
-            
             ResultSet resultado = sql.executeQuery();
-
-            
+    
             if (resultado.next()) {
                 return preencheObjeto(resultado);
             }
@@ -143,15 +133,11 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
         try {
 
             PreparedStatement sql = conn.prepareStatement(getConsultaBusca() + where);
-
             preencheParametros(sql, filtro);
-
             ResultSet resultado = sql.executeQuery();
 
             while (resultado.next()) {
-
                 T objeto = preencheObjeto(resultado);
-
                 listaRetorno.add(objeto);
             }
         } catch (SQLException ex) {

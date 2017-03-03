@@ -166,6 +166,11 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
         );
 
         BtnVoltar.setText("Voltar");
+        BtnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVoltarActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
 
@@ -196,16 +201,13 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PanelEfetuarEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelDadosEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BtnVoltar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnCancelar)
-                            .addComponent(BtnSalvar))))
-                .addGap(317, 317, 317))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BtnCancelar)
+                        .addComponent(BtnSalvar))
+                    .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
@@ -214,6 +216,12 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
     private void CBXVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBXVeiculoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CBXVeiculoActionPerformed
+
+    private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
+        this.doDefaultCloseAction();
+        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
+        TelaPrincipal.PainelLateral.setVisible(true);
+    }//GEN-LAST:event_BtnVoltarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -49,14 +49,14 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="PanelFuncionalidades" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="BtonVoltar" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtonVoltar" min="-2" pref="43" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="PanelGerencProduto" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace pref="79" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -208,8 +208,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="BtnNovoCliente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="BtnNovoCliente" min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="BtnAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="BtnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -224,6 +224,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Novo Produto"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnNovoClienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnAlterar">
           <Properties>

@@ -30,10 +30,12 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
         setConsultaAlterar("UPDATE Clientes SET nome = ?, telefone = ?, email = ?, rua = ?, bairro = ?, cidade = ?, "
                 + "complemento = ?, numero = ?, descricao = ?, cpf = ?, rg = ? where codigo = ?");
         
-        setConsultaBusca("select codigo, nome, telefone, email, rua, bairro, cidade, complemento," +
-"                +numero, descricao, cpf, rg from Clientes");
+        setConsultaBusca("select codigo, nome, telefone, email, rua, bairro, cidade, complemento,"
+                + "numero, descricao, cpf, rg from Clientes");
         
-        setConsultaUltimoId("select max(codigo) from Clientes where codigo = ? and cpf = ? and rg = ?");
+        setConsultaUltimoId("select max(codigo) from Clientes where nome = ? and telefone = ? "
+                + "and email = ? and rua = ? and bairro = ? and cidade = ? and complemento = ? and numero = ? "
+                + "and descricao = ? and cpf = ? and rg = ?");
     }
     
     @Override
@@ -64,6 +66,7 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
     @Override
     protected void preencheConsulta(PreparedStatement sql, Cliente cliente) {
         try{
+            //sql.setInt(1, cliente.getId());
             sql.setString(1, cliente.getNome());
             sql.setString(2, cliente.getTelefone());
             sql.setString(3, cliente.getEmail());
@@ -76,6 +79,8 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
             sql.setString(10, cliente.getCpf());
             sql.setString(11, cliente.getRg());
         
+            if(cliente.getId()>0)
+                sql.setInt(12, cliente.getId());
         } catch(SQLException ex){
             ex.printStackTrace();
         }
@@ -83,9 +88,12 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
 
     @Override
     protected void preencheFiltros(Cliente filtro) {
-        if(filtro.getId() > 0) adicionarFiltro("id", "=");
-        if(filtro.getNome() != null) adicionarFiltro("nome", " like ");
-        if(filtro.getCpf() != null) adicionarFiltro("cpf", "=");    
+        if(filtro.getId() > 0) 
+            adicionarFiltro("id", "=");
+        if(filtro.getNome() != null) 
+            adicionarFiltro("nome", " like ");
+        if(filtro.getCpf() != null) 
+            adicionarFiltro("cpf", "=");    
     }
 
     @Override
@@ -98,7 +106,7 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
             }
             
             if(filtro.getNome() != null ){
-                sql.setString(cont, filtro.getNome() +"%");
+                sql.setString(cont, filtro.getNome() +" % ");
                 cont++;
             }
             
@@ -134,5 +142,22 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
         
         return null;
     }
-    
+
+    @Override
+    public boolean VerificaCliente(String cpf, String rg) {
+        try {
+            PreparedStatement sql = conn.prepareStatement("select codigo from Clientes where cpf = ? and rg = ?");
+            sql.setString(1, cpf);
+            sql.setString(2, rg);
+            ResultSet resultado = sql.executeQuery();
+            if(resultado.next()){
+                return true;
+            }else
+                return false;
+        } catch (SQLException ex) {
+           System.out.println(ex);
+        }
+        return false;
+    }
+
 }

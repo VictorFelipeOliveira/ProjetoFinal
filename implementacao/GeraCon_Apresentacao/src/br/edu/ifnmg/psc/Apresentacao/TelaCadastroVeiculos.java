@@ -252,7 +252,10 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        this.dispose();
+        this.doDefaultCloseAction();
+        TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
+        telaVeiculos.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(telaVeiculos);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void recuperaCampos() {

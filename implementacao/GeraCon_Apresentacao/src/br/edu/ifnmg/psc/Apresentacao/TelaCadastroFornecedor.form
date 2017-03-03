@@ -21,14 +21,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="BtnVoltar" min="-2" pref="64" max="-2" attributes="0"/>
-              <EmptySpace pref="517" max="32767" attributes="0"/>
+              <Component id="BtnVoltar" min="-2" pref="79" max="-2" attributes="0"/>
+              <EmptySpace pref="502" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                      <Component id="BtnExcluir" min="-2" pref="72" max="-2" attributes="0"/>
+                      <Component id="BtnExcluir" min="-2" pref="84" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="BtnSalvar" min="-2" pref="66" max="-2" attributes="0"/>
+                      <Component id="BtnSalvar" min="-2" pref="67" max="-2" attributes="0"/>
                   </Group>
                   <Component id="TxtCidade" min="-2" pref="209" max="-2" attributes="0"/>
               </Group>
@@ -46,17 +45,15 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="332" max="32767" attributes="0"/>
+              <EmptySpace pref="335" max="32767" attributes="0"/>
               <Component id="TxtCidade" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="BtnVoltar" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="BtnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BtnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="BtnVoltar" alignment="0" pref="36" max="32767" attributes="0"/>
+                  <Component id="BtnExcluir" max="32767" attributes="0"/>
+                  <Component id="BtnSalvar" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
@@ -280,6 +277,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnVoltarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

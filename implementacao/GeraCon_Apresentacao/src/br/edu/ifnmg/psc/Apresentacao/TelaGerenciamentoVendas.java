@@ -174,6 +174,8 @@ public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.doDefaultCloseAction();
+        TelaPrincipal.PainelLateral.setVisible(true);
+        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
 

@@ -14,17 +14,18 @@ import javax.swing.JOptionPane;
 public class Apresentacao {
 
     public static void main(String[] args) {
-      criarFuncionario();
+      criarCliente();
     }
     
      public static void criarCliente() {
         Cliente cliente = new Cliente();
         ClienteRepositorio bd_cliente = new ClienteDAO();
+        ClienteRepositorio dao = GerenciadorReferencias.getCliente();
         
-        cliente.setNome("Victor");
-        cliente.setEmail("victorfelipe1608@gmail.com");
-        cliente.setCpf("12686566663");
-        cliente.setRg("MG19024107");
+        cliente.setNome("Joaquim");
+        cliente.setEmail("joao@gmail.com");
+        cliente.setCpf("99999999999");
+        cliente.setRg("MG11111111");
         cliente.setDescricao("Filho de Armando");
         cliente.setTelefone("38998570754");
         cliente.setBairro("São Lucas");
@@ -32,11 +33,41 @@ public class Apresentacao {
         cliente.setRua("Oscar Caetano");
         cliente.setNumero(2917);
         cliente.setComplemento("nenhum");
-        System.out.println(bd_cliente.Salvar(cliente));
-        if(bd_cliente.Salvar(cliente))
+        
+        if(dao.VerificaCliente(cliente.getCpf(),cliente.getRg())){
+            System.out.println("CPF "+cliente.getCpf()+" já cadastrado");
+        }
+        else{
+            if(bd_cliente.Salvar(cliente))
             JOptionPane.showMessageDialog(null,"Cliente: "+cliente.getNome()+" cadastrado"
                  + " com sucesso!!! ");
+            else JOptionPane.showMessageDialog(null, "Falha ao cadastrar novo Cliente");
+        }
+        
+    }
+     
+    private static void criarFuncionario() {
+        Funcionario funcionario = new Funcionario();
+        FuncionarioRepositorio bd_Funcionario = new FuncionarioDAO();
+        
+        funcionario.setNome("Marina");
+        funcionario.setTelefone("38991892729");
+        funcionario.setBairro("São Lucas");
+        funcionario.setCidade("Januária");
+        funcionario.setComplemento("A");
+        funcionario.setEmail("marina.tads@gmail.com");
+        funcionario.setRua("Rua 10");
+        funcionario.setNumero(285);
+        funcionario.setCargo("Gerente");
+        funcionario.setCarteiraTrabalho("123123123");
+        funcionario.setCpf("44444444444");
+        
+        if(bd_Funcionario.Salvar(funcionario)){
+             JOptionPane.showMessageDialog(null,"Funcionário: "+funcionario.getNome()+" cadastrado"
+                 + " com sucesso!!! ");
+        }
         else System.out.println("Nao salvo");
+        
     }
     
     public static void buscar() {
@@ -87,27 +118,5 @@ public class Apresentacao {
         
     }
 
-    private static void criarFuncionario() {
-        Funcionario funcionario = new Funcionario();
-        FuncionarioRepositorio bd_Funcionario = new FuncionarioDAO();
-        
-        funcionario.setNome("Felipe");
-        funcionario.setTelefone("38991892729");
-        funcionario.setBairro("São Lucas");
-        funcionario.setCidade("Januária");
-        funcionario.setComplemento("A");
-        funcionario.setEmail("felipe.tads@gmail.com");
-        funcionario.setRua("Rua 10");
-        funcionario.setNumero(285);
-        funcionario.setCargo("Gerente");
-        funcionario.setCarteiraTrabalho("123123123");
-        funcionario.setCpf("11111111111");
-        
-        if(bd_Funcionario.Salvar(funcionario)){
-             JOptionPane.showMessageDialog(null,"Funcionário: "+funcionario.getNome()+" cadastrado"
-                 + " com sucesso!!! ");
-        }
-        else System.out.println("Nao salvo");
-        
-    }
+    
 }

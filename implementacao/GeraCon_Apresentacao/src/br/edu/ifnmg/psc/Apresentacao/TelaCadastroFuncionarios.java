@@ -280,6 +280,11 @@ public class TelaCadastroFuncionarios extends javax.swing.JInternalFrame {
         );
 
         BtnVoltar.setText("Voltar");
+        BtnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVoltarActionPerformed(evt);
+            }
+        });
 
         BtnExcluir.setText("Excluir");
 
@@ -352,6 +357,13 @@ public class TelaCadastroFuncionarios extends javax.swing.JInternalFrame {
     private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnSalvarActionPerformed
+
+    private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
+        this.doDefaultCloseAction();
+        TelaGerenciarFuncionarios tela = new TelaGerenciarFuncionarios();
+        tela.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(tela);
+    }//GEN-LAST:event_BtnVoltarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

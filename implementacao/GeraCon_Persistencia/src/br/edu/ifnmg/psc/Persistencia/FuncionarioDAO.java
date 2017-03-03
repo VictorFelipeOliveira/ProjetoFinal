@@ -21,8 +21,8 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
          setConsultaAbrir("select codigo, nome, telefone, email, rua, bairro, cidade, "
                  + "complemento, numero, carteiraTrabalho, cargo, cpf from Funcionarios where codigo = ?");
         setConsultaApagar("DELETE from Funcionarios where codigo = ?");
-        setConsultaInserir("insert into Funcionarios (nome, telefone, email, rua, bairro, cidade, "
-                 + "complemento, numero, carteiraTrabalho, cargo, cpf) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        setConsultaInserir("insert into Funcionarios (nome, telefone, email, rua, bairro, cidade, complemento, "
+                + "numero, carteiraTrabalho, cargo, cpf) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         setConsultaAlterar("update Funcionarios set nome = ?, telefone = ?, email = ?, rua = ?, "
                 + "bairro = ?, cidade = ?, complemento = ?, numero = ?, carteiraTrabalho = ?, cargo = ?, cpf = ? "
                 + "where codigo = ?");
@@ -60,7 +60,9 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
     protected void preencheConsulta(PreparedStatement sql, Funcionario funcionario) {
             
         try {
-            sql.setString(1, funcionario.getNome() );
+            sql.setString(1, funcionario.getNome());
+            //sql.setString(2, funcionario.getCpf());
+            //sql.setString(3, funcionario.getCarteiraTrabalho());
             sql.setString(2, funcionario.getTelefone());
             sql.setString(3, funcionario.getEmail());
             sql.setString(4, funcionario.getRua());
@@ -72,21 +74,22 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
             sql.setString(10, funcionario.getCargo());
             sql.setString(11, funcionario.getCpf());
             
-            if(funcionario.getId() > 0) 
+            if(funcionario.getId()> 0) 
                 sql.setInt(12,funcionario.getId());
         } catch (SQLException ex) {
            ex.printStackTrace();
         }
+        System.out.println("Consulta no funcionario: "+sql);
     }
 
     @Override
     protected void preencheFiltros(Funcionario filtro) {
         if(filtro.getId()>0) 
-            adicionarFiltro("id", "=");
+            adicionarFiltro("id", " = ");
         if(filtro.getNome() != null)
             adicionarFiltro("nome", " like ");
         if(filtro.getCpf()!=null)
-            adicionarFiltro("cpf", "=");
+            adicionarFiltro("cpf", " = ");
         
     }
 

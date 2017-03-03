@@ -30,10 +30,12 @@ public class Cliente extends Pessoa implements Entidade{
         this.codigo=0;
     }
 
-    public Cliente(String descricao, String cpf, String rg) {
+    public Cliente(int codigo, String descricao, String cpf, String rg, String sexo) {
+        this.codigo = codigo;
         this.descricao = descricao;
         this.cpf = cpf;
         this.rg = rg;
+        this.sexo = sexo;
     }
 
     @Override

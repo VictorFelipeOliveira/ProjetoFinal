@@ -5,6 +5,7 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,9 +18,12 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
     /**
      * Creates new form TelaGerenciarClientes
      */
-    TelaPrincipal principal = new TelaPrincipal();
+    //TelaPrincipal principal = new TelaPrincipal();
     public TelaGerenciarClientes(){
         initComponents();
+        
+        //PrincipalDesktop.DesktopPrincipal.setVisible(false);
+        
     }
 
     /**
@@ -165,19 +169,20 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.doDefaultCloseAction();
+        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
-       // this.doDefaultCloseAction();
-        principal.c.add(this);
+        this.doDefaultCloseAction();
         TelaCadastroClientes telaClientes = new TelaCadastroClientes();
         telaClientes.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(telaClientes);
         try {
-            telaClientes.setMaximum(true);
+            telaClientes.setSelected(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(TelaGerenciarClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
     }//GEN-LAST:event_btnNovoClienteActionPerformed
 
 

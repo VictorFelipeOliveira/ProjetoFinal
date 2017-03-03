@@ -5,6 +5,10 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author thais
@@ -32,7 +36,7 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
         PanelBuscar = new javax.swing.JPanel();
         BtnBuscar = new javax.swing.JButton();
         PanelFuncionalidades = new javax.swing.JPanel();
-        BtnNovoCliente = new javax.swing.JButton();
+        BtnNovoFuncionario = new javax.swing.JButton();
         BtnAlterar = new javax.swing.JButton();
         BtnExcluir = new javax.swing.JButton();
         BtnVoltar = new javax.swing.JButton();
@@ -78,7 +82,12 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
-        BtnNovoCliente.setText("Novo Funcionário");
+        BtnNovoFuncionario.setText("Novo Funcionário");
+        BtnNovoFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnNovoFuncionarioActionPerformed(evt);
+            }
+        });
 
         BtnAlterar.setText("Alterar");
 
@@ -95,14 +104,14 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
                         .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BtnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnNovoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnNovoCliente)
+                .addComponent(BtnNovoFuncionario)
                 .addGap(28, 28, 28)
                 .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAlterar)
@@ -151,14 +160,29 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
 
     private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
         this.doDefaultCloseAction();
+        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
+        TelaPrincipal.PainelLateral.setVisible(true);
     }//GEN-LAST:event_BtnVoltarActionPerformed
+
+    private void BtnNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFuncionarioActionPerformed
+        this.doDefaultCloseAction();
+        TelaCadastroFuncionarios telaFuncionarios = new TelaCadastroFuncionarios();
+        telaFuncionarios.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(telaFuncionarios);
+        try {
+            telaFuncionarios.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+    }//GEN-LAST:event_BtnNovoFuncionarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAlterar;
     private javax.swing.JButton BtnBuscar;
     private javax.swing.JButton BtnExcluir;
-    private javax.swing.JButton BtnNovoCliente;
+    private javax.swing.JButton BtnNovoFuncionario;
     private javax.swing.JButton BtnVoltar;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelFuncCadastrados;

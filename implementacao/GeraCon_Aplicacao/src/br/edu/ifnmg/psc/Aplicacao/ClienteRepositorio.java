@@ -11,4 +11,5 @@ package br.edu.ifnmg.psc.Aplicacao;
  */
 public interface ClienteRepositorio extends Repositorio<Cliente>{
     public Cliente Abrir(String cpf);
+    public boolean VerificaCliente(String cpf, String rg);
 }

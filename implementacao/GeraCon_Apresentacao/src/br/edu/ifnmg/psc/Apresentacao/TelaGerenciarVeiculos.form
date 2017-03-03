@@ -20,15 +20,15 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="PanelVeiculosCadastrados" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="PanelFuncionalidades" min="-2" max="-2" attributes="0"/>
-                  <Component id="BtonVoltar" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
+                  <Component id="btnVoltar" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
                   <Component id="PanelBuscar" min="-2" max="-2" attributes="0"/>
+                  <Component id="PanelFuncionalidades" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -36,21 +36,17 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="PanelVeiculosCadastrados" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="PanelBuscar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       <Component id="PanelFuncionalidades" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="PanelVeiculosCadastrados" min="-2" max="-2" attributes="0"/>
-                          <Component id="BtonVoltar" min="-2" pref="40" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="btnVoltar" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -147,7 +143,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="BtnExcluir" min="-2" pref="94" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="BtnNovoCliente" alignment="1" min="-2" pref="259" max="-2" attributes="0"/>
+                      <Component id="btnNovoVeiculo" alignment="1" min="-2" pref="259" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="57" max="32767" attributes="0"/>
               </Group>
@@ -157,7 +153,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="BtnNovoCliente" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="btnNovoVeiculo" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="BtnExcluir" pref="34" max="32767" attributes="0"/>
@@ -169,10 +165,13 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="BtnNovoCliente">
+        <Component class="javax.swing.JButton" name="btnNovoVeiculo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Novo Ve&#xed;culo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoVeiculoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnAlterar">
           <Properties>
@@ -186,12 +185,12 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="BtonVoltar">
+    <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtonVoltarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
