@@ -59,8 +59,11 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
                
                 PreparedStatement sql = conn.prepareStatement(getConsultaInserir());
                 preencheConsulta(sql, obj);
+                System.out.println("Analise da consulta: 1: "+sql);
+                
                 sql.executeUpdate();
                 PreparedStatement sql2 = conn.prepareStatement(getConsultaUltimoId());
+                System.out.println("Analise da consulta: "+sql2);
                 preencheConsulta(sql2, obj);
                 ResultSet resultado = sql2.executeQuery();
 

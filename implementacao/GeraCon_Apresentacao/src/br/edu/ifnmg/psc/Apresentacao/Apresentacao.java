@@ -21,7 +21,7 @@ public class Apresentacao {
         Cliente cliente = new Cliente();
         ClienteRepositorio bd_cliente = new ClienteDAO();
         ClienteRepositorio dao = GerenciadorReferencias.getCliente();
-        
+        /*
         cliente.setNome("Joaquim");
         cliente.setEmail("joao@gmail.com");
         cliente.setCpf("99999999999");
@@ -33,7 +33,7 @@ public class Apresentacao {
         cliente.setRua("Oscar Caetano");
         cliente.setNumero(2917);
         cliente.setComplemento("nenhum");
-        
+        */
         if(dao.VerificaCliente(cliente.getCpf(),cliente.getRg())){
             System.out.println("CPF "+cliente.getCpf()+" já cadastrado");
         }
@@ -51,7 +51,7 @@ public class Apresentacao {
         FuncionarioRepositorio bd_Funcionario = new FuncionarioDAO();
         
         funcionario.setNome("Marina");
-        funcionario.setTelefone("38991892729");
+        //funcionario.setTelefone("38991892729");
         funcionario.setBairro("São Lucas");
         funcionario.setCidade("Januária");
         funcionario.setComplemento("A");

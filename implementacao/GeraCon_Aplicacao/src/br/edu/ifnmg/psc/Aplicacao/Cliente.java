@@ -5,6 +5,8 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import br.edu.ifnmg.psc.Excecao.ErroValidacao;
+import java.sql.Date;
 import java.util.Objects;
 
 /**
@@ -13,10 +15,18 @@ import java.util.Objects;
  */
 public class Cliente extends Pessoa implements Entidade{
     private int codigo;
-    private String descricao;
     private String cpf;
     private String rg;
     private String sexo;
+    private Date dataNascimento;
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 
     public String getSexo() {
         return sexo;
@@ -32,7 +42,6 @@ public class Cliente extends Pessoa implements Entidade{
 
     public Cliente(int codigo, String descricao, String cpf, String rg, String sexo) {
         this.codigo = codigo;
-        this.descricao = descricao;
         this.cpf = cpf;
         this.rg = rg;
         this.sexo = sexo;
@@ -47,30 +56,25 @@ public class Cliente extends Pessoa implements Entidade{
     public void setId(int id) {
         this.codigo=id;
     }
-    
-    
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
+   
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpf(String cpf) throws ErroValidacao {
+        if(cpf.length() > 14)
+            throw new ErroValidacao("O atributo cpf deve ter no máximo 14 caracteres!");
+        this.cpf = cpf.replace("-", "").replace(".", "");
     }
 
     public String getRg() {
         return rg;
     }
 
-    public void setRg(String rg) {
-        this.rg = rg;
+    public void setRg(String rg) throws ErroValidacao {
+        if(rg.length()>13)
+            throw new ErroValidacao("O atributo rg deve ter no máximo 10 caracteres!");
+        this.rg = rg.replace("-","").replace(".","");
     }
 
     @Override

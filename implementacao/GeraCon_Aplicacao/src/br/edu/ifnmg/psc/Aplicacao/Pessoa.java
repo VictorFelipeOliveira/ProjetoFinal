@@ -5,6 +5,8 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import br.edu.ifnmg.psc.Excecao.ErroValidacao;
+
 /**
  *
  * @author victor
@@ -26,8 +28,10 @@ public abstract class Pessoa extends Endereco{
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefone(String telefone) throws ErroValidacao {
+        if(telefone.length()>14)
+            throw new ErroValidacao("O atributo rg deve ter no máximo 10 caracteres!");
+        this.telefone = telefone.replace("(","").replace(")","").replace("-", "");
     }
 
     public String getEmail() {
