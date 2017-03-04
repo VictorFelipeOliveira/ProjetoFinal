@@ -5,13 +5,15 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import br.edu.ifnmg.psc.Excecao.ErroValidacao;
+
 /**
  *
  * @author thais
  */
 public class Veiculo implements Entidade {
 
-    
+    private int codigo;
     private String placa;
     private String tipo;
     private int ano;
@@ -19,6 +21,10 @@ public class Veiculo implements Entidade {
     private String combustivel;
     private String marca;
     private String modelo;
+
+    public Veiculo() {
+        this.codigo = 0;
+    }
 
     public String getModelo() {
         return modelo;
@@ -49,8 +55,10 @@ public class Veiculo implements Entidade {
         return placa;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setPlaca(String placa) throws ErroValidacao {
+        if(placa.length()>8)
+            throw new ErroValidacao("O atributo 'Placa' deve ter no máximo 10 caracteres!");
+        this.placa = placa.replace("-","");
     }
 
     public String getTipo() {
@@ -79,12 +87,12 @@ public class Veiculo implements Entidade {
     
     @Override
     public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return codigo;
     }
 
     @Override
     public void setId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.codigo = id;
     }
     
 }
