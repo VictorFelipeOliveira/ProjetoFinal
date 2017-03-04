@@ -12,6 +12,7 @@ package br.edu.ifnmg.psc.Aplicacao;
  
     public interface FuncionarioRepositorio extends Repositorio<Funcionario>{
         public Funcionario Abrir(String cpf);
+        public boolean VerificaFuncionario(String cpf, String rg);
     }
     
 
