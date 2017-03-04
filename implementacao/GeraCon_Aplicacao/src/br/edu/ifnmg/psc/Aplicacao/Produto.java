@@ -5,18 +5,69 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
-import java.util.Objects;
-
 /**
  *
  * @author thais
  */
 public class Produto implements Entidade{
+    Fornecedor fornecedor = new Fornecedor();
+    private int codigo;
 
+   
+    private String nome;
+    private String categoria;
     private String descricao;
     private float precoUnitario;
-    private String unidadeMedida;
+    private int fornecedor_fk;
+    private int quantidade;
+   // private String unidadeMedida;
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Produto() {
+        this.codigo = 0;
+    }
+
+    public Produto(int codigo, String nome, String categoria, String descricao, float precoUnitario, int fornecedor_fk) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.descricao = descricao;
+        this.precoUnitario = precoUnitario;
+        this.fornecedor_fk = fornecedor_fk;
+    }
+
     
+    
+    public int getFornecedor_fk() {
+        return fornecedor_fk;
+    }
+
+    public void setFornecedor_fk(int fornecedor_fk) {
+        this.fornecedor_fk = fornecedor_fk;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
     
     public String getDescricao() {
         return descricao;
@@ -32,56 +83,16 @@ public class Produto implements Entidade{
 
     public void setPrecoUnitario(float precoUnitario) {
         this.precoUnitario = precoUnitario;
-    }
-
-    public String getUnidadeMedida() {
-        return unidadeMedida;
-    }
-
-    public void setUnidadeMedida(String unidadeMedida) {
-        this.unidadeMedida = unidadeMedida;
-    }
-    
+    }  
     
     @Override
     public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return  codigo;
     }
 
     @Override
     public void setId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.codigo = id;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.descricao);
-        hash = 67 * hash + Float.floatToIntBits(this.precoUnitario);
-        hash = 67 * hash + Objects.hashCode(this.unidadeMedida);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Produto other = (Produto) obj;
-        if (!Objects.equals(this.descricao, other.descricao)) {
-            return false;
-        }
-        if (Float.floatToIntBits(this.precoUnitario) != Float.floatToIntBits(other.precoUnitario)) {
-            return false;
-        }
-        if (!Objects.equals(this.unidadeMedida, other.unidadeMedida)) {
-            return false;
-        }
-        return true;
-    }
-    
     
 }

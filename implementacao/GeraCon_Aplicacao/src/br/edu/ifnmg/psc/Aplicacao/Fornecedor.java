@@ -17,6 +17,11 @@ public class Fornecedor extends Pessoa implements Entidade{
     private String cnpj;
     private int codigo;
 
+    
+    public Fornecedor(){
+    
+    } 
+    
     public String getCnpj() {
         return cnpj;
     }

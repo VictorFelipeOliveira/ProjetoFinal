@@ -16,6 +16,7 @@ public abstract class Pessoa extends Endereco{
     private String telefone;
     private String email;
 
+    
     public String getNome() {
         return nome;
     }
@@ -32,8 +33,8 @@ public abstract class Pessoa extends Endereco{
         System.out.print(telefone.length());
         if(telefone.length()>14)
             throw new ErroValidacao("O atributo telefone deve ter no máximo 10 caracteres!");
-        else if(telefone.length()<9)
-            throw new ErroValidacao("Atributo telefone inválido");
+       // else if(telefone.length()<9)
+         //   throw new ErroValidacao("Atributo telefone inválido");
         this.telefone = telefone.replace("(","").replace(")","").replace("-", "");
     }
 
@@ -43,5 +44,10 @@ public abstract class Pessoa extends Endereco{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + '}';
     }
 }

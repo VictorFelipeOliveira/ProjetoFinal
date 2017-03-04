@@ -5,10 +5,15 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author thais
  */
 public interface ProdutoRepositorio extends Repositorio<Produto> {
-     
+     public Produto Abrir(String nome);
+     public boolean verificaProduto(String nome, float preco);
+     ArrayList<Fornecedor> listarFornecedores();
+     public int BuscaProduto(String nome);
 }

@@ -40,7 +40,7 @@ public class Cliente extends Pessoa implements Entidade{
         this.codigo=0;
     }
 
-    public Cliente(int codigo, String descricao, String cpf, String rg, String sexo) {
+    public Cliente(int codigo, String cpf, String rg, String sexo) {
         this.codigo = codigo;
         this.cpf = cpf;
         this.rg = rg;

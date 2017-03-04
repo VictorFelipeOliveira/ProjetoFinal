@@ -9,11 +9,13 @@ import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.CompraRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.FuncionarioRepositorio;
+import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.UsuarioRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.VeiculoRepositorio;
 import br.edu.ifnmg.psc.Persistencia.ClienteDAO;
 import br.edu.ifnmg.psc.Persistencia.FornecedorDAO;
 import br.edu.ifnmg.psc.Persistencia.FuncionarioDAO;
+import br.edu.ifnmg.psc.Persistencia.ProdutoDAO;
 import br.edu.ifnmg.psc.Persistencia.UsuarioDAO;
 import br.edu.ifnmg.psc.Persistencia.VeiculoDAO;
 
@@ -71,6 +73,12 @@ public class GerenciadorReferencias {
         return daoVeiculo;
     }
     
+    private static ProdutoRepositorio daoProduto;
+    public static ProdutoRepositorio getProduto(){
+        if(daoProduto == null)
+            daoProduto = new ProdutoDAO();
+        return daoProduto;
+    }
     
    
 }

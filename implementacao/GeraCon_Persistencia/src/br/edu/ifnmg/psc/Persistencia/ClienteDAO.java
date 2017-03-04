@@ -59,9 +59,7 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
             cliente.setRg(resultado.getString(11));
             cliente.setDataNascimento(resultado.getDate(12));
             
-        } catch(SQLException ex){
-            ex.printStackTrace();
-        } catch (ErroValidacao ex) {
+        } catch(SQLException | ErroValidacao ex){
             ex.printStackTrace();
         }
         return cliente;

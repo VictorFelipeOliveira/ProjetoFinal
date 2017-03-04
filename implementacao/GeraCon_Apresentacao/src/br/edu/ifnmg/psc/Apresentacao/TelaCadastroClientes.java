@@ -20,10 +20,10 @@ import javax.swing.JOptionPane;
  * @author thais
  */
 public class TelaCadastroClientes extends javax.swing.JInternalFrame{
-    Cliente clientes = new Cliente();
+    Cliente cliente;
     ClienteRepositorio bd_cliente = new ClienteDAO();
     ClienteRepositorio dao = GerenciadorReferencias.getCliente();
-    //TelaPrincipal main = new TelaPrincipal();
+    TelaGerenciarClientes listagem;
             
     /**
      * Creates new form TelaCadastroClientes
@@ -142,7 +142,7 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
                                 .addGroup(PanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 98, Short.MAX_VALUE)
                                 .addGroup(PanelCadastroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(LblBairro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(LblCidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -295,23 +295,25 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         try {
             extraiCampos();
-            if(dao.VerificaCliente(clientes.getCpf(),clientes.getRg())){
-            System.out.println("CPF "+clientes.getCpf()+" já cadastrado");
-        }
-        else{
-            if(bd_cliente.Salvar(clientes)){
-                JOptionPane.showMessageDialog(null,"Cliente: "+clientes.getNome()+" cadastrado"
-                 + " com sucesso!!! ");
-                limpaCampos();
+            
+            if(dao.VerificaCliente(cliente.getCpf(),cliente.getRg())){
+                System.out.println("CPF "+cliente.getCpf()+" já cadastrado");
             }
-            else JOptionPane.showMessageDialog(null, "Falha ao cadastrar novo Cliente");
-        }
-        } catch (ParseException ex) {
+            
+            else{
+                if(bd_cliente.Salvar(cliente)){
+                    JOptionPane.showMessageDialog(null,"Cliente: "+cliente.getNome()+" cadastrado"
+                    + " com sucesso!!! ");
+                    limpaCampos();
+                }
+                
+                else JOptionPane.showMessageDialog(null, "Falha ao cadastrar novo Cliente");
+            }
+        
+        } catch (ParseException | NumberFormatException ex) {
             ex.printStackTrace();
         } catch (ErroValidacao ex) {
             Logger.getLogger(TelaCadastroClientes.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NumberFormatException ex){
-            ex.printStackTrace();
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -355,31 +357,32 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
     // End of variables declaration//GEN-END:variables
 
     private void extraiCampos() throws ParseException, ErroValidacao {
+        cliente = new Cliente();
         if(!txtNome.getText().equals(""))
-            clientes.setNome(txtNome.getText());
+            cliente.setNome(txtNome.getText());
         if(!txtCPF.getText().equals(""))
-            clientes.setCpf(txtCPF.getText().trim());
+            cliente.setCpf(txtCPF.getText().trim());
         if(!txtRG.getText().equals(""))
-            clientes.setRg(txtRG.getText());
+            cliente.setRg(txtRG.getText());
         if(!txtBairro.getText().equals(""))
-            clientes.setBairro(txtBairro.getText());
+            cliente.setBairro(txtBairro.getText());
         if(!txtCidade.getText().equals(""))
-            clientes.setCidade(txtCidade.getText());
+            cliente.setCidade(txtCidade.getText());
         if(!txtComplemento.getText().equals(""))
-            clientes.setComplemento(txtComplemento.getText());
+            cliente.setComplemento(txtComplemento.getText());
         if(!txtNumero.getText().equals(""))
-            clientes.setNumero(Integer.parseInt(txtNumero.getText()));
+            cliente.setNumero(Integer.parseInt(txtNumero.getText()));
         if(!txtTelefone.getText().equals(""))
-            clientes.setTelefone(txtTelefone.getText());
+            cliente.setTelefone(txtTelefone.getText());
         if(!txtRua.getText().equals(""))
-            clientes.setRua(txtRua.getText());
+            cliente.setRua(txtRua.getText());
         if(!txtEmail.getText().equals(""))
-            clientes.setEmail(txtEmail.getText());
+            cliente.setEmail(txtEmail.getText());
         
         if(!txtDataNascimento.getText().equals("")){
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             java.sql.Date data= new java.sql.Date(format.parse(txtDataNascimento.getText()).getTime());
-            clientes.setDataNascimento(data);
+            cliente.setDataNascimento(data);
         }
             
         
@@ -401,7 +404,7 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
             default:{throw new Error("Erro na validação");}
             
         }
-        clientes.setSexo(sexo);
+        cliente.setSexo(sexo);
     }
 
     private void limpaCampos() {
@@ -419,4 +422,35 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
         cmbSexo.setSelectedIndex(0);
         
     }
+
+    public void setEntidade(Cliente entidade) throws ParseException {
+        this.cliente = entidade;
+        preencheCampos();
+    }
+
+    private void preencheCampos() throws ParseException {
+        txtNome.setText(cliente.getNome());
+        txtRG.setText(cliente.getRg());
+        txtCPF.setText(cliente.getCpf());
+        cmbSexo.setSelectedItem(cliente.getSexo());
+        
+        SimpleDateFormat entrada= new SimpleDateFormat("yyyy-MM-dd"); 
+        SimpleDateFormat  saida= new SimpleDateFormat("dd/MM/yyyy"); 
+        String data = saida.format(entrada.parse(cliente.getDataNascimento().toString()));
+        
+        txtDataNascimento.setText(data);
+        txtTelefone.setText(cliente.getTelefone());
+        txtEmail.setText(cliente.getEmail());
+        txtRua.setText(cliente.getRua());
+        txtBairro.setText(cliente.getBairro());
+        txtCidade.setText(cliente.getCidade());
+        txtComplemento.setText(cliente.getComplemento());
+        txtNumero.setText(String.valueOf(cliente.getNumero()));
+        
+    }
+
+    void setListagem(TelaGerenciarClientes listagem) {
+        this.listagem = listagem;
+    }
+
 }
