@@ -5,6 +5,7 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import java.util.Objects;
 
 /**
@@ -14,23 +15,26 @@ import java.util.Objects;
 public class Fornecedor extends Pessoa implements Entidade{
 
     private String cnpj;
+    private int codigo;
 
     public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+    public void setCnpj(String cnpj) throws ErroValidacao {
+        if(cnpj.length()>18)
+            throw new ErroValidacao("O atributo CNPJ deve ter no máximo 10 caracteres!");
+        this.cnpj = cnpj.replace(".","").replace("/","").replace("-","");
     }
     
     @Override
     public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return codigo;
     }
 
     @Override
     public void setId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.codigo = id;
     }
 
     @Override
@@ -53,7 +57,5 @@ public class Fornecedor extends Pessoa implements Entidade{
             return false;
         }
         return true;
-    }
-    
-    
+    }    
 }

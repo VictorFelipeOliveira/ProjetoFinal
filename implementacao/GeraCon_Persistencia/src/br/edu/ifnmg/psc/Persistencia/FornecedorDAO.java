@@ -24,13 +24,14 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
         setConsultaAbrir("select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
                 + "numero, cnpj from Fornecedores where codigo = ?");
         setConsultaApagar("delete from Fornecedores where codigo = ?");
-        setConsultaInserir("insert into Fornecedores (nome, cnpj, telefone, email, rua, numero, "
-                + "complemento, bairro, cidade) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        setConsultaAlterar("update Fornecedores set nome = ?, cnpj = ?, telefone = ?, email = ?, "
-                + "rua = ?, numero = ?, complemento = ?, bairro = ?, cidade = ?  where codigo = ?");
-        setConsultaBusca("select codigo, nome, cnpj, telefone, email, rua, numero, complemento, "
-                + "bairro, cidade from Fornecedores");
-        setConsultaUltimoId("select max(codigo) from Fornecedores where nome = ? and cnpj =?");
+        setConsultaInserir("insert into Fornecedores (nome, telefone, email, rua, bairro, cidade, complemento,"
+                + " numero, cnpj) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        setConsultaAlterar("update Fornecedores set nome = ?, telefone = ?, email = ?, rua = ?, "
+                + "bairro = ?, cidade = ?, complemento = ?, numero = ?, cnpj = ?  where codigo = ?");
+        setConsultaBusca("select codigo, nome, telefone, email, rua, bairro, cidade, "
+                + "complemento, numero, cnpj from Fornecedores");
+        setConsultaUltimoId("select max(codigo) from Fornecedores where nome = ? and telefone = ? and email = ? and rua = ? "
+                + "and bairro = ? and cidade = ? and complemento = ? and numero = ? and cnpj = ?");
     }
 
     @Override

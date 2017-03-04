@@ -29,8 +29,11 @@ public abstract class Pessoa extends Endereco{
     }
 
     public void setTelefone(String telefone) throws ErroValidacao {
+        System.out.print(telefone.length());
         if(telefone.length()>14)
-            throw new ErroValidacao("O atributo rg deve ter no máximo 10 caracteres!");
+            throw new ErroValidacao("O atributo telefone deve ter no máximo 10 caracteres!");
+        else if(telefone.length()<9)
+            throw new ErroValidacao("Atributo telefone inválido");
         this.telefone = telefone.replace("(","").replace(")","").replace("-", "");
     }
 
