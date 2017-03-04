@@ -7,9 +7,12 @@ package br.edu.ifnmg.psc.Persistencia;
 
 import br.edu.ifnmg.psc.Aplicacao.Fornecedor;
 import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
+import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,8 +21,8 @@ import java.sql.SQLException;
 public class FornecedorDAO extends DAOGenerico<Fornecedor> implements FornecedorRepositorio{
 
     public FornecedorDAO() {
-        setConsultaAbrir("select codigo, nome, cnpj, telefone, email, rua, numero, complemento, "
-                + "bairro, cidade from Fornecedores where codigo = ?");
+        setConsultaAbrir("select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
+                + "numero, cnpj from Fornecedores where codigo = ?");
         setConsultaApagar("delete from Fornecedores where codigo = ?");
         setConsultaInserir("insert into Fornecedores (nome, cnpj, telefone, email, rua, numero, "
                 + "complemento, bairro, cidade) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -37,15 +40,15 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
         try{
             fornecedor.setId(resultado.getInt(1));
             fornecedor.setNome(resultado.getString(2));
-            fornecedor.setCnpj(resultado.getString(3));
-            fornecedor.setTelefone(resultado.getString(4));
-            fornecedor.setEmail(resultado.getString(5));
-            fornecedor.setRua(resultado.getString(6));
-            fornecedor.setNumero(resultado.getInt(7));
+            fornecedor.setTelefone(resultado.getString(3));
+            fornecedor.setEmail(resultado.getString(4));
+            fornecedor.setRua(resultado.getString(5));
+            fornecedor.setBairro(resultado.getString(6));
+            fornecedor.setCidade(resultado.getString(7));
             fornecedor.setComplemento(resultado.getString(8));
-            fornecedor.setBairro(resultado.getString(9));
-            fornecedor.setCidade(resultado.getString(10));
-        }catch(SQLException ex){
+            fornecedor.setNumero(resultado.getInt(9));
+            fornecedor.setCnpj(resultado.getString(10));
+        }catch(SQLException | ErroValidacao ex){
             ex.printStackTrace();
         }
         return fornecedor;
@@ -55,14 +58,14 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
     protected void preencheConsulta(PreparedStatement sql, Fornecedor fornecedor) {
         try{
             sql.setString(1, fornecedor.getNome());
-            sql.setString(2, fornecedor.getCnpj());
-            sql.setString(3, fornecedor.getTelefone());
-            sql.setString(4, fornecedor.getEmail());
-            sql.setString(5, fornecedor.getRua());
-            sql.setInt(6, fornecedor.getNumero());
+            sql.setString(2, fornecedor.getTelefone());
+            sql.setString(3, fornecedor.getEmail());
+            sql.setString(4, fornecedor.getRua());
+            sql.setString(5, fornecedor.getBairro());
+            sql.setString(6, fornecedor.getCidade());
             sql.setString(7, fornecedor.getComplemento());
-            sql.setString(8, fornecedor.getBairro());
-            sql.setString(9, fornecedor.getCidade());
+            sql.setInt(8, fornecedor.getNumero());
+            sql.setString(9, fornecedor.getCnpj());
         }catch(SQLException ex){
             ex.printStackTrace();
         }
@@ -79,8 +82,16 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
     protected void preencheParametros(PreparedStatement sql, Fornecedor filtro) {
         try {
             int cont = 1;
-            if(filtro.getId() > 0){ sql.setInt(cont, filtro.getId()); cont++; }
-            if(filtro.getNome() != null ){ sql.setString(cont, filtro.getNome() +"%"); cont++; }
+            if(filtro.getId() > 0){
+                sql.setInt(cont, filtro.getId());
+                cont++; 
+            }
+            
+            if(filtro.getNome() != null ){
+                sql.setString(cont, filtro.getNome() +"%");
+                cont++; 
+            }
+            
             if(filtro.getCnpj()!= null){ 
                 sql.setString(cont, filtro.getCnpj()); 
                 cont++; 
@@ -95,8 +106,8 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
     public Fornecedor Abrir(String cpf) {
           try {
             
-            PreparedStatement sql = conn.prepareStatement("select nome, cnpj, telefone, email, rua, numero, complemento, "
-                + "bairro, cidade from Fornecedores where cnpj = ?");
+            PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
+                + "numero, cnpj from Fornecedores where cnpj = ?");
             
             sql.setString(1, cpf);
             
@@ -111,5 +122,18 @@ public class FornecedorDAO extends DAOGenerico<Fornecedor> implements Fornecedor
         }
         
         return null;
+    }
+
+    @Override
+    public boolean VerificaFornecedor(String cnpj) {
+         try {
+            PreparedStatement sql = conn.prepareStatement("select codigo from Fornecedores where cnpj = ?");
+            sql.setString(1, cnpj);
+            ResultSet resultado = sql.executeQuery();
+            return resultado.next();
+        } catch (SQLException ex) {
+           ex.printStackTrace();
+        }
+        return false;
     }
 }

@@ -11,5 +11,6 @@ package br.edu.ifnmg.psc.Aplicacao;
  */
 public interface FornecedorRepositorio extends Repositorio<Fornecedor> {
     public Fornecedor Abrir(String cpf);
+    public boolean VerificaFornecedor(String cnpj);
     
 }
