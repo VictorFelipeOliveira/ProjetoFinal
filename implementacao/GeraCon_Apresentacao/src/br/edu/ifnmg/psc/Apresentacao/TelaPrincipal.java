@@ -154,7 +154,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuItemFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFuncionariosActionPerformed
-        abreInternalFrame(new TelaGerenciarFuncionarios());
+       abreInternalFrame(new TelaGerenciarFuncionarios());
     }//GEN-LAST:event_menuItemFuncionariosActionPerformed
 
     private void menuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemClientesActionPerformed
