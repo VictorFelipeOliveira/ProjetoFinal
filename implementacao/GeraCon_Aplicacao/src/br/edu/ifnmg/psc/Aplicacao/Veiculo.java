@@ -22,6 +22,17 @@ public class Veiculo implements Entidade {
     private String marca;
     private String modelo;
 
+    public Veiculo(int codigo, String placa, String tipo, int ano, String observacoes, String combustivel, String marca, String modelo) {
+        this.codigo = codigo;
+        this.placa = placa;
+        this.tipo = tipo;
+        this.ano = ano;
+        this.observacoes = observacoes;
+        this.combustivel = combustivel;
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+    
     public Veiculo() {
         this.codigo = 0;
     }

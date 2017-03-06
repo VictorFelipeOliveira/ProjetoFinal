@@ -10,14 +10,18 @@ import br.edu.ifnmg.psc.Aplicacao.CompraRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.FuncionarioRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
+import br.edu.ifnmg.psc.Aplicacao.TransacaoRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.UsuarioRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.VeiculoRepositorio;
+import br.edu.ifnmg.psc.Aplicacao.VendaRepositorio;
 import br.edu.ifnmg.psc.Persistencia.ClienteDAO;
 import br.edu.ifnmg.psc.Persistencia.FornecedorDAO;
 import br.edu.ifnmg.psc.Persistencia.FuncionarioDAO;
 import br.edu.ifnmg.psc.Persistencia.ProdutoDAO;
+import br.edu.ifnmg.psc.Persistencia.TransacaoDAO;
 import br.edu.ifnmg.psc.Persistencia.UsuarioDAO;
 import br.edu.ifnmg.psc.Persistencia.VeiculoDAO;
+import br.edu.ifnmg.psc.Persistencia.VendaDAO;
 
 /**
  *
@@ -80,5 +84,19 @@ public class GerenciadorReferencias {
         return daoProduto;
     }
     
+    private static VendaRepositorio daoVenda;
+
+    public static VendaRepositorio getVenda() {
+        if(daoVenda == null)
+            daoVenda = new VendaDAO();
+        return daoVenda;
+    }
+    
+    private static TransacaoRepositorio daoTransacao;
+    public static TransacaoRepositorio getTransacao() {
+        if(daoTransacao == null)
+            daoTransacao = new TransacaoDAO();
+        return daoTransacao;
+    }
    
 }

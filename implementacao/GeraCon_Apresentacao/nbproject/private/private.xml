@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/victor/Documentos/Projetos/novo_sistema/ProjetoFinal/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaCadastroClientes.java</file>
-            <file>file:/home/victor/Documentos/Projetos/novo_sistema/ProjetoFinal/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaCadastroVeiculos.java</file>
+            <file>file:/home/victor/Documentos/Projetos/novo_sistema/ProjetoFinal/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaGerenciarClientes.java</file>
+            <file>file:/home/victor/Documentos/Projetos/novo_sistema/ProjetoFinal/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaCadastroFornecedor.java</file>
+            <file>file:/home/victor/Documentos/Projetos/novo_sistema/ProjetoFinal/implementacao/GeraCon_Apresentacao/src/br/edu/ifnmg/psc/Apresentacao/TelaGerenciarFornecedores.java</file>
         </group>
     </open-files>
 </project-private>

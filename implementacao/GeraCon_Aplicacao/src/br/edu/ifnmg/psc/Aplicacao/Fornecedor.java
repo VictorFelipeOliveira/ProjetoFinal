@@ -17,9 +17,13 @@ public class Fornecedor extends Pessoa implements Entidade{
     private String cnpj;
     private int codigo;
 
-    
+    public Fornecedor(int codigo,String cnpj) {
+        this.cnpj = cnpj;
+        this.codigo = codigo;
+    }
+
     public Fornecedor(){
-    
+        this.codigo = 0;
     } 
     
     public String getCnpj() {

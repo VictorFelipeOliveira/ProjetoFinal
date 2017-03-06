@@ -9,6 +9,7 @@ import br.edu.ifnmg.psc.Aplicacao.Veiculo;
 import br.edu.ifnmg.psc.Aplicacao.VeiculoRepositorio;
 import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import br.edu.ifnmg.psc.Persistencia.VeiculoDAO;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -22,6 +23,7 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
     VeiculoRepositorio daoVeiculo = GerenciadorReferencias.getVeiculo();
     VeiculoRepositorio bd_Veiculo = new VeiculoDAO();
     Veiculo veiculo = new Veiculo();
+    TelaGerenciarVeiculos listagem;
     /**
      * Creates new form TelaCadastroVeiculos
      */
@@ -52,7 +54,7 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
         btnSalvar = new javax.swing.JButton();
         LblMarca = new javax.swing.JLabel();
         LblPlaca = new javax.swing.JLabel();
-        TxtModelo = new javax.swing.JTextField();
+        txtModelo = new javax.swing.JTextField();
         cmbTipo = new javax.swing.JComboBox();
         LblCombustivel = new javax.swing.JLabel();
         cmbCombustivel = new javax.swing.JComboBox();
@@ -167,7 +169,7 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
                             .addComponent(LblAno, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TxtModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                            .addComponent(txtModelo, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
                             .addComponent(txtAno))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelCadastroLayout.createSequentialGroup()
@@ -195,7 +197,7 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
                             .addGap(51, 51, 51)
                             .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(LblModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TxtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCadastroLayout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -276,10 +278,14 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        this.doDefaultCloseAction();
-        TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
-        telaVeiculos.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(telaVeiculos);
+        try {
+            this.doDefaultCloseAction();
+            TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
+            telaVeiculos.setVisible(true);
+            TelaPrincipal.DesktopPrincipal.add(telaVeiculos);
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaCadastroVeiculos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void extraiCampos() throws ErroValidacao {
@@ -288,8 +294,8 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
             veiculo.setPlaca(txtPlaca.getText());
         if(!txtMarca.getText().equals(""))
             veiculo.setMarca(txtMarca.getText());
-        if(!TxtModelo.getText().equals(""))
-            veiculo.setModelo(TxtModelo.getText());
+        if(!txtModelo.getText().equals(""))
+            veiculo.setModelo(txtModelo.getText());
         if(!txtAno.getText().equals(""))
             veiculo.setAno(Integer.parseInt(txtAno.getText()));
         veiculo.setObservacoes(txtObservacoes.getText());
@@ -344,7 +350,6 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LblTipo;
     private javax.swing.JPanel PanelCadastro;
     private javax.swing.JPanel PanelObs;
-    private javax.swing.JTextField TxtModelo;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JButton btnVoltar;
@@ -354,6 +359,7 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JFormattedTextField txtAno;
     private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtModelo;
     private javax.swing.JTextArea txtObservacoes;
     private javax.swing.JFormattedTextField txtPlaca;
     // End of variables declaration//GEN-END:variables
@@ -363,10 +369,27 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
         txtObservacoes.setText("");
         txtMarca.setText("");
         txtAno.setText("");
-        TxtModelo.setText("");
+        txtModelo.setText("");
         cmbCombustivel.setSelectedIndex(0);
         cmbTipo.setSelectedIndex(0);
     }
 
-  
+    void setEntidade(Veiculo entidade) {
+        this.veiculo = entidade;
+        preencheCampos();
+    }
+
+    void setListagem(TelaGerenciarVeiculos listagem) {
+        this.listagem = listagem;
+    }
+
+    private void preencheCampos() {
+        txtPlaca.setText(veiculo.getPlaca());
+        txtAno.setText(String.valueOf(veiculo.getAno()));
+        txtMarca.setText(veiculo.getMarca());
+        txtObservacoes.setText(veiculo.getObservacoes());
+        txtModelo.setText(veiculo.getModelo());
+        cmbCombustivel.setSelectedItem(veiculo.getCombustivel());
+        cmbTipo.setSelectedItem(veiculo.getTipo());
+    }
 }

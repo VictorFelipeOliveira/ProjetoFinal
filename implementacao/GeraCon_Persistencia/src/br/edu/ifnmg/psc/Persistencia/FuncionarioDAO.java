@@ -20,18 +20,18 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
 
     public FuncionarioDAO(){
          setConsultaAbrir("select codigo, nome, telefone, email, rua, bairro, cidade, "
-                 + "complemento, numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento from Funcionarios where codigo = ?");
+                 + "complemento, numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento , sexo from Funcionarios where codigo = ?");
         setConsultaApagar("DELETE from Funcionarios where codigo = ?");
         setConsultaInserir("insert into Funcionarios (nome, telefone, email, rua, bairro, cidade, complemento, "
-                + "numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                + "numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento, sexo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         setConsultaAlterar("update Funcionarios set nome = ?, telefone = ?, email = ?, rua = ?, "
                 + "bairro = ?, cidade = ?, complemento = ?, numero = ?, carteiraTrabalho = ?, cargo = ?, cpf = ?, rg = ?, "
-                + "dataNascimento = ? where codigo = ?");
+                + "dataNascimento = ?, sexo = ? where codigo = ?");
         setConsultaBusca("select codigo, nome, telefone, email, rua, bairro, cidade, "
-                 + "complemento, numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento from Funcionarios");
+                 + "complemento, numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento, sexo from Funcionarios");
         setConsultaUltimoId("select max(codigo) from Funcionarios where nome = ? and telefone = ? and email = ? and rua = ? "
                 + "and bairro = ? and cidade = ? and complemento = ? and numero = ? and carteiraTrabalho = ? and cargo = ? "
-                + "and cpf = ? and rg = ? and dataNascimento = ?");
+                + "and cpf = ? and rg = ? and dataNascimento = ? and sexo = ?");
     }
 
     @Override
@@ -53,6 +53,7 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
             funcionario.setCpf(resultado.getString(12));
             funcionario.setRg(resultado.getString(13));
             funcionario.setDataNascimento(resultado.getDate(14));
+            funcionario.setSexo(resultado.getString(15));
             
         }catch(SQLException ex){
            System.out.println(ex);
@@ -80,6 +81,7 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
             sql.setString(11, funcionario.getCpf());
             sql.setString(12, funcionario.getRg());
             sql.setDate(13, funcionario.getDataNascimento());
+            sql.setString(14, funcionario.getSexo());
             
             if(funcionario.getId()> 0) 
                 sql.setInt(14,funcionario.getId());
@@ -116,7 +118,7 @@ public class FuncionarioDAO extends DAOGenerico<Funcionario> implements Funciona
     public Funcionario Abrir(String cpf) {
         try {
             PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, rua, bairro, cidade, "
-                 + "complemento, numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento from Funcionarios where cpf = ?");
+                 + "complemento, numero, carteiraTrabalho, cargo, cpf, rg, dataNascimento, sexo from Funcionarios where cpf = ?");
             sql.setString(1, cpf);
             ResultSet resultado = sql.executeQuery();
             

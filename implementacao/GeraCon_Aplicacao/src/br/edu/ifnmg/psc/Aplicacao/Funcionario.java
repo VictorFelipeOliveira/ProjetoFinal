@@ -20,9 +20,35 @@ public class Funcionario  extends Pessoa implements Entidade {
     private String cpf;
     private String rg;
     private Date dataNascimento;
-    
-    
+    private String sexo;
+    private String habilitacao;
 
+    public String getHabilitacao() {
+        return habilitacao;
+    }
+
+    public void setHabilitacao(String habilitacao) {
+        this.habilitacao = habilitacao;
+    }
+
+    public Funcionario(int codigo, String carteiraTrabalho, String cargo, String cpf, String rg, Date dataNascimento, String sexo) {
+        this.codigo = codigo;
+        this.carteiraTrabalho = carteiraTrabalho;
+        this.cargo = cargo;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.dataNascimento = dataNascimento;
+        this.sexo = sexo;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
     public Date getDataNascimento() {
         return dataNascimento;
     }

@@ -9,12 +9,11 @@ import br.edu.ifnmg.psc.Aplicacao.Fornecedor;
 import br.edu.ifnmg.psc.Aplicacao.Produto;
 import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
 import br.edu.ifnmg.psc.Excecao.ErroValidacao;
+import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,17 +22,17 @@ import java.util.logging.Logger;
 public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositorio {
 
     public ProdutoDAO() {
-        setConsultaAbrir("select codigo, descricao, precoUnitario, fk_fornecedores, categoria, "
+        setConsultaAbrir("select codigo, descricao, precoUnitario, fk_fornecedores, "
                 + "nome, quantidade from Produtos where codigo = ?");
         setConsultaApagar("delete from Produtos where codigo = ?");
-        setConsultaInserir("insert into Produtos (descricao, precoUnitario, fk_fornecedores, categoria, nome, quantidade)"
-                + " values (?, ?, ?, ?, ?, ?)");
+        setConsultaInserir("insert into Produtos (descricao, precoUnitario, fk_fornecedores, nome, quantidade)"
+                + " values (?, ?, ?, ?, ?)");
         setConsultaAlterar("update Produtos set descricao = ?, preocUnitario = ?, fk_fornecedores = ?,"
-                + "categoria = ?, nome = ?, quantidade = ? where codigo = ?");
-        setConsultaBusca("select codigo, descricao, precoUnitario, fk_fornecedores, categoria,"
+                + "nome = ?, quantidade = ? where codigo = ?");
+        setConsultaBusca("select codigo, descricao, precoUnitario, fk_fornecedores, "
                 + "nome, quantidade from Produtos");
         setConsultaUltimoId("select max(codigo) from Produtos where descricao = ? and precoUnitario = ?"
-                + " and fk_fornecedores = ? and categoria = ? and nome = ? and quantidade = ?");
+                + " and fk_fornecedores = ? and nome = ? and quantidade = ?");
     }
 
     @Override
@@ -42,11 +41,10 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
         try{
             produto.setId(resultado.getInt(1));
             produto.setDescricao(resultado.getString(2));
-            produto.setPrecoUnitario(resultado.getFloat(3));
+            produto.setPrecoUnitario(resultado.getBigDecimal(3));
             produto.setFornecedor_fk(resultado.getInt(4));
-            produto.setCategoria(resultado.getString(5));
-            produto.setNome(resultado.getString(6));
-            produto.setQuantidade(resultado.getInt(7));
+            produto.setNome(resultado.getString(5));
+            produto.setQuantidade(resultado.getInt(6));
             
             
         } catch (SQLException ex) {
@@ -59,11 +57,10 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
     protected void preencheConsulta(PreparedStatement sql, Produto produto) {
         try{
             sql.setString(1, produto.getDescricao());
-            sql.setFloat(2, produto.getPrecoUnitario());
+            sql.setBigDecimal(2, produto.getPrecoUnitario());
             sql.setInt(3, produto.getFornecedor_fk());
-            sql.setString(4, produto.getCategoria());
-            sql.setString(5, produto.getNome());
-            sql.setInt(6, produto.getQuantidade());
+            sql.setString(4, produto.getNome());
+            sql.setInt(5, produto.getQuantidade());
         } catch(SQLException ex){
             ex.printStackTrace();
         }
@@ -75,7 +72,7 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
             adicionarFiltro("id", "=");
         if(filtro.getNome() != null) 
             adicionarFiltro("categoria", " like ");
-        if(filtro.getPrecoUnitario()!= 0) 
+        if(filtro.getPrecoUnitario()!= null) 
             adicionarFiltro("precoUnitario", "=");
         
     }
@@ -94,8 +91,8 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
                 cont++; 
             }
             
-            if(filtro.getPrecoUnitario()!= 0){ 
-                sql.setFloat(cont, filtro.getPrecoUnitario()); 
+            if(filtro.getPrecoUnitario()!= null){ 
+                sql.setBigDecimal(cont, filtro.getPrecoUnitario()); 
                 cont++; 
             }
             
@@ -109,7 +106,7 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
         try {
             
             PreparedStatement sql = conn.prepareStatement("select codigo, descricao, precoUnitario, fk_fornecedores, "
-                    + "categoria, nome, quantidade from Produtos where nome = ?");
+                    + "nome, quantidade from Produtos where nome = ?");
             
             sql.setString(1, nome);
             
@@ -127,11 +124,11 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
     }
 
     @Override
-    public boolean verificaProduto(String nome, float preco) {
+    public boolean verificaProduto(String nome, BigDecimal preco) {
         try {
             PreparedStatement sql = conn.prepareStatement("select codigo from Produtos where nome = ? and precoUnitario = ?");
             sql.setString(1, nome);
-            sql.setFloat(2, preco);
+            sql.setBigDecimal(2, preco);
             ResultSet resultado = sql.executeQuery();
             return resultado.next();
         } catch (SQLException ex) {
@@ -182,7 +179,7 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
     @Override
     public int BuscaProduto(String nome) {
         try {
-            PreparedStatement sql = conn.prepareStatement("select codigo, descricao, precoUnitario, fk_fornecedores, categoria, "
+            PreparedStatement sql = conn.prepareStatement("select codigo, descricao, precoUnitario, fk_fornecedores, "
                 + "nome, quantidade from Produtos where nome = ?");
             sql.setString(1, nome);
             ResultSet resultado = sql.executeQuery();
@@ -192,17 +189,16 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
                 
                 produto.setId(resultado.getInt(1));
                 produto.setDescricao(resultado.getString(2));
-                produto.setPrecoUnitario(resultado.getFloat(3));
+                produto.setPrecoUnitario(resultado.getBigDecimal(3));
                 produto.setFornecedor_fk(resultado.getInt(4));
                 produto.setCategoria(resultado.getString(5));
                 produto.setNome(resultado.getString(6));
                 produto.setQuantidade(resultado.getInt(7));
-                
-                // Adiciona o objeto à lista
+               
                 return produto.getId();
             }
         }catch (SQLException ex) { 
-            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         } 
         return 0;
     }

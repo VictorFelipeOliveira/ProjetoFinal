@@ -24,18 +24,15 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="PanelCadastroCliente" min="-2" pref="788" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="btnVoltar" min="-2" pref="73" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnExcluir" min="-2" pref="82" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnSalvar" min="-2" pref="79" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="PanelCadastroCliente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnVoltar" min="-2" pref="107" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="419" max="-2" attributes="0"/>
+                      <Component id="btnExcluir" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="btnSalvar" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -45,15 +42,15 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
               <Component id="PanelCadastroCliente" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnSalvar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="btnExcluir" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnVoltar" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -80,34 +77,30 @@
                               <Component id="LblNumero" alignment="0" max="32767" attributes="0"/>
                               <Component id="LblComplemento" pref="105" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtComplemento" min="-2" pref="140" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtNumero" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <Component id="txtRua" min="-2" pref="251" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="unrelated" pref="98" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="LblBairro" alignment="1" min="-2" pref="57" max="-2" attributes="0"/>
-                                      <Component id="LblCidade" alignment="1" min="-2" pref="57" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtBairro" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="txtCidade" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txtNumero" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtRua" alignment="0" min="-2" pref="243" max="-2" attributes="0"/>
+                              <Component id="txtComplemento" alignment="0" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="LblBairro" min="-2" pref="57" max="-2" attributes="0"/>
+                              <Component id="LblCidade" min="-2" pref="57" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtBairro" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="txtCidade" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblDataNascimento" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                  <Component id="txtDataNascimento" max="32767" attributes="0"/>
+                                  <Component id="txtDataNascimento" pref="243" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -116,21 +109,21 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtNome" pref="301" max="32767" attributes="0"/>
-                                      <Component id="txtCPF" max="32767" attributes="0"/>
+                                      <Component id="txtNome" max="32767" attributes="0"/>
+                                      <Component id="txtCPF" pref="301" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblEmail" min="-2" pref="68" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                  <Component id="txtEmail" pref="301" max="32767" attributes="0"/>
+                                  <Component id="txtEmail" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="Telefone" min="-2" pref="72" max="-2" attributes="0"/>
                                       <Component id="LblSexo" min="-2" pref="72" max="-2" attributes="0"/>
@@ -148,7 +141,7 @@
                               <Component id="txtTelefone" max="32767" attributes="0"/>
                               <Component id="txtRG" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace min="18" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
                   </Group>
@@ -301,8 +294,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCidade">
         </Component>
-        <Component class="javax.swing.JTextField" name="txtComplemento">
-        </Component>
         <Component class="javax.swing.JTextField" name="txtNome">
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtTelefone">
@@ -340,10 +331,15 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtEmail">
         </Component>
+        <Component class="javax.swing.JTextField" name="txtComplemento">
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/voltar_32.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
@@ -352,6 +348,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSalvar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/save.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
       <Events>
@@ -360,8 +359,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnExcluir">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/cancela.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Excluir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -7,12 +7,14 @@ package br.edu.ifnmg.psc.Apresentacao;
 
 import br.edu.ifnmg.psc.Aplicacao.Cliente;
 import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
+import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,20 +27,18 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
      */
     ClienteRepositorio dao = GerenciadorReferencias.getCliente();
     TelaCadastroClientes telaClientes;
+    int idTabela;
     
-    public TelaGerenciarClientes(){
+    public TelaGerenciarClientes() throws ParseException{
         initComponents();
         
         List<Cliente> busca = dao.Buscar(null);
-        
         preencheTabela(busca);
-        
-        //PrincipalDesktop.DesktopPrincipal.setVisible(false);
-        
     }
     
-     private void preencheTabela(List<Cliente> lista){
+    private void preencheTabela(List<Cliente> lista) throws ParseException{
         DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID");
         modelo.addColumn("Nome");
         modelo.addColumn("Telefone");
         modelo.addColumn("Email");
@@ -48,6 +48,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
         
         for(Cliente c : lista){
             Vector linha = new Vector();
+            linha.add(c.getId());
             linha.add(c.getNome());
             linha.add(c.getTelefone());
             linha.add(c.getEmail());
@@ -60,6 +61,15 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
         tblClientes.setModel(modelo);
     }
 
+    public void buscar(String cpf) throws ParseException{
+        Cliente filtro = new Cliente(0,cpf,null,null,null);
+        
+        List<Cliente> busca = dao.Buscar(filtro);
+        
+        preencheTabela(busca);
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,14 +77,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
      */
     @SuppressWarnings("unchecked")
     
-    public void buscar(String nome){
-        Cliente filtro = new Cliente(0, nome, null, null);
-        
-        List<Cliente> busca = dao.Buscar(filtro);
-        
-        preencheTabela(busca);
-        
-    }
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -84,16 +87,17 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
         tblClientes = new javax.swing.JTable();
         PanelBuscar = new javax.swing.JPanel();
         txtBusca = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
         PanelFuncionalidades = new javax.swing.JPanel();
         btnNovoCliente = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
-        btnExcluir = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
         setVisible(true);
 
         PanelClientesCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes cadastrados"));
 
+        tblClientes.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -120,12 +124,12 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
             PanelClientesCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelClientesCadastradosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPaneClientesCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 926, Short.MAX_VALUE))
+                .addComponent(scrollPaneClientesCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE))
         );
         PanelClientesCadastradosLayout.setVerticalGroup(
             PanelClientesCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelClientesCadastradosLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(scrollPaneClientesCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
@@ -135,6 +139,14 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
         txtBusca.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtBusca.setName(""); // NOI18N
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar_user_32.png"))); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelBuscarLayout = new javax.swing.GroupLayout(PanelBuscar);
         PanelBuscar.setLayout(PanelBuscarLayout);
         PanelBuscarLayout.setHorizontalGroup(
@@ -143,19 +155,26 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
                 .addContainerGap()
                 .addComponent(txtBusca, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
         );
         PanelBuscarLayout.setVerticalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBuscarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         txtBusca.getAccessibleContext().setAccessibleDescription("");
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
+        btnNovoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add_user_32.png"))); // NOI18N
         btnNovoCliente.setText("Novo Cliente");
         btnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,36 +182,39 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
             }
         });
 
+        btnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/editar_usuario.png"))); // NOI18N
         btnAlterar.setText("Alterar");
-
-        btnExcluir.setText("Excluir");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelFuncionalidadesLayout = new javax.swing.GroupLayout(PanelFuncionalidades);
         PanelFuncionalidades.setLayout(PanelFuncionalidadesLayout);
         PanelFuncionalidadesLayout.setHorizontalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelFuncionalidadesLayout.createSequentialGroup()
-                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(btnNovoCliente))
+                    .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                    .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(btnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
+        btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/voltar_32.png"))); // NOI18N
         btnVoltar.setText("Voltar");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,27 +229,26 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PanelClientesCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelClientesCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(29, 29, 29)
                         .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -235,7 +256,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.doDefaultCloseAction();
-        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
+        TelaPrincipal.MenuPrincipal.setVisible(true);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
@@ -252,15 +273,28 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
     }//GEN-LAST:event_btnNovoClienteActionPerformed
 
     private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
-        try {
-            int selecionada = tblClientes.getSelectedRow();
-            int id = Integer.parseInt( tblClientes.getModel().getValueAt(selecionada, 0).toString() );
-            editarCliente(id);
-        } catch (ParseException ex) {
-            Logger.getLogger(TelaGerenciarClientes.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        int selecionada = tblClientes.getSelectedRow();
+        idTabela = Integer.parseInt( tblClientes.getModel().getValueAt(selecionada, 0).toString() );
+        System.out.println("ID selecionado: "+idTabela);
     }//GEN-LAST:event_tblClientesMouseClicked
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        try {
+            buscar(txtBusca.getText() );
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        try {
+            this.doDefaultCloseAction();
+            
+            editarCliente(idTabela);
+        } catch (ParseException ex) {
+            ex.printStackTrace();   
+        }
+    }//GEN-LAST:event_btnAlterarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -268,7 +302,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
     private javax.swing.JPanel PanelClientesCadastrados;
     private javax.swing.JPanel PanelFuncionalidades;
     private javax.swing.JButton btnAlterar;
-    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnNovoCliente;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JScrollPane jScrollPane1;
@@ -280,7 +314,7 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
     private void editarCliente(int id) throws ParseException {
         Cliente entidade;
         if(id == 0)
-            entidade = new Cliente(0, "", "000.000.000-00", null);
+            entidade = new Cliente(0, null,null, null,null);
         else
             entidade = dao.Abrir(id);
         
@@ -289,9 +323,19 @@ public class TelaGerenciarClientes extends javax.swing.JInternalFrame{
         telaClientes.setEntidade(entidade);
         
         telaClientes.setListagem(this);
-        
-        this.getParent().add(telaClientes);
-        telaClientes.setVisible(true);
-        this.setVisible(false);
+        abreFrame(telaClientes);
+    }
+    
+    public void abreFrame(JInternalFrame frame){
+        frame.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(frame, BorderLayout.CENTER);
+        try {
+            frame.setSelected(true);
+            frame.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        frame.setSize(TelaPrincipal.DesktopPrincipal.getSize());
     }
 }

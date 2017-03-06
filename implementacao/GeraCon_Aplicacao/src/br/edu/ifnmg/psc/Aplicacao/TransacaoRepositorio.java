@@ -10,6 +10,6 @@ package br.edu.ifnmg.psc.Aplicacao;
  * @author thais
  */
 public interface TransacaoRepositorio extends Repositorio<Transacao> {
-    public Transacao Abir();
+    public Transacao Abrir(int codigo);
     
 }

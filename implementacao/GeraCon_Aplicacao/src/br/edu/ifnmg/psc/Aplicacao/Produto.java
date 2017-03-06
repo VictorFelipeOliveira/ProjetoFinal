@@ -5,6 +5,8 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author thais
@@ -17,7 +19,7 @@ public class Produto implements Entidade{
     private String nome;
     private String categoria;
     private String descricao;
-    private float precoUnitario;
+    private BigDecimal precoUnitario;
     private int fornecedor_fk;
     private int quantidade;
    // private String unidadeMedida;
@@ -34,7 +36,7 @@ public class Produto implements Entidade{
         this.codigo = 0;
     }
 
-    public Produto(int codigo, String nome, String categoria, String descricao, float precoUnitario, int fornecedor_fk) {
+    public Produto(int codigo, String nome, String categoria, String descricao, BigDecimal precoUnitario, int fornecedor_fk) {
         this.codigo = codigo;
         this.nome = nome;
         this.categoria = categoria;
@@ -77,11 +79,11 @@ public class Produto implements Entidade{
         this.descricao = descricao;
     }
 
-    public float getPrecoUnitario() {
+    public BigDecimal getPrecoUnitario() {
         return precoUnitario;
     }
 
-    public void setPrecoUnitario(float precoUnitario) {
+    public void setPrecoUnitario(BigDecimal precoUnitario) {
         this.precoUnitario = precoUnitario;
     }  
     

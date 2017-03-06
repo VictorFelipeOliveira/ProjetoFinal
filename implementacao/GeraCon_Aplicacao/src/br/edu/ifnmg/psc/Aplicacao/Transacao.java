@@ -5,7 +5,6 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
-import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -35,15 +34,6 @@ public class Transacao implements Entidade{
         this.funcionario = funcionario;
         this.fornecedor = fornecedor;
         itens=new ArrayList<>();
-    }
-
-    
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public Date getData() {

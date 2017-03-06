@@ -5,9 +5,19 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import br.edu.ifnmg.psc.Aplicacao.Funcionario;
+import br.edu.ifnmg.psc.Aplicacao.FuncionarioRepositorio;
+import br.edu.ifnmg.psc.Excecao.ErroValidacao;
+import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;
+import java.text.ParseException;
+import java.util.List;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,13 +25,49 @@ import java.util.logging.Logger;
  */
 public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
 
+    FuncionarioRepositorio dao = GerenciadorReferencias.getFuncionario();
+    TelaCadastroFuncionarios telaFuncionarios;
+    Funcionario funcionario;
+    int idTabela;
     /**
      * Creates new form TelaGerenciarFuncionarios
      */
     public TelaGerenciarFuncionarios() {
         initComponents();
+        List<Funcionario> busca = dao.Buscar(null);
+        preencheTabela(busca);
     }
 
+    private void preencheTabela(List<Funcionario> lista) {
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID");
+        modelo.addColumn("Nome");
+        modelo.addColumn("Telefone");
+        modelo.addColumn("Email");
+        modelo.addColumn("Carteira de Trabalho");
+        modelo.addColumn("Cargo");
+        
+        for(Funcionario f : lista){
+            Vector linha = new Vector();
+            linha.add(f.getId());
+            linha.add(f.getNome());
+            linha.add(f.getTelefone());
+            linha.add(f.getEmail());
+            linha.add(f.getCarteiraTrabalho());
+            linha.add(f.getCargo());
+            modelo.addRow(linha);
+        }
+        
+        tblFuncionarios.setModel(modelo);
+    }
+    
+     public void buscar(String cpf) throws ParseException{
+        Funcionario filtro = new Funcionario(0,null,null,cpf,null,null,null);
+        
+        List<Funcionario> busca = dao.Buscar(filtro);
+        preencheTabela(busca);
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,15 +79,38 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
 
         PanelFuncCadastrados = new javax.swing.JPanel();
         scrollPaneForncCadastrados = new java.awt.ScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblFuncionarios = new javax.swing.JTable();
         PanelBuscar = new javax.swing.JPanel();
-        BtnBuscar = new javax.swing.JButton();
+        btnPesquisar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         PanelFuncionalidades = new javax.swing.JPanel();
         BtnNovoFuncionario = new javax.swing.JButton();
         BtnAlterar = new javax.swing.JButton();
-        BtnExcluir = new javax.swing.JButton();
         BtnVoltar = new javax.swing.JButton();
 
         PanelFuncCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionários cadastrados"));
+
+        tblFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tblFuncionarios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        tblFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblFuncionariosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblFuncionarios);
+
+        scrollPaneForncCadastrados.add(jScrollPane1);
 
         javax.swing.GroupLayout PanelFuncCadastradosLayout = new javax.swing.GroupLayout(PanelFuncCadastrados);
         PanelFuncCadastrados.setLayout(PanelFuncCadastradosLayout);
@@ -49,76 +118,89 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
             PanelFuncCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncCadastradosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
+                .addContainerGap())
         );
         PanelFuncCadastradosLayout.setVerticalGroup(
             PanelFuncCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncCadastradosLayout.createSequentialGroup()
-                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         PanelBuscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar"));
 
-        BtnBuscar.setText("Buscar Funcionário");
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar_user_32.png"))); // NOI18N
+        btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelBuscarLayout = new javax.swing.GroupLayout(PanelBuscar);
         PanelBuscar.setLayout(PanelBuscarLayout);
         PanelBuscarLayout.setHorizontalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBuscarLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(txtBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102))
         );
         PanelBuscarLayout.setVerticalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBuscarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BtnBuscar)
-                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnPesquisar)
+                .addContainerGap())
         );
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
-        BtnNovoFuncionario.setText("Novo Funcionário");
+        BtnNovoFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add_user_32.png"))); // NOI18N
+        BtnNovoFuncionario.setText("Novo");
         BtnNovoFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnNovoFuncionarioActionPerformed(evt);
             }
         });
 
-        BtnAlterar.setText("Alterar");
-
-        BtnExcluir.setText("Excluir");
+        BtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/editar_usuario.png"))); // NOI18N
+        BtnAlterar.setText("Editar");
+        BtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAlterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelFuncionalidadesLayout = new javax.swing.GroupLayout(PanelFuncionalidades);
         PanelFuncionalidades.setLayout(PanelFuncionalidadesLayout);
         PanelFuncionalidadesLayout.setHorizontalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelFuncionalidadesLayout.createSequentialGroup()
-                        .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BtnNovoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE)
+                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnNovoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addComponent(BtnNovoFuncionario)
-                .addGap(28, 28, 28)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnAlterar)
-                    .addComponent(BtnExcluir))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(BtnAlterar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        BtnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/voltar_32.png"))); // NOI18N
         BtnVoltar.setText("Voltar");
         BtnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,28 +213,32 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelFuncCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelFuncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
+                        .addGap(18, 18, 18)
                         .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(68, 68, 68)
                         .addComponent(BtnVoltar))
                     .addComponent(PanelFuncCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,8 +246,7 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
 
     private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
         this.doDefaultCloseAction();
-        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
-        TelaPrincipal.PainelLateral.setVisible(true);
+        TelaPrincipal.MenuPrincipal.setVisible(true);
     }//GEN-LAST:event_BtnVoltarActionPerformed
 
     private void BtnNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFuncionarioActionPerformed
@@ -177,16 +262,67 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
         TelaPrincipal.DesktopPrincipal.setVisible(true);
     }//GEN-LAST:event_BtnNovoFuncionarioActionPerformed
 
+    private void tblFuncionariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblFuncionariosMouseClicked
+        int selecionada = tblFuncionarios.getSelectedRow();
+        idTabela = Integer.parseInt( tblFuncionarios.getModel().getValueAt(selecionada, 0).toString() );
+    }//GEN-LAST:event_tblFuncionariosMouseClicked
+
+    private void BtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAlterarActionPerformed
+       try {
+            this.doDefaultCloseAction();
+            
+            editarCliente(idTabela);
+        } catch (ParseException ex) {
+            ex.printStackTrace();   
+        } catch (ErroValidacao ex) {
+            Logger.getLogger(TelaGerenciarFuncionarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BtnAlterarActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAlterar;
-    private javax.swing.JButton BtnBuscar;
-    private javax.swing.JButton BtnExcluir;
     private javax.swing.JButton BtnNovoFuncionario;
     private javax.swing.JButton BtnVoltar;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelFuncCadastrados;
     private javax.swing.JPanel PanelFuncionalidades;
+    private javax.swing.JButton btnPesquisar;
+    private javax.swing.JScrollPane jScrollPane1;
     private java.awt.ScrollPane scrollPaneForncCadastrados;
+    private javax.swing.JTable tblFuncionarios;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
+
+    private void editarCliente(int id) throws ParseException, ErroValidacao {
+        Funcionario entidade;
+        if(id == 0)
+            entidade = new Funcionario(0, null,null,null, null,null,null);
+        else
+            entidade = dao.Abrir(id);
+        
+        telaFuncionarios = new TelaCadastroFuncionarios();
+        
+        telaFuncionarios.setEntidade(entidade);
+        
+        telaFuncionarios.setListagem(this);
+        abreFrame(telaFuncionarios);
+    }
+    
+    public void abreFrame(JInternalFrame frame){
+        frame.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(frame, BorderLayout.CENTER);
+        try {
+            frame.setSelected(true);
+            frame.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        frame.setSize(TelaPrincipal.DesktopPrincipal.getSize());
+    }
 }

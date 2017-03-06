@@ -127,7 +127,8 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
     public List<T> Buscar(T filtro) {
         List<T> listaRetorno = new ArrayList<>();
 
-        preencheFiltros(filtro);
+        if(filtro != null)
+            preencheFiltros(filtro);
 
         if (where.length() > 0) {
             where = "WHERE " + where;
@@ -136,7 +137,9 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
         try {
 
             PreparedStatement sql = conn.prepareStatement(getConsultaBusca() + where);
-            preencheParametros(sql, filtro);
+            if(filtro!=null)
+                preencheParametros(sql, filtro);
+            
             ResultSet resultado = sql.executeQuery();
 
             while (resultado.next()) {
@@ -144,7 +147,7 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
                 listaRetorno.add(objeto);
             }
         } catch (SQLException ex) {
-        
+            ex.printStackTrace();
         }
 
         return listaRetorno;

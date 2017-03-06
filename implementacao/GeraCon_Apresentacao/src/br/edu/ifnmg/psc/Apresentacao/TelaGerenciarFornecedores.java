@@ -5,9 +5,15 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import br.edu.ifnmg.psc.Aplicacao.Fornecedor;
+import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
+import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.text.ParseException;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JInternalFrame;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,11 +21,18 @@ import java.util.logging.Logger;
  */
 public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
 
+    FornecedorRepositorio dao = GerenciadorReferencias.getFornecedor();
+    TelaCadastroFornecedor telaFornecedor;
+    int idTabela;
     /**
      * Creates new form TelaGerenciarFornecedores
      */
     public TelaGerenciarFornecedores() {
         initComponents();
+        
+        List<Fornecedor> busca = dao.Buscar(null);
+        
+        preencheTabela(busca);
     }
 
     /**
@@ -33,17 +46,37 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
 
         PanelFornCadastrados = new javax.swing.JPanel();
         scrollPaneForncCadastrados = new java.awt.ScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblFornecedores = new javax.swing.JTable();
         PanelBuscar = new javax.swing.JPanel();
-        BtnBuscar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         PanelFuncionalidades = new javax.swing.JPanel();
         BtnNovoFornecedor = new javax.swing.JButton();
         BtnAlterar = new javax.swing.JButton();
-        BtnExcluir = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
-        setClosable(true);
-
         PanelFornCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Fornecedores cadastrados"));
+
+        tblFornecedores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tblFornecedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblFornecedoresMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblFornecedores);
+
+        scrollPaneForncCadastrados.add(jScrollPane1);
 
         javax.swing.GroupLayout PanelFornCadastradosLayout = new javax.swing.GroupLayout(PanelFornCadastrados);
         PanelFornCadastrados.setLayout(PanelFornCadastradosLayout);
@@ -51,22 +84,23 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
             PanelFornCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFornCadastradosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                 .addContainerGap())
         );
         PanelFornCadastradosLayout.setVerticalGroup(
             PanelFornCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFornCadastradosLayout.createSequentialGroup()
-                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         PanelBuscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar"));
 
-        BtnBuscar.setText("Buscar Fornecedor");
-        BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar_user_32.png"))); // NOI18N
+        btnBuscar.setText("Pesquisar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnBuscarActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -75,57 +109,64 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         PanelBuscarLayout.setHorizontalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBuscarLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(txtBuscar)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
+                .addContainerGap(111, Short.MAX_VALUE)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93))
         );
         PanelBuscarLayout.setVerticalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBuscarLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnBuscar)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
-        BtnNovoFornecedor.setText("Novo Fornecedor");
+        BtnNovoFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add_user_32.png"))); // NOI18N
+        BtnNovoFornecedor.setText("Novo");
         BtnNovoFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnNovoFornecedorActionPerformed(evt);
             }
         });
 
-        BtnAlterar.setText("Alterar");
-
-        BtnExcluir.setText("Excluir");
+        BtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/editar_usuario.png"))); // NOI18N
+        BtnAlterar.setText("Editar");
+        BtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAlterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelFuncionalidadesLayout = new javax.swing.GroupLayout(PanelFuncionalidades);
         PanelFuncionalidades.setLayout(PanelFuncionalidadesLayout);
         PanelFuncionalidadesLayout.setHorizontalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelFuncionalidadesLayout.createSequentialGroup()
-                        .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BtnNovoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFuncionalidadesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnNovoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(88, 88, 88))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnNovoFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(BtnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(BtnNovoFornecedor)
+                .addGap(26, 26, 26)
+                .addComponent(BtnAlterar)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/voltar_32.png"))); // NOI18N
         btnVoltar.setText("Voltar");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,45 +179,44 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(PanelFornCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(PanelFornCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(17, 17, 17)
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PanelBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelFornCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVoltar))
-                    .addComponent(PanelFornCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnVoltar)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnBuscarActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        this.doDefaultCloseAction();
-        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
-        TelaPrincipal.PainelLateral.setVisible(true);           
+        this.doDefaultCloseAction(); 
+        TelaPrincipal.MenuPrincipal.setVisible(true);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void BtnNovoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFornecedorActionPerformed
@@ -192,16 +232,96 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         TelaPrincipal.DesktopPrincipal.setVisible(true);
     }//GEN-LAST:event_BtnNovoFornecedorActionPerformed
 
+    private void tblFornecedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblFornecedoresMouseClicked
+        int selecionada = tblFornecedores.getSelectedRow();
+        idTabela = Integer.parseInt( tblFornecedores.getModel().getValueAt(selecionada, 0).toString() );
+        System.out.println("ID selecionado: "+idTabela);
+    }//GEN-LAST:event_tblFornecedoresMouseClicked
+
+    private void BtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAlterarActionPerformed
+       try {
+            this.doDefaultCloseAction();
+            editarFornecedor(idTabela);
+        } catch (ParseException ex) {
+            ex.printStackTrace();   
+        }
+    }//GEN-LAST:event_BtnAlterarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAlterar;
-    private javax.swing.JButton BtnBuscar;
-    private javax.swing.JButton BtnExcluir;
     private javax.swing.JButton BtnNovoFornecedor;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelFornCadastrados;
     private javax.swing.JPanel PanelFuncionalidades;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JScrollPane jScrollPane1;
     private java.awt.ScrollPane scrollPaneForncCadastrados;
+    private javax.swing.JTable tblFornecedores;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
+
+    private void preencheTabela(List<Fornecedor> lista) {
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID");
+        modelo.addColumn("Nome");
+        modelo.addColumn("Telefone");
+        modelo.addColumn("Email");
+        modelo.addColumn("CNPJ");
+        
+        for(Fornecedor f : lista){
+            Vector linha = new Vector();
+            linha.add(f.getId());
+            linha.add(f.getNome());
+            linha.add(f.getTelefone());
+            linha.add(f.getEmail());
+            linha.add(f.getCnpj());
+            modelo.addRow(linha);
+        }
+        
+        tblFornecedores.setModel(modelo);
+    }
+    
+    public void buscar(String cnpj) throws ParseException{
+        Fornecedor filtro = new Fornecedor(0,cnpj);
+        
+        List<Fornecedor> busca = dao.Buscar(filtro);
+        
+        preencheTabela(busca);
+        
+    }
+    
+    private void editarFornecedor(int id) throws ParseException {
+        Fornecedor entidade;
+        if(id == 0)
+            entidade = new Fornecedor(0, null);
+        else
+            entidade = dao.Abrir(id);
+        
+        telaFornecedor = new TelaCadastroFornecedor();
+        
+        telaFornecedor.setEntidade(entidade);
+        
+        telaFornecedor.setListagem(this);
+        abreFrame(telaFornecedor);
+        
+        //this.getParent().add(telaClientes);
+        //telaClientes.setVisible(true);
+        //TelaPrincipal.DesktopPrincipal.add(telaClientes);
+        //TelaPrincipal.DesktopPrincipal;
+    }
+    
+    public void abreFrame(JInternalFrame frame){
+        frame.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(frame, BorderLayout.CENTER);
+        try {
+            frame.setSelected(true);
+            frame.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        frame.setSize(TelaPrincipal.DesktopPrincipal.getSize());
+    }
 }

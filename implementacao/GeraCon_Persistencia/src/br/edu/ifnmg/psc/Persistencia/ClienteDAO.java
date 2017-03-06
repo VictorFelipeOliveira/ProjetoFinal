@@ -11,8 +11,7 @@ import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.text.ParseException;
 
 /**
  *
@@ -23,22 +22,22 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
     public ClienteDAO(){
       
         setConsultaAbrir("select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
-                + "numero, cpf, rg, dataNascimento from Clientes where codigo = ?");
+                + "numero, cpf, rg, dataNascimento, sexo from Clientes where codigo = ?");
         
         setConsultaApagar("DELETE from Clientes where codigo = ?");
         
         setConsultaInserir("INSERT INTO Clientes (nome, telefone, email, rua, bairro, cidade, complemento, "
-                + "numero, cpf, rg, dataNascimento) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                + "numero, cpf, rg, dataNascimento, sexo) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
         setConsultaAlterar("UPDATE Clientes SET nome = ?, telefone = ?, email = ?, rua = ?, bairro = ?, cidade = ?, "
-                + "complemento = ?, numero = ?, cpf = ?, rg = ?, dataNascimento = ? where codigo = ?");
+                + "complemento = ?, numero = ?, cpf = ?, rg = ?, dataNascimento = ?, sexo = ? where codigo = ?");
         
         setConsultaBusca("select codigo, nome, telefone, email, rua, bairro, cidade, complemento,"
-                + "numero, cpf, rg, dataNascimento from Clientes");
+                + "numero, cpf, rg, dataNascimento, sexo from Clientes");
         
         setConsultaUltimoId("select max(codigo) from Clientes where nome = ? and telefone = ? "
                 + "and email = ? and rua = ? and bairro = ? and cidade = ? and complemento = ? and numero = ? "
-                + "and cpf = ? and rg = ? and dataNascimento = ?");
+                + "and cpf = ? and rg = ? and dataNascimento = ? and sexo = ?");
     }
     
     @Override
@@ -58,8 +57,9 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
             cliente.setCpf(resultado.getString(10));
             cliente.setRg(resultado.getString(11));
             cliente.setDataNascimento(resultado.getDate(12));
+            cliente.setSexo(resultado.getString(13));
             
-        } catch(SQLException | ErroValidacao ex){
+        } catch(SQLException | ErroValidacao | ParseException ex){
             ex.printStackTrace();
         }
         return cliente;
@@ -81,18 +81,19 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
             sql.setString(9, cliente.getCpf());
             sql.setString(10, cliente.getRg());
             sql.setDate(11, cliente.getDataNascimento());
+            sql.setString(12, cliente.getSexo());
         
             if(cliente.getId()>0)
                 sql.setInt(12, cliente.getId());
-        } catch(SQLException ex){
+        } catch(SQLException | ParseException ex){
             ex.printStackTrace();
         }
     }
 
     @Override
     protected void preencheFiltros(Cliente filtro) {
-        if(filtro.getId() > 0) 
-            adicionarFiltro("id", "=");
+        if(filtro.getId()> 0) 
+            adicionarFiltro("codigo", "=");
         if(filtro.getNome() != null) 
             adicionarFiltro("nome", " like ");
         if(filtro.getCpf() != null) 
@@ -129,7 +130,7 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
         try {
             
             PreparedStatement sql = conn.prepareStatement("select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
-                + "numero, cpf, rg, dataNascimento from Clientes where cpf = ?");
+                + "numero, cpf, rg, dataNascimento, sexo from Clientes where cpf = ?");
             
             sql.setString(1, cpf);
             
@@ -145,6 +146,7 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
         
         return null;
     }
+    
 
     @Override
     public boolean VerificaCliente(String cpf, String rg) {
@@ -162,5 +164,4 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
         }
         return false;
     }
-
 }

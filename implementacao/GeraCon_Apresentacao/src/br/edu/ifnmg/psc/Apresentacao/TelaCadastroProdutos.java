@@ -10,6 +10,8 @@ import br.edu.ifnmg.psc.Aplicacao.Produto;
 import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
 import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import br.edu.ifnmg.psc.Persistencia.ProdutoDAO;
+import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -22,6 +24,7 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
     Produto produto = new Produto();
     ProdutoRepositorio dao = new ProdutoDAO();
     ProdutoRepositorio bd_Produto = GerenciadorReferencias.getProduto();
+    TelaGerenciarProduto listagem;
     /**
      * Creates new form TelaCadastroProdutos
      */
@@ -46,8 +49,6 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         LblPrecoUnitario = new javax.swing.JLabel();
         cmbFornecedor = new javax.swing.JComboBox();
         TxtPrecoUnitario = new javax.swing.JTextField();
-        lblCategoria = new javax.swing.JLabel();
-        cmbCategoria = new javax.swing.JComboBox<>();
         PainelDescricao = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescricao = new javax.swing.JTextArea();
@@ -75,10 +76,6 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
                 cmbFornecedorActionPerformed(evt);
             }
         });
-
-        lblCategoria.setText("Categoria:");
-
-        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Item 1", "Item 2" }));
 
         PainelDescricao.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
 
@@ -111,9 +108,7 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
             .addGroup(PanelCadastroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelCadastroLayout.createSequentialGroup()
-                        .addComponent(PainelDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addComponent(PainelDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCadastroLayout.createSequentialGroup()
                         .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LblPrecoUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,17 +120,13 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
                         .addGap(51, 51, 51)
                         .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cmbFornecedor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21))
-                    .addGroup(PanelCadastroLayout.createSequentialGroup()
-                        .addComponent(lblQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmbFornecedor, 0, 218, Short.MAX_VALUE)
+                            .addComponent(txtQuantidade))
+                        .addGap(0, 6, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         PanelCadastroLayout.setVerticalGroup(
             PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,20 +134,16 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblPrecoUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TxtPrecoUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(33, 33, 33)
                 .addComponent(PainelDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -239,10 +226,14 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_BtnSalvarActionPerformed
 
     private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
-        this.doDefaultCloseAction();
-        TelaGerenciarProduto telaProduto = new TelaGerenciarProduto();
-        telaProduto.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(telaProduto);
+        try {
+            this.doDefaultCloseAction();
+            TelaGerenciarProduto telaProduto = new TelaGerenciarProduto();
+            telaProduto.setVisible(true);
+            TelaPrincipal.DesktopPrincipal.add(telaProduto);
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_BtnVoltarActionPerformed
 
 
@@ -254,10 +245,8 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
     private javax.swing.JPanel PainelDescricao;
     private javax.swing.JPanel PanelCadastro;
     private javax.swing.JTextField TxtPrecoUnitario;
-    private javax.swing.JComboBox<String> cmbCategoria;
     private javax.swing.JComboBox cmbFornecedor;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblCategoria;
     private javax.swing.JLabel lblFornecedor;
     private javax.swing.JLabel lblQuantidade;
     private javax.swing.JTextArea txtDescricao;
@@ -269,46 +258,20 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         if(!txtNome.getText().equals(""))
             produto.setNome(txtNome.getText());
         if(!TxtPrecoUnitario.getText().equals(""))
-            produto.setPrecoUnitario(Float.parseFloat(TxtPrecoUnitario.getText()));
+            produto.setPrecoUnitario(BigDecimal.valueOf(Float.parseFloat(TxtPrecoUnitario.getText())));
         if(!txtDescricao.getText().equals(""))
             produto.setDescricao(txtDescricao.getText());
         if(!txtQuantidade.getText().equals(""))
             produto.setQuantidade(Integer.parseInt(txtQuantidade.getText()));
-        
-        String categoria = "";
-        switch(cmbCategoria.getSelectedIndex()){
-            case 1:{
-                categoria = "Item 1";
-                break;
-            }
-            case 2:{
-                categoria = "Item 2";
-                break;
-            }
-            default: throw new ErroValidacao("Categoria selecionada inválida");
+          
+        int codigo = 0;
+        ArrayList<Fornecedor> listafornecedor = dao.listarFornecedores();
+        for(Fornecedor novo: listafornecedor){
+            if(novo.getNome().equals(cmbFornecedor.getSelectedItem()))
+                codigo = novo.getId();
         }
-        produto.setCategoria(categoria);
-        
-       /* Fornecedor fornecedor = (Fornecedor) cmbFornecedor.getSelectedItem();
-        int id = fornecedor.getId();
-        System.out.println("Id do fornecedor: "+id);
-        
-        produto.setFornecedor_fk(id);
-        */
-       
-     /*  String nome = (String) cmbFornecedor.getSelectedItem();
-       int codigo = dao.BuscaProduto(nome);
-       produto.setFornecedor_fk(codigo);
-       */
-      int codigo = 0;
-      ArrayList<Fornecedor> listafornecedor = dao.listarFornecedores();
-      for(Fornecedor novo: listafornecedor){
-          if(novo.getNome().equals(cmbFornecedor.getSelectedItem()))
-              codigo = novo.getId();
-      }
-      produto.setFornecedor_fk(codigo);
-      System.out.println("Codigo selecionado: "+codigo);
-     
+        produto.setFornecedor_fk(codigo);
+        System.out.println("Codigo selecionado: "+codigo);
     }
     
     public void carregarCombo(){
@@ -323,7 +286,29 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         txtNome.setText("");
         txtDescricao.setText("");
         TxtPrecoUnitario.setText("");
-        cmbCategoria.setSelectedIndex(0);
         cmbFornecedor.setSelectedIndex(0);
+        txtQuantidade.setText(null);
+    }
+
+    void setEntidade(Produto entidade) {
+        this.produto = entidade;
+        preencheCampos();
+    }
+
+    void setListagem(TelaGerenciarProduto aThis) {
+        this.listagem = listagem;
+    }
+
+    private void preencheCampos() {
+        txtNome.setText(produto.getNome());
+        TxtPrecoUnitario.setText(String.valueOf(produto.getPrecoUnitario()));
+        txtDescricao.setText(produto.getDescricao());
+        txtQuantidade.setText(String.valueOf(produto.getQuantidade()));
+        
+        ArrayList<Fornecedor> novaLista = dao.listarFornecedores();
+        for(Fornecedor novo: novaLista){
+            if(novo.getId() == produto.getFornecedor_fk())
+                cmbFornecedor.setSelectedItem(novo.getNome());
+        }
     }
 }

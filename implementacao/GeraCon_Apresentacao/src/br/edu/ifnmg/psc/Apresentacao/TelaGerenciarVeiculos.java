@@ -5,9 +5,15 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import br.edu.ifnmg.psc.Aplicacao.Veiculo;
+import br.edu.ifnmg.psc.Aplicacao.VeiculoRepositorio;
+import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.text.ParseException;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JInternalFrame;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,11 +21,49 @@ import java.util.logging.Logger;
  */
 public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
 
+    VeiculoRepositorio dao = GerenciadorReferencias.getVeiculo();
+    TelaCadastroVeiculos telaVeiculos;
+    int idTabela;
     /**
      * Creates new form TelaGerenciarVeiculos
      */
-    public TelaGerenciarVeiculos() {
+    public TelaGerenciarVeiculos() throws ParseException {
         initComponents();
+        List<Veiculo> busca = dao.Buscar(null);
+        preencheTabela(busca);
+    }
+    
+    private void preencheTabela(List<Veiculo> lista) throws ParseException{
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID");
+        modelo.addColumn("Placa");
+        modelo.addColumn("Tipo");
+        modelo.addColumn("Ano");
+        modelo.addColumn("Combustivel");
+        modelo.addColumn("Marca");
+        modelo.addColumn("Modelo");
+        
+        for(Veiculo v : lista){
+            Vector linha = new Vector();
+            linha.add(v.getId());
+            linha.add(v.getPlaca());
+            linha.add(v.getTipo());
+            linha.add(v.getAno());
+            linha.add(v.getCombustivel());
+            linha.add(v.getMarca());
+            linha.add(v.getModelo());
+            modelo.addRow(linha);
+        }
+        
+        tblVeiculos.setModel(modelo);
+    }
+    
+    public void buscar(String cpf) throws ParseException{
+        Veiculo filtro = new Veiculo(0,null,null,0,null,null,null,null);
+        
+        List<Veiculo> busca = dao.Buscar(filtro);
+        
+        preencheTabela(busca);
     }
 
     /**
@@ -33,15 +77,38 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
 
         PanelVeiculosCadastrados = new javax.swing.JPanel();
         scrollPaneForncCadastrados = new java.awt.ScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblVeiculos = new javax.swing.JTable();
         PanelBuscar = new javax.swing.JPanel();
         BtnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
         PanelFuncionalidades = new javax.swing.JPanel();
         btnNovoVeiculo = new javax.swing.JButton();
         BtnAlterar = new javax.swing.JButton();
-        BtnExcluir = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
         PanelVeiculosCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Veículos cadastrados"));
+
+        tblVeiculos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tblVeiculos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        tblVeiculos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblVeiculosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblVeiculos);
+
+        scrollPaneForncCadastrados.add(jScrollPane1);
 
         javax.swing.GroupLayout PanelVeiculosCadastradosLayout = new javax.swing.GroupLayout(PanelVeiculosCadastrados);
         PanelVeiculosCadastrados.setLayout(PanelVeiculosCadastradosLayout);
@@ -49,62 +116,72 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
             PanelVeiculosCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelVeiculosCadastradosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 684, Short.MAX_VALUE)
+                .addContainerGap())
         );
         PanelVeiculosCadastradosLayout.setVerticalGroup(
             PanelVeiculosCadastradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelVeiculosCadastradosLayout.createSequentialGroup()
-                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                .addComponent(scrollPaneForncCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         PanelBuscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar"));
 
-        BtnBuscar.setText("Buscar Veículo");
+        BtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar_user_32.png"))); // NOI18N
+        BtnBuscar.setText("Pesquisar");
 
         javax.swing.GroupLayout PanelBuscarLayout = new javax.swing.GroupLayout(PanelBuscar);
         PanelBuscar.setLayout(PanelBuscarLayout);
         PanelBuscarLayout.setHorizontalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBuscarLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(txtBuscar)
+                .addContainerGap())
+            .addGroup(PanelBuscarLayout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         PanelBuscarLayout.setVerticalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelBuscarLayout.createSequentialGroup()
-                .addComponent(BtnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnBuscar)
                 .addContainerGap())
         );
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
-        btnNovoVeiculo.setText("Novo Veículo");
+        btnNovoVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add_user_32.png"))); // NOI18N
+        btnNovoVeiculo.setText("Novo");
         btnNovoVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNovoVeiculoActionPerformed(evt);
             }
         });
 
-        BtnAlterar.setText("Alterar");
-
-        BtnExcluir.setText("Excluir");
+        BtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/editar_usuario.png"))); // NOI18N
+        BtnAlterar.setText("Editar");
+        BtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAlterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelFuncionalidadesLayout = new javax.swing.GroupLayout(PanelFuncionalidades);
         PanelFuncionalidades.setLayout(PanelFuncionalidadesLayout);
         PanelFuncionalidadesLayout.setHorizontalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelFuncionalidadesLayout.createSequentialGroup()
-                        .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnNovoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(110, 110, 110)
+                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNovoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,12 +189,11 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(btnNovoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(BtnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(BtnAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/voltar_32.png"))); // NOI18N
         btnVoltar.setText("Voltar");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,27 +206,29 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PanelVeiculosCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(260, 260, 260))
+                    .addComponent(PanelBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(PanelVeiculosCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
+                        .addGap(36, 36, 36)
                         .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PanelVeiculosCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -159,8 +237,7 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.doDefaultCloseAction();
-        TelaPrincipal.PainelInternoPrincipal.setVisible(true);
-        TelaPrincipal.PainelLateral.setVisible(true);
+        TelaPrincipal.MenuPrincipal.setVisible(true);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnNovoVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoVeiculoActionPerformed
@@ -176,16 +253,63 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
         TelaPrincipal.DesktopPrincipal.setVisible(true);
     }//GEN-LAST:event_btnNovoVeiculoActionPerformed
 
+    private void tblVeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVeiculosMouseClicked
+        int selecionada = tblVeiculos.getSelectedRow();
+        idTabela = Integer.parseInt( tblVeiculos.getModel().getValueAt(selecionada, 0).toString() );
+        System.out.println("ID selecionado: "+idTabela);
+    }//GEN-LAST:event_tblVeiculosMouseClicked
+
+    private void BtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAlterarActionPerformed
+        try {
+            this.doDefaultCloseAction();
+            
+            editarVeiculo(idTabela);
+        } catch (ParseException ex) {
+            ex.printStackTrace();   
+        }
+    }//GEN-LAST:event_BtnAlterarActionPerformed
+
+    private void editarVeiculo(int id) throws ParseException {
+        Veiculo entidade;
+        if(id == 0)
+            entidade = new Veiculo(0,null,null,0,null,null,null,null);
+        else
+            entidade = dao.Abrir(id);
+        
+        telaVeiculos = new TelaCadastroVeiculos();
+        
+        telaVeiculos.setEntidade(entidade);
+        
+        telaVeiculos.setListagem(this);
+        abreFrame(telaVeiculos);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAlterar;
     private javax.swing.JButton BtnBuscar;
-    private javax.swing.JButton BtnExcluir;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelFuncionalidades;
     private javax.swing.JPanel PanelVeiculosCadastrados;
     private javax.swing.JButton btnNovoVeiculo;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JScrollPane jScrollPane1;
     private java.awt.ScrollPane scrollPaneForncCadastrados;
+    private javax.swing.JTable tblVeiculos;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
+    
+    public void abreFrame(JInternalFrame frame){
+        frame.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(frame, BorderLayout.CENTER);
+        try {
+            frame.setSelected(true);
+            frame.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        frame.setSize(TelaPrincipal.DesktopPrincipal.getSize());
+    }
+
 }
+

@@ -20,46 +20,39 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="BtnVoltar" min="-2" pref="79" max="-2" attributes="0"/>
-              <EmptySpace pref="529" max="32767" attributes="0"/>
-              <Component id="BtnExcluir" min="-2" pref="84" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-              <Component id="BtnSalvar" min="-2" pref="73" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PainelCadastro" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="CadastroFornecedor" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="BtnVoltar" min="-2" pref="113" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="BtnExcluir" min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BtnSalvar" min="-2" pref="102" max="-2" attributes="0"/>
+                  </Group>
               </Group>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace pref="360" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <Component id="CadastroFornecedor" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="BtnVoltar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="BtnExcluir" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="BtnSalvar" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="BtnVoltar" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PainelCadastro" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="82" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="PainelCadastro">
+    <Container class="javax.swing.JPanel" name="CadastroFornecedor">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -84,14 +77,14 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="txtRua" alignment="0" pref="276" max="32767" attributes="0"/>
-                                      <Component id="TxtComplemento" max="32767" attributes="0"/>
+                                      <Component id="txtComplemento" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                   <Component id="LblNumero" min="-2" pref="89" max="-2" attributes="0"/>
                                   <EmptySpace pref="30" max="32767" attributes="0"/>
-                                  <Component id="TxtNumero" min="-2" pref="276" max="-2" attributes="0"/>
+                                  <Component id="txtNumero" min="-2" pref="276" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
@@ -101,8 +94,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="TxtBairro" pref="210" max="32767" attributes="0"/>
-                              <Component id="TxtCidade" max="32767" attributes="0"/>
+                              <Component id="txtBairro" pref="210" max="32767" attributes="0"/>
+                              <Component id="txtCidade" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -129,7 +122,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="TxtTelefone" max="32767" attributes="0"/>
+                                      <Component id="txtTelefone" max="32767" attributes="0"/>
                                       <Component id="txtCNPJ" pref="210" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -137,7 +130,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -150,7 +143,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="LblTelefone" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="TxtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -175,24 +168,24 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtRua" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="LblBairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtBairro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtBairro" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="LblEndereco" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="LblCidade" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TxtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="LblNumero" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="TxtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="LblComplemento" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="TxtComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtComplemento" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -247,27 +240,27 @@
             <Property name="text" type="java.lang.String" value="Cidade:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtNumero">
+        <Component class="javax.swing.JTextField" name="txtNumero">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtNumeroActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumeroActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtComplemento">
+        <Component class="javax.swing.JTextField" name="txtComplemento">
         </Component>
         <Component class="javax.swing.JTextField" name="txtEmail">
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="TxtTelefone">
+        <Component class="javax.swing.JFormattedTextField" name="txtTelefone">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="####-####" subtype="-1" type="5"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtBairro">
+        <Component class="javax.swing.JTextField" name="txtBairro">
         </Component>
         <Component class="javax.swing.JTextField" name="txtNome">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtCidade">
+        <Component class="javax.swing.JTextField" name="txtCidade">
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtCNPJ">
           <Properties>
@@ -280,6 +273,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="BtnSalvar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/save.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
       <Events>
@@ -288,6 +284,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="BtnVoltar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/voltar_32.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
@@ -296,6 +295,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="BtnExcluir">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagens/cancela.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Excluir"/>
       </Properties>
     </Component>

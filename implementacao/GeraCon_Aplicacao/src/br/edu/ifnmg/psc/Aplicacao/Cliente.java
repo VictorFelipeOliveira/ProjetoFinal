@@ -7,6 +7,8 @@ package br.edu.ifnmg.psc.Aplicacao;
 
 import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Objects;
 
 /**
@@ -20,11 +22,11 @@ public class Cliente extends Pessoa implements Entidade{
     private String sexo;
     private Date dataNascimento;
 
-    public Date getDataNascimento() {
+    public Date getDataNascimento() throws ParseException {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) throws ParseException {
         this.dataNascimento = dataNascimento;
     }
 
@@ -40,11 +42,12 @@ public class Cliente extends Pessoa implements Entidade{
         this.codigo=0;
     }
 
-    public Cliente(int codigo, String cpf, String rg, String sexo) {
+    public Cliente(int codigo, String cpf, String rg, String sexo, Date dataNascimento) {
         this.codigo = codigo;
         this.cpf = cpf;
         this.rg = rg;
         this.sexo = sexo;
+        this.dataNascimento = dataNascimento;
     }
 
     @Override

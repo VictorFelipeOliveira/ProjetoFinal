@@ -5,6 +5,7 @@
  */
 package br.edu.ifnmg.psc.Aplicacao;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  */
 public interface ProdutoRepositorio extends Repositorio<Produto> {
      public Produto Abrir(String nome);
-     public boolean verificaProduto(String nome, float preco);
+     public boolean verificaProduto(String nome, BigDecimal preco);
      ArrayList<Fornecedor> listarFornecedores();
      public int BuscaProduto(String nome);
 }
