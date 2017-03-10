@@ -18,6 +18,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.management.JMRuntimeException;
 import javax.swing.JInternalFrame;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -242,13 +250,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void MenuItemReltorioClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemReltorioClientesActionPerformed
         ClienteRepositorio dao = GerenciadorReferencias.getCliente();
         
-        exibeRelatorioJasper("Clientes.jasper", dao.Buscar(null) );
+        try {
+            exibeRelatorioJasper("Clientes.jasper", dao.Buscar(null) );
+        } catch (JRException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_MenuItemReltorioClientesActionPerformed
 
     private void menuRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioVendasActionPerformed
         VendaRepositorio dao = GerenciadorReferencias.getVenda();
         
-        exibeRelatorioJasper("Vendas.jasper", dao.Buscar(null) );
+        try {
+            exibeRelatorioJasper("Vendas.jasper", dao.Buscar(null) );
+        } catch (JRException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_menuRelatorioVendasActionPerformed
 
     /**
@@ -286,7 +302,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-     private void exibeRelatorioJasper(String caminho_relatorio, List dados) {
+     private void exibeRelatorioJasper(String caminho_relatorio, List dados) throws JRException {
 
         try {
             // Parâmetros
@@ -307,8 +323,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
             jrviewer.setVisible(true);
         
-        } catch (JMRuntimeExceptionionception ex) {
-            Logger.getLogger(JasperReport.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JMRuntimeException ex) {
+            ex.printStackTrace();
         }
     }
 

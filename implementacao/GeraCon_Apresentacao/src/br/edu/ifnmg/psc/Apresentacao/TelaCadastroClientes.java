@@ -11,8 +11,6 @@ import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import br.edu.ifnmg.psc.Persistencia.ClienteDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
