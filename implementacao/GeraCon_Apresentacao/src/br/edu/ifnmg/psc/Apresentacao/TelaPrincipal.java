@@ -314,7 +314,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             // Carrega o relatório na memória
             JasperReport relatorio = (JasperReport) JRLoader.loadObject(arquivo);
             
-            JRDataSource fontededados = new JRBeanCollectionDataSource(dados, true);
+            JRData Source fontededados = new JRBeanCollectionDataSource(dados, true);
             
             JasperPrint jasperPrint = JasperFillManager.fillReport(relatorio, parametros, fontededados);
             
