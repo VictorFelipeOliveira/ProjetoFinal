@@ -68,7 +68,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuItemVendas = new javax.swing.JMenuItem();
         menuRelatorios = new javax.swing.JMenu();
         menuRelatorioVendas = new javax.swing.JMenuItem();
-        MenuItemReltorioClientes = new javax.swing.JMenuItem();
+        menuItemRelatorioClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,13 +170,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menuRelatorios.add(menuRelatorioVendas);
 
-        MenuItemReltorioClientes.setText("Clientes");
-        MenuItemReltorioClientes.addActionListener(new java.awt.event.ActionListener() {
+        menuItemRelatorioClientes.setText("Clientes");
+        menuItemRelatorioClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemReltorioClientesActionPerformed(evt);
+                menuItemRelatorioClientesActionPerformed(evt);
             }
         });
-        menuRelatorios.add(MenuItemReltorioClientes);
+        menuRelatorios.add(menuItemRelatorioClientes);
 
         MenuPrincipal.add(menuRelatorios);
 
@@ -247,7 +247,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         abreInternalFrame(new TelaGerenciarFornecedores());
     }//GEN-LAST:event_itemFornecedoresActionPerformed
 
-    private void MenuItemReltorioClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemReltorioClientesActionPerformed
+    private void menuItemRelatorioClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRelatorioClientesActionPerformed
         ClienteRepositorio dao = GerenciadorReferencias.getCliente();
         
         try {
@@ -255,7 +255,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (JRException ex) {
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_MenuItemReltorioClientesActionPerformed
+    }//GEN-LAST:event_menuItemRelatorioClientesActionPerformed
 
     private void menuRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioVendasActionPerformed
         VendaRepositorio dao = GerenciadorReferencias.getVenda();
@@ -332,7 +332,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JDesktopPane DesktopPrincipal;
     private javax.swing.JMenuItem MenuItemCompras;
     private javax.swing.JMenuItem MenuItemEntrega;
-    private javax.swing.JMenuItem MenuItemReltorioClientes;
     private javax.swing.JMenuItem MenuItemVeiculo;
     public static javax.swing.JMenuBar MenuPrincipal;
     private javax.swing.JMenuItem itemFornecedores;
@@ -340,6 +339,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemClientes;
     private javax.swing.JMenuItem menuItemFuncionarios;
     private javax.swing.JMenuItem menuItemProdutos;
+    private javax.swing.JMenuItem menuItemRelatorioClientes;
     private javax.swing.JMenuItem menuItemVendas;
     private javax.swing.JMenuItem menuRelatorioVendas;
     private javax.swing.JMenu menuRelatorios;
