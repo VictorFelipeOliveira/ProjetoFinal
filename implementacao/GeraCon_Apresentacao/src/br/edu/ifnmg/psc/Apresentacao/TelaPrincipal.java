@@ -143,6 +143,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuRelatorios.setText("Relatórios");
 
         menuRelatorioVendas.setText("Vendas");
+        menuRelatorioVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuRelatorioVendasActionPerformed(evt);
+            }
+        });
         menuRelatorios.add(menuRelatorioVendas);
 
         MenuPrincipal.add(menuRelatorios);
@@ -196,6 +201,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void itemFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemFornecedoresActionPerformed
         abreInternalFrame(new TelaGerenciarFornecedores());
     }//GEN-LAST:event_itemFornecedoresActionPerformed
+
+    private void menuRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioVendasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuRelatorioVendasActionPerformed
 
     /**
      * @param args the command line arguments
