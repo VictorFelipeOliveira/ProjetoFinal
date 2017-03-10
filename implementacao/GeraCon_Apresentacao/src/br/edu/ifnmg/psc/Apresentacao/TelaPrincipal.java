@@ -5,11 +5,18 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
+import br.edu.ifnmg.psc.Aplicacao.VendaRepositorio;
 import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;
+import java.net.URL;
 import java.text.ParseException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.management.JMRuntimeException;
 import javax.swing.JInternalFrame;
 
 /**
@@ -49,6 +56,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuItemVendas = new javax.swing.JMenuItem();
         menuRelatorios = new javax.swing.JMenu();
         menuRelatorioVendas = new javax.swing.JMenuItem();
+        MenuItemReltorioClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -150,6 +158,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menuRelatorios.add(menuRelatorioVendas);
 
+        MenuItemReltorioClientes.setText("Clientes");
+        MenuItemReltorioClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemReltorioClientesActionPerformed(evt);
+            }
+        });
+        menuRelatorios.add(MenuItemReltorioClientes);
+
         MenuPrincipal.add(menuRelatorios);
 
         setJMenuBar(MenuPrincipal);
@@ -202,8 +218,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         abreInternalFrame(new TelaGerenciarFornecedores());
     }//GEN-LAST:event_itemFornecedoresActionPerformed
 
+<<<<<<< HEAD
     private void menuRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioVendasActionPerformed
         // TODO add your handling code here:
+=======
+    private void MenuItemReltorioClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemReltorioClientesActionPerformed
+        ClienteRepositorio dao = GerenciadorReferencias.getCliente();
+        
+        exibeRelatorioJasper("Clientes.jasper", dao.Buscar(null) );
+    }//GEN-LAST:event_MenuItemReltorioClientesActionPerformed
+
+    private void menuRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioVendasActionPerformed
+        VendaRepositorio dao = GerenciadorReferencias.getVenda();
+        
+        exibeRelatorioJasper("Vendas.jasper", dao.Buscar(null) );
+>>>>>>> 32e3568839830099969c009732a4dbc751f5c5c5
     }//GEN-LAST:event_menuRelatorioVendasActionPerformed
 
     /**
@@ -241,11 +270,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
     }
+     private void exibeRelatorioJasper(String caminho_relatorio, List dados) {
+
+        try {
+            // Parâmetros
+            Map parametros = new HashMap();
+
+            // Pega o caminho do arquivo do relatório
+            URL arquivo = getClass().getResource(caminho_relatorio);
+            
+            // Carrega o relatório na memória
+            JasperReport relatorio = (JasperReport) JRLoader.loadObject(arquivo);
+            
+            JRDataSource fontededados = new JRBeanCollectionDataSource(dados, true);
+            
+            JasperPrint jasperPrint = JasperFillManager.fillReport(relatorio, parametros, fontededados);
+            
+            // Visualiza o relatório
+            JasperViewer jrviewer = new JasperViewer(jasperPrint, false);
+            
+            jrviewer.setVisible(true);
+        
+        } catch (JMRuntimeExceptionionception ex) {
+            Logger.getLogger(JasperReport.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JDesktopPane DesktopPrincipal;
     private javax.swing.JMenuItem MenuItemCompras;
     private javax.swing.JMenuItem MenuItemEntrega;
+    private javax.swing.JMenuItem MenuItemReltorioClientes;
     private javax.swing.JMenuItem MenuItemVeiculo;
     public static javax.swing.JMenuBar MenuPrincipal;
     private javax.swing.JMenuItem itemFornecedores;

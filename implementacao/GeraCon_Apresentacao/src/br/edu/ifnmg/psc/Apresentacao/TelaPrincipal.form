@@ -128,6 +128,17 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuRelatorioVendasActionPerformed"/>
               </Events>
+<<<<<<< HEAD
+=======
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemReltorioClientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clientes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemReltorioClientesActionPerformed"/>
+              </Events>
+>>>>>>> 32e3568839830099969c009732a4dbc751f5c5c5
             </MenuItem>
           </SubComponents>
         </Menu>
