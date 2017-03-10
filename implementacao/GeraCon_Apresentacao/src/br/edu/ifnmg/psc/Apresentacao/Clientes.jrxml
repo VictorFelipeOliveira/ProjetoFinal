@@ -3,6 +3,10 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="bairro" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="codigo" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -40,7 +44,7 @@
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="17" y="20" width="100" height="20" uuid="52beef2d-3c12-4162-88df-9e96068bc15f"/>
+				<reportElement x="11" y="20" width="100" height="20" uuid="52beef2d-3c12-4162-88df-9e96068bc15f"/>
 				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 			</textField>
 			<textField>
