@@ -410,7 +410,6 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
             System.out.println("Data Formatada: "+data);
             cliente.setDataNascimento(data);
         }
-            
         
         String sexo = "";
         

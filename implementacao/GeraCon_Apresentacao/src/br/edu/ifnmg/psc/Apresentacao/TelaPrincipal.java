@@ -32,6 +32,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH); 
         setContentPane(DesktopPrincipal);
+        this.painelLateral.setVisible(true);
+        DesktopPrincipal.add(this.painelLateral);
+        //
     }
 
     /**
@@ -43,6 +46,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        painelLateral = new javax.swing.JPanel();
         DesktopPrincipal = new javax.swing.JDesktopPane();
         MenuPrincipal = new javax.swing.JMenuBar();
         menuGerenciar = new javax.swing.JMenu();
@@ -59,13 +63,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         MenuItemReltorioClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+
+        painelLateral.setBorder(javax.swing.BorderFactory.createTitledBorder("nijkdfb"));
 
         DesktopPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         DesktopPrincipal.setDoubleBuffered(true);
         DesktopPrincipal.setMinimumSize(new java.awt.Dimension(600, 800));
-        getContentPane().add(DesktopPrincipal);
-        DesktopPrincipal.setBounds(0, 0, 990, 480);
+        painelLateral.add(DesktopPrincipal);
 
         MenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuPrincipal.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
@@ -170,7 +174,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(MenuPrincipal);
 
-        setSize(new java.awt.Dimension(1000, 537));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(823, Short.MAX_VALUE)
+                .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+
+        setSize(new java.awt.Dimension(1045, 536));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -218,10 +239,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         abreInternalFrame(new TelaGerenciarFornecedores());
     }//GEN-LAST:event_itemFornecedoresActionPerformed
 
-<<<<<<< HEAD
-    private void menuRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRelatorioVendasActionPerformed
-        // TODO add your handling code here:
-=======
     private void MenuItemReltorioClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemReltorioClientesActionPerformed
         ClienteRepositorio dao = GerenciadorReferencias.getCliente();
         
@@ -232,7 +249,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         VendaRepositorio dao = GerenciadorReferencias.getVenda();
         
         exibeRelatorioJasper("Vendas.jasper", dao.Buscar(null) );
->>>>>>> 32e3568839830099969c009732a4dbc751f5c5c5
     }//GEN-LAST:event_menuRelatorioVendasActionPerformed
 
     /**
@@ -311,6 +327,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemVendas;
     private javax.swing.JMenuItem menuRelatorioVendas;
     private javax.swing.JMenu menuRelatorios;
+    public static javax.swing.JPanel painelLateral;
     // End of variables declaration//GEN-END:variables
     
     public void abreInternalFrame(JInternalFrame frame) {
