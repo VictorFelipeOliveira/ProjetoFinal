@@ -221,15 +221,7 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
 
     private void BtnNovoFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFornecedorActionPerformed
         this.doDefaultCloseAction();
-        TelaCadastroFornecedor telaFornecedor = new TelaCadastroFornecedor();
-        telaFornecedor.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(telaFornecedor);
-        try {
-            telaFornecedor.setSelected(true);
-        } catch (PropertyVetoException ex) {
-            ex.printStackTrace();
-        }
-        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        abreFrame(new TelaCadastroFornecedor());
     }//GEN-LAST:event_BtnNovoFornecedorActionPerformed
 
     private void tblFornecedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblFornecedoresMouseClicked
@@ -305,11 +297,6 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         
         telaFornecedor.setListagem(this);
         abreFrame(telaFornecedor);
-        
-        //this.getParent().add(telaClientes);
-        //telaClientes.setVisible(true);
-        //TelaPrincipal.DesktopPrincipal.add(telaClientes);
-        //TelaPrincipal.DesktopPrincipal;
     }
     
     public void abreFrame(JInternalFrame frame){

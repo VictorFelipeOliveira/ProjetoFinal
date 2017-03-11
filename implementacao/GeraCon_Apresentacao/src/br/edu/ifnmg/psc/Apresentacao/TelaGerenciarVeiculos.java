@@ -154,6 +154,8 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        txtBuscar.getAccessibleContext().setAccessibleDescription("Informe a placa");
+
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
         btnNovoVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add_user_32.png"))); // NOI18N
@@ -241,16 +243,7 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnNovoVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoVeiculoActionPerformed
-        this.doDefaultCloseAction();
-        TelaCadastroVeiculos telaVeiculos = new TelaCadastroVeiculos();
-        telaVeiculos.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(telaVeiculos);
-        try {
-            telaVeiculos.setSelected(true);
-        } catch (PropertyVetoException ex) {
-            ex.printStackTrace();
-        }
-        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        abreFrame(new TelaCadastroVeiculos());
     }//GEN-LAST:event_btnNovoVeiculoActionPerformed
 
     private void tblVeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblVeiculosMouseClicked

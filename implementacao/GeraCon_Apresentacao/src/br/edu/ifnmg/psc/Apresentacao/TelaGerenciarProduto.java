@@ -79,8 +79,8 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
         btnPesquisar = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
         PanelFuncionalidades = new javax.swing.JPanel();
-        BtnNovoCliente = new javax.swing.JButton();
-        BtnAlterar = new javax.swing.JButton();
+        BtnNovoProduto = new javax.swing.JButton();
+        btnAlterarProduto = new javax.swing.JButton();
         BtonVoltar = new javax.swing.JButton();
 
         PanelGerencProduto.setBorder(javax.swing.BorderFactory.createTitledBorder("Gerenciamento de produtos"));
@@ -155,19 +155,19 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
 
-        BtnNovoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add_user_32.png"))); // NOI18N
-        BtnNovoCliente.setText("Novo");
-        BtnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
+        BtnNovoProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add_user_32.png"))); // NOI18N
+        BtnNovoProduto.setText("Novo");
+        BtnNovoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnNovoClienteActionPerformed(evt);
+                BtnNovoProdutoActionPerformed(evt);
             }
         });
 
-        BtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/editar_usuario.png"))); // NOI18N
-        BtnAlterar.setText("Editar");
-        BtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterarProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/editar_usuario.png"))); // NOI18N
+        btnAlterarProduto.setText("Editar");
+        btnAlterarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAlterarActionPerformed(evt);
+                btnAlterarProdutoActionPerformed(evt);
             }
         });
 
@@ -176,19 +176,19 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
         PanelFuncionalidadesLayout.setHorizontalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addGroup(PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAlterarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnNovoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelFuncionalidadesLayout.setVerticalGroup(
             PanelFuncionalidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFuncionalidadesLayout.createSequentialGroup()
                 .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(BtnNovoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnNovoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAlterarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -241,25 +241,17 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
         TelaPrincipal.MenuPrincipal.setVisible(true);
     }//GEN-LAST:event_BtonVoltarActionPerformed
 
-    private void BtnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoClienteActionPerformed
+    private void BtnNovoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoProdutoActionPerformed
         this.doDefaultCloseAction();
-        TelaCadastroProdutos telaProdutos = new TelaCadastroProdutos();
-        telaProdutos.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(telaProdutos);
-        try {
-            telaProdutos.setSelected(true);
-        } catch (PropertyVetoException ex) {
-            ex.printStackTrace();
-        }
-        TelaPrincipal.DesktopPrincipal.setVisible(true);
-    }//GEN-LAST:event_BtnNovoClienteActionPerformed
+        abreFrame(new TelaCadastroProdutos());
+    }//GEN-LAST:event_BtnNovoProdutoActionPerformed
 
     private void tblProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProdutosMouseClicked
         int selecionada = tblProdutos.getSelectedRow();
         idTabela = Integer.parseInt( tblProdutos.getModel().getValueAt(selecionada, 0).toString() );
     }//GEN-LAST:event_tblProdutosMouseClicked
 
-    private void BtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAlterarActionPerformed
+    private void btnAlterarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarProdutoActionPerformed
         try {
             this.doDefaultCloseAction();
             
@@ -267,16 +259,16 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
         } catch (ParseException ex) {
             ex.printStackTrace();   
         }
-    }//GEN-LAST:event_BtnAlterarActionPerformed
+    }//GEN-LAST:event_btnAlterarProdutoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAlterar;
-    private javax.swing.JButton BtnNovoCliente;
+    private javax.swing.JButton BtnNovoProduto;
     private javax.swing.JButton BtonVoltar;
     private javax.swing.JPanel PanelBuscar;
     private javax.swing.JPanel PanelFuncionalidades;
     private javax.swing.JPanel PanelGerencProduto;
+    private javax.swing.JButton btnAlterarProduto;
     private javax.swing.JButton btnPesquisar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblProdutos;

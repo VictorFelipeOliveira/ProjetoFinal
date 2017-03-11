@@ -13,6 +13,8 @@ import br.edu.ifnmg.psc.Persistencia.ProdutoDAO;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -228,9 +230,8 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
     private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
         try {
             this.doDefaultCloseAction();
-            TelaGerenciarProduto telaProduto = new TelaGerenciarProduto();
-            telaProduto.setVisible(true);
-            TelaPrincipal.DesktopPrincipal.add(telaProduto);
+            TelaGerenciarProduto tela = new TelaGerenciarProduto();
+            tela.abreFrame(tela);
         } catch (ParseException ex) {
             ex.printStackTrace();
         }

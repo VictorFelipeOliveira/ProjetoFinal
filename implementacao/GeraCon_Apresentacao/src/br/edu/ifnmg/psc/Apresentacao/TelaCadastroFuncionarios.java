@@ -435,8 +435,7 @@ public class TelaCadastroFuncionarios extends javax.swing.JInternalFrame {
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         this.doDefaultCloseAction();
         TelaGerenciarFuncionarios tela = new TelaGerenciarFuncionarios();
-        tela.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(tela);
+        tela.abreFrame(tela);
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void txtComplementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComplementoActionPerformed

@@ -18,7 +18,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.management.JMRuntimeException;
 import javax.swing.JInternalFrame;
-import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -31,7 +30,7 @@ import net.sf.jasperreports.view.JasperViewer;
  *
  * @author victor
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class TelaPrincipal extends javax.swing.JFrame{
 
     /**
      * Creates new form PrincipalDesktop
@@ -40,9 +39,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH); 
         setContentPane(DesktopPrincipal);
-        this.painelLateral.setVisible(true);
-        DesktopPrincipal.add(this.painelLateral);
-        //
     }
 
     /**
@@ -54,7 +50,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painelLateral = new javax.swing.JPanel();
         DesktopPrincipal = new javax.swing.JDesktopPane();
         MenuPrincipal = new javax.swing.JMenuBar();
         menuGerenciar = new javax.swing.JMenu();
@@ -71,13 +66,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuItemRelatorioClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        painelLateral.setBorder(javax.swing.BorderFactory.createTitledBorder("nijkdfb"));
-
-        DesktopPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        DesktopPrincipal.setDoubleBuffered(true);
-        DesktopPrincipal.setMinimumSize(new java.awt.Dimension(600, 800));
-        painelLateral.add(DesktopPrincipal);
 
         MenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuPrincipal.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
@@ -186,17 +174,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(823, Short.MAX_VALUE)
-                .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(DesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1035, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(painelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+            .addComponent(DesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
         );
 
         setSize(new java.awt.Dimension(1045, 536));
@@ -343,7 +325,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemVendas;
     private javax.swing.JMenuItem menuRelatorioVendas;
     private javax.swing.JMenu menuRelatorios;
-    public static javax.swing.JPanel painelLateral;
     // End of variables declaration//GEN-END:variables
     
     public void abreInternalFrame(JInternalFrame frame) {

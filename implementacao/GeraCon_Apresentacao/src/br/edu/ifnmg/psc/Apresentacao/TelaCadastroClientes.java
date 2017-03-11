@@ -321,7 +321,7 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
         try {
             this.doDefaultCloseAction();
             TelaGerenciarClientes tela = new TelaGerenciarClientes();
-            TelaPrincipal.DesktopPrincipal.add(tela);
+            tela.abreFrame(tela);
         } catch (ParseException ex) {
             ex.printStackTrace();
         }

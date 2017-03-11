@@ -146,19 +146,19 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(txtBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelBuscarLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
                 .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelBuscarLayout.setVerticalGroup(
             PanelBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBuscarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnPesquisar)
-                .addContainerGap())
+                .addGap(6, 6, 6))
         );
 
         PanelFuncionalidades.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionalidades"));
@@ -251,15 +251,7 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
 
     private void BtnNovoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoFuncionarioActionPerformed
         this.doDefaultCloseAction();
-        TelaCadastroFuncionarios telaFuncionarios = new TelaCadastroFuncionarios();
-        telaFuncionarios.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(telaFuncionarios);
-        try {
-            telaFuncionarios.setSelected(true);
-        } catch (PropertyVetoException ex) {
-            ex.printStackTrace();
-        }
-        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        abreFrame(new TelaCadastroFuncionarios());
     }//GEN-LAST:event_BtnNovoFuncionarioActionPerformed
 
     private void tblFuncionariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblFuncionariosMouseClicked

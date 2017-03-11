@@ -9,9 +9,12 @@ import br.edu.ifnmg.psc.Aplicacao.Fornecedor;
 import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
 import br.edu.ifnmg.psc.Excecao.ErroValidacao;
 import br.edu.ifnmg.psc.Persistencia.FornecedorDAO;
+import java.awt.BorderLayout;
+import java.beans.PropertyVetoException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -259,8 +262,7 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
     private void BtnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVoltarActionPerformed
         this.doDefaultCloseAction();
         TelaGerenciarFornecedores tela = new TelaGerenciarFornecedores();
-        tela.setVisible(true);
-        TelaPrincipal.DesktopPrincipal.add(tela);
+        tela.abreFrame(tela);
     }//GEN-LAST:event_BtnVoltarActionPerformed
 
     private void BtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalvarActionPerformed
@@ -363,5 +365,18 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
         txtCidade.setText(fornecedor.getCidade());
         txtComplemento.setText(fornecedor.getComplemento());
         txtNumero.setText(String.valueOf(fornecedor.getNumero()));
+    }
+    
+    public void abreFrame(JInternalFrame frame){
+        frame.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(frame, BorderLayout.CENTER);
+        try {
+            frame.setSelected(true);
+            frame.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        frame.setSize(TelaPrincipal.DesktopPrincipal.getSize());
     }
 }

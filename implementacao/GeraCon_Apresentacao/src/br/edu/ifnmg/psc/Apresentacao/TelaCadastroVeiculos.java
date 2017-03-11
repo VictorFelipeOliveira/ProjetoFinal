@@ -280,12 +280,12 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         try {
             this.doDefaultCloseAction();
-            TelaGerenciarVeiculos telaVeiculos = new TelaGerenciarVeiculos();
-            telaVeiculos.setVisible(true);
-            TelaPrincipal.DesktopPrincipal.add(telaVeiculos);
+            TelaGerenciarVeiculos tela = new TelaGerenciarVeiculos();
+            tela.abreFrame(tela);
         } catch (ParseException ex) {
             Logger.getLogger(TelaCadastroVeiculos.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void extraiCampos() throws ErroValidacao {
