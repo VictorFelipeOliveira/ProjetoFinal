@@ -17,4 +17,5 @@ public interface ProdutoRepositorio extends Repositorio<Produto> {
      public boolean verificaProduto(String nome, BigDecimal preco);
      ArrayList<Fornecedor> listarFornecedores();
      public int BuscaProduto(String nome);
+     public ArrayList<Produto> listarProdutos();
 }

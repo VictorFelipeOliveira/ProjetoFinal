@@ -10,6 +10,6 @@ package br.edu.ifnmg.psc.Aplicacao;
  * @author thais
  */
 public interface CompraRepositorio extends Repositorio<Compra> {
-    public Compra Abir();
+    public Compra Abrir();
     
 }

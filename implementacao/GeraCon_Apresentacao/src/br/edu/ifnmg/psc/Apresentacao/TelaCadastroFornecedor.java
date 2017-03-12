@@ -313,6 +313,8 @@ public class TelaCadastroFornecedor extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void extraiCampos() throws ErroValidacao {
+       fornecedor = new Fornecedor();
+        
        if(!txtNome.getText().equals(""))
            fornecedor.setNome(txtNome.getText());
        if(!txtEmail.getText().equals(""))

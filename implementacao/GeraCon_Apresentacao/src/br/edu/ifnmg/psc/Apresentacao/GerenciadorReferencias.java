@@ -10,15 +10,14 @@ import br.edu.ifnmg.psc.Aplicacao.CompraRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.FuncionarioRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
-import br.edu.ifnmg.psc.Aplicacao.TransacaoRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.UsuarioRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.VeiculoRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.VendaRepositorio;
 import br.edu.ifnmg.psc.Persistencia.ClienteDAO;
+import br.edu.ifnmg.psc.Persistencia.CompraDAO;
 import br.edu.ifnmg.psc.Persistencia.FornecedorDAO;
 import br.edu.ifnmg.psc.Persistencia.FuncionarioDAO;
 import br.edu.ifnmg.psc.Persistencia.ProdutoDAO;
-import br.edu.ifnmg.psc.Persistencia.TransacaoDAO;
 import br.edu.ifnmg.psc.Persistencia.UsuarioDAO;
 import br.edu.ifnmg.psc.Persistencia.VeiculoDAO;
 import br.edu.ifnmg.psc.Persistencia.VendaDAO;
@@ -37,6 +36,14 @@ public class GerenciadorReferencias {
         return daoUsuario;
     }
     
+    private static CompraRepositorio daoCompra;
+    
+    public static CompraRepositorio getCompra(){
+        if(daoCompra == null)
+            daoCompra = new CompraDAO();
+        return daoCompra;
+    }
+    
     private static ClienteRepositorio daoCliente;
 
     public static ClienteRepositorio getCliente() {
@@ -44,14 +51,6 @@ public class GerenciadorReferencias {
             daoCliente = new ClienteDAO();
         return daoCliente;
     }
-    
-    private static CompraRepositorio daoCompra;
-    
- /*   public static CompraRepositorio getCompra(){
-        if(daoCompra == null)
-            daoCompra = new CompraDAO();
-        return daoCompra;
-    }*/
     
     private static FornecedorRepositorio daoFornecedor;
     
@@ -92,11 +91,4 @@ public class GerenciadorReferencias {
         return daoVenda;
     }
     
-    private static TransacaoRepositorio daoTransacao;
-    public static TransacaoRepositorio getTransacao() {
-        if(daoTransacao == null)
-            daoTransacao = new TransacaoDAO();
-        return daoTransacao;
-    }
-   
 }

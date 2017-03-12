@@ -89,6 +89,8 @@ public class TelaGerenciarFuncionarios extends javax.swing.JInternalFrame {
         BtnAlterar = new javax.swing.JButton();
         BtnVoltar = new javax.swing.JButton();
 
+        setTitle("Gerenciar Funcionários");
+
         PanelFuncCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Funcionários cadastrados"));
 
         tblFuncionarios.setModel(new javax.swing.table.DefaultTableModel(

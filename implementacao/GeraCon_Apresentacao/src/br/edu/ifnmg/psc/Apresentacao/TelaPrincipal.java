@@ -6,6 +6,7 @@
 package br.edu.ifnmg.psc.Apresentacao;
 
 import br.edu.ifnmg.psc.Aplicacao.ClienteRepositorio;
+import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.VendaRepositorio;
 import java.awt.BorderLayout;
 import java.beans.PropertyVetoException;
@@ -18,6 +19,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.management.JMRuntimeException;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -50,6 +53,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem2 = new javax.swing.JMenuItem();
         DesktopPrincipal = new javax.swing.JDesktopPane();
         MenuPrincipal = new javax.swing.JMenuBar();
         menuGerenciar = new javax.swing.JMenu();
@@ -62,10 +66,15 @@ public class TelaPrincipal extends javax.swing.JFrame{
         MenuItemVeiculo = new javax.swing.JMenuItem();
         menuItemVendas = new javax.swing.JMenuItem();
         menuRelatorios = new javax.swing.JMenu();
-        menuRelatorioVendas = new javax.swing.JMenuItem();
         menuItemRelatorioClientes = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        menuRelatorioVendas = new javax.swing.JMenuItem();
+        MenuSair = new javax.swing.JMenu();
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela Principal");
 
         MenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuPrincipal.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
@@ -150,14 +159,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         menuRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/relatorio.png"))); // NOI18N
         menuRelatorios.setText("Relatórios");
 
-        menuRelatorioVendas.setText("Vendas");
-        menuRelatorioVendas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuRelatorioVendasActionPerformed(evt);
-            }
-        });
-        menuRelatorios.add(menuRelatorioVendas);
-
+        menuItemRelatorioClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/users.png"))); // NOI18N
         menuItemRelatorioClientes.setText("Clientes");
         menuItemRelatorioClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,7 +168,34 @@ public class TelaPrincipal extends javax.swing.JFrame{
         });
         menuRelatorios.add(menuItemRelatorioClientes);
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/produto.png"))); // NOI18N
+        jMenuItem1.setText("Produtos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuRelatorios.add(jMenuItem1);
+
+        menuRelatorioVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/venda.png"))); // NOI18N
+        menuRelatorioVendas.setText("Vendas");
+        menuRelatorioVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuRelatorioVendasActionPerformed(evt);
+            }
+        });
+        menuRelatorios.add(menuRelatorioVendas);
+
         MenuPrincipal.add(menuRelatorios);
+
+        MenuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
+        MenuSair.setText("Sair");
+        MenuSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                MenuSairMousePressed(evt);
+            }
+        });
+        MenuPrincipal.add(MenuSair);
 
         setJMenuBar(MenuPrincipal);
 
@@ -174,14 +203,14 @@ public class TelaPrincipal extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1035, Short.MAX_VALUE)
+            .addComponent(DesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1041, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+            .addComponent(DesktopPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1045, 536));
+        setSize(new java.awt.Dimension(1051, 531));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -198,7 +227,11 @@ public class TelaPrincipal extends javax.swing.JFrame{
     }//GEN-LAST:event_menuItemClientesActionPerformed
 
     private void menuItemVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemVendasActionPerformed
-        abreInternalFrame(new TelaGerenciamentoVendas());
+        try {
+            abreInternalFrame(new TelaGerenciamentoVendas());
+        } catch (ParseException ex) {
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_menuItemVendasActionPerformed
 
     private void menuItemProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProdutosActionPerformed
@@ -235,7 +268,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         try {
             exibeRelatorioJasper("Clientes.jasper", dao.Buscar(null) );
         } catch (JRException ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_menuItemRelatorioClientesActionPerformed
 
@@ -248,6 +281,21 @@ public class TelaPrincipal extends javax.swing.JFrame{
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_menuRelatorioVendasActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        try {
+            ProdutoRepositorio dao = GerenciadorReferencias.getProduto();
+            exibeRelatorioJasper("Produtos.jasper", dao.Buscar(null));
+        } catch (JRException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void MenuSairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuSairMousePressed
+        int resposta = JOptionPane.showConfirmDialog(null, "Deseja sair do sistema?"); 
+        if (resposta==0)
+           System.exit(0);
+    }//GEN-LAST:event_MenuSairMousePressed
 
     /**
      * @param args the command line arguments
@@ -296,7 +344,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
             // Carrega o relatório na memória
             JasperReport relatorio = (JasperReport) JRLoader.loadObject(arquivo);
             
-            JRData Source fontededados = new JRBeanCollectionDataSource(dados, true);
+            JRDataSource fontededados = new JRBeanCollectionDataSource(dados, true);
             
             JasperPrint jasperPrint = JasperFillManager.fillReport(relatorio, parametros, fontededados);
             
@@ -316,7 +364,10 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private javax.swing.JMenuItem MenuItemEntrega;
     private javax.swing.JMenuItem MenuItemVeiculo;
     public static javax.swing.JMenuBar MenuPrincipal;
+    private javax.swing.JMenu MenuSair;
     private javax.swing.JMenuItem itemFornecedores;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu menuGerenciar;
     private javax.swing.JMenuItem menuItemClientes;
     private javax.swing.JMenuItem menuItemFuncionarios;

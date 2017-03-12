@@ -61,6 +61,8 @@ public class TelaCadastroVeiculos extends javax.swing.JInternalFrame {
         txtMarca = new javax.swing.JTextField();
         txtPlaca = new javax.swing.JFormattedTextField();
 
+        setTitle("Cadastro de Veículos");
+
         PanelCadastro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Veículo"));
 
         LblModelo.setText("Modelo:");

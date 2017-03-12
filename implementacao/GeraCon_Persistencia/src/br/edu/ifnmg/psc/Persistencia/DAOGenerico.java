@@ -127,11 +127,12 @@ public abstract class DAOGenerico<T extends Entidade> implements Repositorio<T> 
     public List<T> Buscar(T filtro) {
         List<T> listaRetorno = new ArrayList<>();
 
-        if(filtro != null)
+        if(filtro != null){
             preencheFiltros(filtro);
 
-        if (where.length() > 0) {
-            where = "WHERE " + where;
+            if (where.length() > 0) {
+                where = "WHERE " + where;
+            }
         }
 
         try {

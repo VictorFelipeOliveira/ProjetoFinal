@@ -37,6 +37,8 @@ public class TelaGerenciarUsuarios extends javax.swing.JInternalFrame {
         BtnAlterar = new javax.swing.JButton();
         BtonVoltar = new javax.swing.JButton();
 
+        setTitle("Gerenciar Usuários");
+
         PanelUsuariosCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuários cadastrados"));
 
         javax.swing.GroupLayout PanelUsuariosCadastradosLayout = new javax.swing.GroupLayout(PanelUsuariosCadastrados);

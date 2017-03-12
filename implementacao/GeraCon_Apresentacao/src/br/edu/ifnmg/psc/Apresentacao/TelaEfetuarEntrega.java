@@ -49,6 +49,8 @@ public class TelaEfetuarEntrega extends javax.swing.JInternalFrame {
         BtnCancelar = new javax.swing.JButton();
         BtnSalvar = new javax.swing.JButton();
 
+        setTitle("Efetuar Entrega");
+
         PanelEfetuarEntrega.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de produtos"));
 
         javax.swing.GroupLayout PanelEfetuarEntregaLayout = new javax.swing.GroupLayout(PanelEfetuarEntrega);

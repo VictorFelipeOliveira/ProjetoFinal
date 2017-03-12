@@ -11,7 +11,8 @@ import java.util.Objects;
  *
  * @author thais
  */
-public class Compra extends Transacao implements Entidade{
+public class Compra implements Entidade{
+    private int id;
     private float desconto;
     private String formaPagamento;
 
@@ -55,6 +56,16 @@ public class Compra extends Transacao implements Entidade{
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
     
     

@@ -56,7 +56,7 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
     }
     
     public void buscar(String nome) throws ParseException{
-        Produto filtro = new Produto(0,nome,null,null,null,0);
+        Produto filtro = new Produto(0,nome,null,null,null,null);
         
         List<Produto> busca = dao.Buscar(filtro);
         
@@ -82,6 +82,8 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
         BtnNovoProduto = new javax.swing.JButton();
         btnAlterarProduto = new javax.swing.JButton();
         BtonVoltar = new javax.swing.JButton();
+
+        setTitle("Gerenciar Produtos");
 
         PanelGerencProduto.setBorder(javax.swing.BorderFactory.createTitledBorder("Gerenciamento de produtos"));
 
@@ -278,7 +280,7 @@ public class TelaGerenciarProduto extends javax.swing.JInternalFrame {
     private void editarProduto(int id) throws ParseException {
         Produto entidade;
         if(id == 0)
-            entidade = new Produto(0,null, null,null, null,0);
+            entidade = new Produto(0,null, null,null, null,null);
         else
             entidade = dao.Abrir(id);
         

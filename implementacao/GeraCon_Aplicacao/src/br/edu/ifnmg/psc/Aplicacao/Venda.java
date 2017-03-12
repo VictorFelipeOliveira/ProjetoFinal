@@ -20,9 +20,9 @@ public class Venda implements Entidade{
     private Date data;
     private BigDecimal valorTotal;
     private String formaPagamento;
-    private Transacao transacao;
     private BigDecimal desconto;
-
+    private ArrayList<ItensVenda> itens;
+    
     public BigDecimal getDesconto() {
         return desconto;
     }
@@ -31,21 +31,11 @@ public class Venda implements Entidade{
         this.desconto = desconto;
     }
 
-    public Transacao getTransacao() {
-        return transacao;
-    }
-
-    public void setTransacao(Transacao transacao) {
-        this.transacao = transacao;
-    }
-    
-    private List<VendaItem> itens;
-
     public Venda() {
-    
+        itens = new ArrayList<>();
     }
-
-    public Venda(int id, Cliente cliente, Date data, BigDecimal valorTotal, List<VendaItem> itens) {
+    
+    public Venda(int id, Cliente cliente, Date data, BigDecimal valorTotal) {
         this.id = id;
         this.cliente = cliente;
         this.data = data;
@@ -53,7 +43,7 @@ public class Venda implements Entidade{
         itens = new ArrayList<>();
     }
     
-    public void addItem(VendaItem item){
+    public void addItem(ItensVenda item){
         if(!itens.contains(item)) {
             itens.add(item);
             this.valorTotal = this.valorTotal.add( 
@@ -61,7 +51,7 @@ public class Venda implements Entidade{
         }
     }
     
-    public void removeItem(VendaItem item){
+    public void removeItem(ItensVenda item){
         if(itens.contains(item)){
             itens.remove(item);
         this.valorTotal = this.valorTotal.subtract(
@@ -103,11 +93,11 @@ public class Venda implements Entidade{
         this.valorTotal = valorTotal;
     }
 
-    public List<VendaItem> getItens() {
+    public ArrayList<ItensVenda> getItens() {
         return itens;
     }
 
-    public void setItens(List<VendaItem> itens) {
+    public void setItens(ArrayList<ItensVenda> itens) {
         this.itens = itens;
     }
 
@@ -118,6 +108,4 @@ public class Venda implements Entidade{
     public void setFormaPagamento(String formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
-    
-    
 }

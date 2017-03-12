@@ -69,8 +69,14 @@ public class UsuarioDAO extends DAOGenerico<Usuario> implements UsuarioRepositor
     protected void preencheParametros(PreparedStatement sql, Usuario filtro) {
         try {
             int cont = 1;
-            if(filtro.getId() > 0){ sql.setInt(cont, filtro.getId()); cont++; }
-            if(filtro.getLogin() != null ){ sql.setString(cont, filtro.getLogin() +"%"); cont++; }
+            if(filtro.getId() > 0){ 
+                sql.setInt(cont, filtro.getId()); 
+                cont++; 
+            }
+            if(filtro.getLogin() != null ){ 
+                sql.setString(cont, filtro.getLogin() +"%"); 
+                cont++; 
+            }
             if(filtro.getSenha() != null){ 
                 sql.setString(cont, filtro.getSenha()); 
                 cont++; 

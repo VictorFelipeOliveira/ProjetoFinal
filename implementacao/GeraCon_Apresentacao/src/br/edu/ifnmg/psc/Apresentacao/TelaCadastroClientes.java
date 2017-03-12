@@ -69,6 +69,8 @@ public class TelaCadastroClientes extends javax.swing.JInternalFrame{
         btnSalvar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
 
+        setTitle("Cadastro de Clientes");
+
         PanelCadastroCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Cliente"));
 
         lblCpf.setText("CPF:");

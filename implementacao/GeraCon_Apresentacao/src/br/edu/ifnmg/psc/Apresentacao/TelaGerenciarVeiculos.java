@@ -87,6 +87,8 @@ public class TelaGerenciarVeiculos extends javax.swing.JInternalFrame {
         BtnAlterar = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
+        setTitle("Gerenciar Veículos");
+
         PanelVeiculosCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Veículos cadastrados"));
 
         tblVeiculos.setModel(new javax.swing.table.DefaultTableModel(

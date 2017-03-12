@@ -5,17 +5,88 @@
  */
 package br.edu.ifnmg.psc.Apresentacao;
 
+import br.edu.ifnmg.psc.Aplicacao.Venda;
+import br.edu.ifnmg.psc.Aplicacao.VendaRepositorio;
+import java.awt.BorderLayout;
+import java.beans.PropertyVetoException;
+import java.text.ParseException;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JInternalFrame;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author thais
  */
 public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
 
+    VendaRepositorio dao = GerenciadorReferencias.getVenda();
+    TelaEfetuarVenda telaVendas;
+    int idTabela;
     /**
      * Creates new form TelaGerenciamentoVendas
      */
-    public TelaGerenciamentoVendas() {
+    public TelaGerenciamentoVendas() throws ParseException {
         initComponents();
+        List<Venda> busca = dao.Buscar(null);
+        preencheTabela(busca);
+    }
+    
+     private void preencheTabela(List<Venda> lista) throws ParseException{
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Código");
+        modelo.addColumn("Valor Total");
+        modelo.addColumn("Desconto");
+        modelo.addColumn("Forma Pagamento");
+               
+        for(Venda v : lista){
+            Vector linha = new Vector();
+            linha.add(v.getId());
+            linha.add(v.getValorTotal());
+            linha.add(v.getDesconto());
+            linha.add(v.getFormaPagamento());
+            modelo.addRow(linha);
+        }
+        
+        tblListaVendas.setModel(modelo);
+    }
+     
+    public void buscar(String cpf) throws ParseException{
+        Venda filtro = new Venda();
+        
+        List<Venda> busca = dao.Buscar(filtro);
+        
+        preencheTabela(busca);
+        
+    }
+    
+    private void editarCliente(int id) throws ParseException {
+        Venda entidade;
+        if(id == 0)
+            entidade = new Venda();
+        else
+            entidade = dao.Abrir(id);
+        
+        telaVendas = new TelaEfetuarVenda();
+        
+        telaVendas.setEntidade(entidade);
+        
+        telaVendas.setListagem(this);
+        abreFrame(telaVendas);
+    }
+    
+    public void abreFrame(JInternalFrame frame){
+        frame.setVisible(true);
+        TelaPrincipal.DesktopPrincipal.add(frame, BorderLayout.CENTER);
+        try {
+            frame.setSelected(true);
+            frame.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            ex.printStackTrace();
+        }
+        TelaPrincipal.DesktopPrincipal.setVisible(true);
+        frame.setSize(TelaPrincipal.DesktopPrincipal.getSize());
     }
 
     /**
@@ -29,7 +100,7 @@ public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
 
         PanelGerencVendas = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblListaVendas = new javax.swing.JTable();
         PanelBuscar = new javax.swing.JPanel();
         BtnBuscar = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
@@ -38,44 +109,48 @@ public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
         BtnAlterar = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
+        setTitle("Gerenciamento de Vendas");
+
         PanelGerencVendas.setBorder(javax.swing.BorderFactory.createTitledBorder("Gerenciamento de Vendas"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblListaVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Produto", "Preço Unitário", "Quantidade", "Fornecedor"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        ));
+        tblListaVendas.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        tblListaVendas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListaVendasMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblListaVendas);
 
         javax.swing.GroupLayout PanelGerencVendasLayout = new javax.swing.GroupLayout(PanelGerencVendas);
         PanelGerencVendas.setLayout(PanelGerencVendasLayout);
         PanelGerencVendasLayout.setHorizontalGroup(
             PanelGerencVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelGerencVendasLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(PanelGerencVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGerencVendasLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
         PanelGerencVendasLayout.setVerticalGroup(
             PanelGerencVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+            .addGap(0, 383, Short.MAX_VALUE)
+            .addGroup(PanelGerencVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGerencVendasLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         PanelBuscar.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar"));
@@ -110,6 +185,11 @@ public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
 
         BtnNovoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add.png"))); // NOI18N
         BtnNovoCliente.setText("Novo");
+        BtnNovoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnNovoClienteActionPerformed(evt);
+            }
+        });
 
         BtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/editar.png"))); // NOI18N
         BtnAlterar.setText("Editar");
@@ -149,27 +229,28 @@ public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(PanelGerencVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(PanelGerencVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PanelGerencVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(PanelFuncionalidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(PanelGerencVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,6 +260,15 @@ public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
         this.doDefaultCloseAction();
         TelaPrincipal.MenuPrincipal.setVisible(true);
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void tblListaVendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListaVendasMouseClicked
+        int selecionada = tblListaVendas.getSelectedRow();
+        idTabela = Integer.parseInt( tblListaVendas.getModel().getValueAt(selecionada, 0).toString() );
+    }//GEN-LAST:event_tblListaVendasMouseClicked
+
+    private void BtnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNovoClienteActionPerformed
+        abreFrame(new TelaEfetuarVenda());
+    }//GEN-LAST:event_BtnNovoClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -190,7 +280,7 @@ public class TelaGerenciamentoVendas extends javax.swing.JInternalFrame {
     private javax.swing.JPanel PanelGerencVendas;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblListaVendas;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

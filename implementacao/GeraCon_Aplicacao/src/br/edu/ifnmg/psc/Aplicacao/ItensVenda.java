@@ -11,24 +11,35 @@ import java.util.Objects;
  *
  * @author thais
  */
-public class ItemPedido implements Entidade {
+public class ItensVenda implements Entidade {
 
     private int codigo;
     private int quantidade;
+    private Venda venda;
     private Produto produto;
-    private Transacao transacao;
 
-    public ItemPedido() {
+
+    public ItensVenda() {
         
     }
 
-    public ItemPedido(int codigo, int quantidade, Produto produto, Transacao transacao) {
+    public ItensVenda(Produto produto, int quantidade) {
+        this.quantidade = quantidade;
+        this.produto = produto;
+    }
+   
+    public ItensVenda(Venda venda, Produto produto, int quantidade) {
+        this.quantidade = quantidade;
+        this.venda = venda;
+        this.produto = produto;
+    }
+    
+    public ItensVenda(int codigo, int quantidade, Produto produto, Venda venda) {
         this.codigo = codigo;
         this.quantidade = quantidade;
         this.produto = produto;
-        this.transacao = transacao;
+        this.venda = venda;
     }
-
     
     public int getCodigo() {
         return codigo;
@@ -54,13 +65,14 @@ public class ItemPedido implements Entidade {
         this.produto = produto;
     }
 
-    public Transacao getTransacao() {
-        return transacao;
+    public Venda getVenda() {
+        return venda;
     }
 
-    public void setTransacao(Transacao transacao) {
-        this.transacao = transacao;
+    public void setVenda(Venda venda) {
+        this.venda = venda;
     }
+    
     
     @Override
     public int getId() {
@@ -74,37 +86,38 @@ public class ItemPedido implements Entidade {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + this.codigo;
-        hash = 53 * hash + this.quantidade;
-        hash = 53 * hash + Objects.hashCode(this.produto);
-        hash = 53 * hash + Objects.hashCode(this.transacao);
+        int hash = 3;
+        hash = 67 * hash + this.codigo;
+        hash = 67 * hash + this.quantidade;
+        hash = 67 * hash + Objects.hashCode(this.venda);
+        hash = 67 * hash + Objects.hashCode(this.produto);
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj == null) {
             return false;
         }
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ItemPedido other = (ItemPedido) obj;
+        final ItensVenda other = (ItensVenda) obj;
         if (this.codigo != other.codigo) {
             return false;
         }
         if (this.quantidade != other.quantidade) {
             return false;
         }
-        if (!Objects.equals(this.produto, other.produto)) {
+        if (!Objects.equals(this.venda, other.venda)) {
             return false;
         }
-        if (!Objects.equals(this.transacao, other.transacao)) {
+        if (!Objects.equals(this.produto, other.produto)) {
             return false;
         }
         return true;
     }
-    
-    
 }

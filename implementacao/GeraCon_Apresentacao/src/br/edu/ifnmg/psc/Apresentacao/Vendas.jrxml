@@ -3,14 +3,22 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<field name="codigo" class="java.lang.Integer"/>
+	<field name="valorTotal" class="java.lang.String"/>
+	<field name="desconto" class="java.lang.String"/>
+	<field name="formaPagamento" class="java.lang.String"/>
+	<field name="data" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="30" y="30" width="509" height="20" uuid="7e33c3a2-0b6c-4731-990f-7845d08c6fcd"/>
-				<text><![CDATA[Relatório de Vendas]]></text>
+				<reportElement x="0" y="10" width="555" height="27" uuid="7e33c3a2-0b6c-4731-990f-7845d08c6fcd"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Vendas Efetuadas]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -18,34 +26,65 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="25" splitType="Stretch">
 			<staticText>
-				<reportElement x="10" y="11" width="100" height="20" uuid="39790b7a-51cc-43df-b86b-fc670682671d"/>
+				<reportElement x="0" y="0" width="100" height="20" uuid="5ac303c8-30a1-4ee8-8f68-61905fd77def"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[Código]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="212" y="17" width="100" height="20" uuid="8b5e908f-2d7b-49c0-96f8-d4b0af391761"/>
+				<reportElement x="100" y="0" width="100" height="20" uuid="911e2241-aa68-462e-ab92-506dbb5a7395"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[Valor Total]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="411" y="17" width="128" height="20" uuid="1d6561ff-79f6-49e7-91da-10d5a157111e"/>
-				<text><![CDATA[Forma de pagamento]]></text>
+				<reportElement x="200" y="0" width="100" height="20" uuid="b0e19f8c-33b8-412a-ae2f-764997e94f08"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Desconto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="821bdf37-1f66-4eda-9c39-3ff06300f152"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Forma Pagamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="20" uuid="30bb7cb0-791d-4760-a13a-18d08e69eeb0"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="16" y="31" width="100" height="20" uuid="f2a1700c-812d-40db-9d2e-d8f91fed593b"/>
+				<reportElement x="0" y="0" width="100" height="20" uuid="09bdd670-9a27-48b4-8c40-69543f75f743"/>
 				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="212" y="31" width="100" height="20" uuid="865368fc-07a8-4594-b60f-8287f2ba681c"/>
+				<reportElement x="100" y="0" width="100" height="20" uuid="9440ceb9-c748-49a6-bb5e-2d0703f7b546"/>
 				<textFieldExpression><![CDATA[$F{valorTotal}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="411" y="31" width="128" height="20" uuid="932e129d-03cc-40ad-91db-96c354cb9afa"/>
+				<reportElement x="200" y="0" width="100" height="20" uuid="2fab817c-3d3f-4d83-b83f-e49d70270352"/>
+				<textFieldExpression><![CDATA[$F{desconto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="c64df82f-3c80-49f9-ad75-a5bd132c02b7"/>
 				<textFieldExpression><![CDATA[$F{formaPagamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="1ff8bcec-43b0-4875-bf34-bf66c7ed2161"/>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

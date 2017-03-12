@@ -12,6 +12,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -163,5 +166,48 @@ public class ClienteDAO extends DAOGenerico <Cliente> implements ClienteReposito
            System.out.println(ex);
         }
         return false;
+    }
+
+    @Override
+    public ArrayList<Cliente> listarClientes() {
+        ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
+        String consulta = "select codigo, nome, telefone, email, rua, bairro, cidade, complemento, "
+                + "numero, cpf, rg, dataNascimento from Clientes";
+       
+        try{
+            PreparedStatement sql = conn.prepareStatement(consulta);
+            ResultSet resultado = sql.executeQuery();
+                        
+            // Verifica se algum registro foi retornado na consulta
+            while(resultado.next()){
+                Cliente cliente = new Cliente();
+                
+                cliente.setId(resultado.getInt(1));
+                cliente.setNome(resultado.getString(2));
+                cliente.setTelefone(resultado.getString(3));
+                cliente.setEmail(resultado.getString(4));
+                cliente.setRua(resultado.getString(5));
+                cliente.setBairro(resultado.getString(6));
+                cliente.setCidade(resultado.getString(7));
+                cliente.setComplemento(resultado.getString(8));
+                cliente.setNumero(resultado.getInt(9));
+                cliente.setCpf(resultado.getString(10));
+                cliente.setRg(resultado.getString(11));
+                cliente.setDataNascimento(resultado.getDate(12));
+                
+                // Adiciona o objeto à lista
+                listaClientes.add(cliente);
+            }            
+            
+        
+        } catch(SQLException ex){
+            System.out.println(ex);
+        } catch (ErroValidacao ex) {
+            ex.printStackTrace();
+        } catch (ParseException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return listaClientes;
     }
 }

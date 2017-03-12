@@ -43,6 +43,8 @@ public class TelaEfetuarCompras extends javax.swing.JInternalFrame {
         BtnVoltar = new javax.swing.JButton();
         BtnCancelar = new javax.swing.JButton();
 
+        setTitle("Efetuar Compras");
+
         PanelCarrGerenComp.setBorder(javax.swing.BorderFactory.createTitledBorder("Carrinho de compras"));
 
         javax.swing.GroupLayout PanelCarrGerenCompLayout = new javax.swing.GroupLayout(PanelCarrGerenComp);

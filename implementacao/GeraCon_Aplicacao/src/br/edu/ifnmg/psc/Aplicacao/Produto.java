@@ -14,13 +14,10 @@ import java.math.BigDecimal;
 public class Produto implements Entidade{
     Fornecedor fornecedor = new Fornecedor();
     private int codigo;
-
-   
     private String nome;
     private String categoria;
     private String descricao;
     private BigDecimal precoUnitario;
-    private int fornecedor_fk;
     private int quantidade;
    // private String unidadeMedida;
 
@@ -36,25 +33,15 @@ public class Produto implements Entidade{
         this.codigo = 0;
     }
 
-    public Produto(int codigo, String nome, String categoria, String descricao, BigDecimal precoUnitario, int fornecedor_fk) {
+    public Produto(int codigo, String nome, String categoria, String descricao, BigDecimal precoUnitario, Fornecedor fornecedor) {
         this.codigo = codigo;
         this.nome = nome;
         this.categoria = categoria;
         this.descricao = descricao;
         this.precoUnitario = precoUnitario;
-        this.fornecedor_fk = fornecedor_fk;
+        this.fornecedor = fornecedor;
     }
 
-    
-    
-    public int getFornecedor_fk() {
-        return fornecedor_fk;
-    }
-
-    public void setFornecedor_fk(int fornecedor_fk) {
-        this.fornecedor_fk = fornecedor_fk;
-    }
-    
     public String getNome() {
         return nome;
     }
@@ -85,7 +72,15 @@ public class Produto implements Entidade{
 
     public void setPrecoUnitario(BigDecimal precoUnitario) {
         this.precoUnitario = precoUnitario;
-    }  
+    }
+
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }
     
     @Override
     public int getId() {

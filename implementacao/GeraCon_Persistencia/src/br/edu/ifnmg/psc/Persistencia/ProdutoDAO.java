@@ -5,6 +5,7 @@
  */
 package br.edu.ifnmg.psc.Persistencia;
 
+import br.edu.ifnmg.psc.Aplicacao.Cliente;
 import br.edu.ifnmg.psc.Aplicacao.Fornecedor;
 import br.edu.ifnmg.psc.Aplicacao.Produto;
 import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
  */
 public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositorio {
 
+    FornecedorDAO fornecedor;
     public ProdutoDAO() {
         setConsultaAbrir("select codigo, descricao, precoUnitario, fk_fornecedores, "
                 + "nome, quantidade from Produtos where codigo = ?");
@@ -33,6 +35,7 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
                 + "nome, quantidade from Produtos");
         setConsultaUltimoId("select max(codigo) from Produtos where descricao = ? and precoUnitario = ?"
                 + " and fk_fornecedores = ? and nome = ? and quantidade = ?");
+        fornecedor = new FornecedorDAO();
     }
 
     @Override
@@ -42,7 +45,7 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
             produto.setId(resultado.getInt(1));
             produto.setDescricao(resultado.getString(2));
             produto.setPrecoUnitario(resultado.getBigDecimal(3));
-            produto.setFornecedor_fk(resultado.getInt(4));
+            produto.setFornecedor(fornecedor.Abrir(resultado.getInt(4)));
             produto.setNome(resultado.getString(5));
             produto.setQuantidade(resultado.getInt(6));
             
@@ -58,7 +61,7 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
         try{
             sql.setString(1, produto.getDescricao());
             sql.setBigDecimal(2, produto.getPrecoUnitario());
-            sql.setInt(3, produto.getFornecedor_fk());
+            sql.setInt(3, produto.getFornecedor().getId());
             sql.setString(4, produto.getNome());
             sql.setInt(5, produto.getQuantidade());
         } catch(SQLException ex){
@@ -190,7 +193,7 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
                 produto.setId(resultado.getInt(1));
                 produto.setDescricao(resultado.getString(2));
                 produto.setPrecoUnitario(resultado.getBigDecimal(3));
-                produto.setFornecedor_fk(resultado.getInt(4));
+                produto.setFornecedor(fornecedor.Abrir(resultado.getInt(4)));
                 produto.setCategoria(resultado.getString(5));
                 produto.setNome(resultado.getString(6));
                 produto.setQuantidade(resultado.getInt(7));
@@ -201,5 +204,38 @@ public class ProdutoDAO extends DAOGenerico<Produto> implements ProdutoRepositor
             ex.printStackTrace();
         } 
         return 0;
+    }
+
+    @Override
+    public ArrayList<Produto> listarProdutos() {
+        ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
+        String consulta = "select codigo, nome, quantidade, descricao, precoUnitario, fk_fornecedores from Produtos";
+       
+        try{
+            PreparedStatement sql = conn.prepareStatement(consulta);
+            ResultSet resultado = sql.executeQuery();
+                        
+            // Verifica se algum registro foi retornado na consulta
+            while(resultado.next()){
+                Produto produto = new Produto();
+                
+                produto.setId(resultado.getInt(1));
+                produto.setNome(resultado.getString(2));
+                produto.setQuantidade(resultado.getInt(3));
+                produto.setDescricao(resultado.getString(4));
+                produto.setPrecoUnitario(resultado.getBigDecimal(5));
+                produto.setFornecedor(fornecedor.Abrir(resultado.getInt(6)));
+                
+                
+                // Adiciona o objeto à lista
+                listaProdutos.add(produto);
+            }            
+            
+        
+        } catch(SQLException ex){
+          ex.printStackTrace();
+        }
+        
+        return listaProdutos;
     }
 }

@@ -56,6 +56,8 @@ public class TelaGerenciarFornecedores extends javax.swing.JInternalFrame {
         BtnAlterar = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
+        setTitle("Gerenciar Fornecedores");
+
         PanelFornCadastrados.setBorder(javax.swing.BorderFactory.createTitledBorder("Fornecedores cadastrados"));
 
         tblFornecedores.setModel(new javax.swing.table.DefaultTableModel(

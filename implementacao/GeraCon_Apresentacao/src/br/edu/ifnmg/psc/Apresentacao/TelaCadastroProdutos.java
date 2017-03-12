@@ -6,15 +6,15 @@
 package br.edu.ifnmg.psc.Apresentacao;
 
 import br.edu.ifnmg.psc.Aplicacao.Fornecedor;
+import br.edu.ifnmg.psc.Aplicacao.FornecedorRepositorio;
 import br.edu.ifnmg.psc.Aplicacao.Produto;
 import br.edu.ifnmg.psc.Aplicacao.ProdutoRepositorio;
 import br.edu.ifnmg.psc.Excecao.ErroValidacao;
+import br.edu.ifnmg.psc.Persistencia.FornecedorDAO;
 import br.edu.ifnmg.psc.Persistencia.ProdutoDAO;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -271,7 +271,10 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
             if(novo.getNome().equals(cmbFornecedor.getSelectedItem()))
                 codigo = novo.getId();
         }
-        produto.setFornecedor_fk(codigo);
+        
+        FornecedorRepositorio daoFornecedor = new FornecedorDAO();
+        produto.setFornecedor(daoFornecedor.Abrir(codigo));
+        
         System.out.println("Codigo selecionado: "+codigo);
     }
     
@@ -281,6 +284,7 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         for(Fornecedor novo: listafornecedor){
             cmbFornecedor.addItem(novo.getNome());
         }
+        
     }
 
     private void limpaCampos() {
@@ -308,7 +312,7 @@ public class TelaCadastroProdutos extends javax.swing.JInternalFrame {
         
         ArrayList<Fornecedor> novaLista = dao.listarFornecedores();
         for(Fornecedor novo: novaLista){
-            if(novo.getId() == produto.getFornecedor_fk())
+            if(novo.getId() == produto.getFornecedor().getId())
                 cmbFornecedor.setSelectedItem(novo.getNome());
         }
     }

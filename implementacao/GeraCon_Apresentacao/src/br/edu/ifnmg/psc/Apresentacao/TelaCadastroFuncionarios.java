@@ -75,6 +75,8 @@ public class TelaCadastroFuncionarios extends javax.swing.JInternalFrame {
         BtnExcluir = new javax.swing.JButton();
         BtnSalvar = new javax.swing.JButton();
 
+        setTitle("Cadastro de Funcionários");
+
         PanelCdastro.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro de Funcionário"));
 
         LblNome.setText("Nome:");
